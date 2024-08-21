@@ -1554,6 +1554,7 @@ img {
     letter-spacing: 0.1em;
     text-align: left;
     height: 24px;
+    margin-left: 0.5px;
 }
 
 .main-wrap > .footer-wrap > .footer-content > .upper > .left-footer > .information > .extra-info {
