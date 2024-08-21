@@ -540,7 +540,7 @@ img {
 
 .main-slider > .content {
     position: absolute;
-    top: 263px;
+    top: 266px;
     left: 189px;
     display: flex;
     align-items: center;
@@ -720,6 +720,7 @@ img {
     line-height: 20px;
     text-align: center;
     color: #FF64AE;
+    margin-left: 1px;
 }
 
 .main-wrap > .core-services > .header > .services-description {
@@ -1097,6 +1098,7 @@ img {
 }
 
 .main-wrap > .professional-teams > .pro-box-section-wrap > .pro-box-section {
+    margin-top: -5px;
     background: #ffffff;
     height: 439px;
     width: 270px;
@@ -1106,6 +1108,7 @@ img {
 }
 
 .main-wrap > .professional-teams > .pro-box-section-wrap > .active-pro-box-section {
+    margin-top: 0;
     height: 626px;
     width: 424px;
     box-shadow: 0 25px 50px 25px #F6F7FF;
@@ -1520,7 +1523,7 @@ img {
 }
 
 .main-wrap > .footer-wrap > .footer-content > .upper > .left-footer > .slogan {
-    padding-left: 31px;
+    padding-left: 32px;
     margin-top: 33px;
     font-size: 16px;
     font-weight: 700;
@@ -1536,7 +1539,7 @@ img {
 }
 
 .main-wrap > .footer-wrap > .footer-content > .upper > .left-footer > .information {
-    padding-left: 31px;
+    padding-left: 32px;
     margin-top: 26px;
     display: flex;
     flex-direction: column;
@@ -1584,8 +1587,9 @@ img {
 }
 
 .main-wrap > .footer-wrap > .footer-content > .upper > .right-footer {
-    margin-left: 129px;
+    margin-left: 130px;
     display: flex;
+    margin-top: 0.5px;
 }
 
 .main-wrap > .footer-wrap > .footer-content > .upper > .right-footer > .section {
@@ -1658,6 +1662,7 @@ img {
     letter-spacing: 0.1em;
     text-align: right;
     color: #D7DBFF;
+    margin-right: -1px;
 }
 
 @media (min-width: 1536px) {
