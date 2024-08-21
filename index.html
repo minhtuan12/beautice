@@ -1,0 +1,413 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Beautice</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <meta name="description" content="">
+
+    <meta property="og:title" content="">
+    <meta property="og:type" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="img/Main%20Logo.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="icon.png">
+
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+
+<div class="main-wrap">
+    <div class="header-wrap">
+        <img src="./img/Main%20Logo.svg" alt=""/>
+        <div class="right-header">
+            <div class="main-menu">
+                <div class="home-option">Home <img class="plus-icon" src="img/Plus%20Icon.png" alt=""/></div>
+                <div class="option">About</div>
+                <div class="option">Service</div>
+                <div class="option">Gallery</div>
+                <div class="option">Blog</div>
+            </div>
+            <div class="contact-btn">
+                <button>Contact</button>
+            </div>
+            <div class="menu-btn">
+                <i class="fa-solid fa-bars fa-xl"></i>
+            </div>
+        </div>
+    </div>
+    <div class="main-slider">
+        <div class="first-bubble"><img alt="" src="img/Bubble%201%20(1).png"/></div>
+        <div class="second-bubble"><img alt="" src="img/Bubble%202%20(1).png"/></div>
+        <div class="content">
+            <div class="left-part-slider">
+                <div class="title">
+                    Clinic & beauty
+                    consultant
+                </div>
+                <div class="description">
+                    It is a long established fact that a reader will be
+                    by the readable content of a page.
+                </div>
+                <div class="detail-btn">
+                    <button>More Details</button>
+                </div>
+            </div>
+            <div class="right-part-slider">
+                <img src="img/Frame%201.png" alt=""/>
+            </div>
+        </div>
+        <div class="slide-btn">
+            <button class="left-btn"></button>
+            <button class="middle-btn"></button>
+            <button class="right-btn"></button>
+        </div>
+    </div>
+    <div class="core-services">
+        <div class="header">
+            <div class="services-title">
+                Main Services
+            </div>
+            <div class="services-description">
+                Learn services to focus
+                on your beauty
+            </div>
+            <div class="bottom-desc">
+                Porta rhoncus orci condimentum vitae lobortis eu dignissim non massa. Non parturient amet, feugiat
+                tellus sagittis, scelerisque eget nulla turpis.
+            </div>
+        </div>
+        <div class="angle-right" onclick="handleSlideProduct('right')"><i class="fa-solid fa-angle-right fa-2xl"></i></div>
+        <div class="angle-left" onclick="handleSlideProduct('left')"><i class="fa-solid fa-angle-right fa-2xl"></i></div>
+        <div class="box-section-wrap">
+            <div class="box-section">
+                <div class="box-image">
+                    <img src="img/Ellipse%202.png" alt="" class="outer-img"/>
+                    <img src="img/Anim1.png" alt="" class="inner-img">
+                </div>
+                <div class="box-content">
+                    <div class="box-title">
+                        Beauty consultation
+                    </div>
+                    <div class="box-desc">
+                        Non parturient amet, feugiat tellus sagittis, scelerisque eget nulla turpis.
+                    </div>
+                </div>
+            </div>
+            <div class="box-section">
+                <div class="box-image">
+                    <img src="img/Ellipse%202.png" alt="" class="outer-img"/>
+                    <img src="img/Group.png" alt="" class="inner-img" style="top: 40px; left: 85px">
+                </div>
+                <div class="box-content">
+                    <div class="box-title">
+                        Skin treatments
+                    </div>
+                    <div class="box-desc">
+                        Non parturient amet, feugiat tellus sagittis, scelerisque eget nulla turpis.
+                    </div>
+                </div>
+            </div>
+            <div class="box-section">
+                <div class="box-image">
+                    <img src="img/Ellipse%202.png" alt="" class="outer-img"/>
+                    <img src="img/Group%20(1).png" alt="" class="inner-img" style="top: 48.97px; left: 78.37px">
+                </div>
+                <div class="box-content">
+                    <div class="box-title">
+                        Beauty product
+                    </div>
+                    <div class="box-desc">
+                        Non parturient amet, feugiat tellus sagittis, scelerisque eget nulla turpis.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="about-us">
+        <img src="img/Background%20Bubble.png" alt=""/>
+        <div class="content">
+            <div class="left-content">
+                <div class="content-title">
+                    About Us
+                </div>
+                <div class="content-under-title">
+                    We are the best beauty clinic
+                </div>
+                <div class="content-desc">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit, quam suscipit purus donec amet.
+                    Egestas volutpat facilisi eu libero. Nunc, ipsum ornare mauris sit quam quis enim. Varius tellus in
+                    suspendisse placerat.<br/><br/>
+                    Id dui erat sed quam tellus in purus. Pellentesque congue fringilla cras tellus enim.
+                </div>
+                <div class="option-btn">
+                    <button>Learn More</button>
+                    <div class="play-btn-option">
+                        <img src="img/Play_button.png" alt=""/>
+                        <span class="option-title">Watch Video</span>
+                    </div>
+                </div>
+            </div>
+            <div class="right-content">
+                <img src="img/unsplash_LRXYS0tSyGc.png" alt=""/>
+            </div>
+        </div>
+    </div>
+    <div class="professional-teams">
+        <div class="pro-header">
+            <div class="pro-header-title">Professional Teams</div>
+            <div class="pro-header-under-title">The Professional expert</div>
+            <div class="pro-header-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam.</div>
+        </div>
+        <div class="pro-angle-right" onclick="handleSlideProfessionalExpert('right')"><i
+            class="fa-solid fa-angle-right fa-2xl"></i></div>
+        <div class="pro-angle-left" onclick="handleSlideProfessionalExpert('left')"><i
+            class="fa-solid fa-angle-right fa-2xl"></i></div>
+        <div class="pro-box-section-wrap">
+            <div id="1" class="pro-box-section"
+            >
+                <div class="pro-box-image">
+                    <img src="img/unsplash_pTrhfmj2jDA.png" alt="">
+                </div>
+                <div class="pro-box-content">
+                    <div class="pro-box-occupation">Surgeon</div>
+                    <div class="pro-box-title">Briyan Nevalli</div>
+                    <div class="pro-box-desc">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit
+                    </div>
+                    <div class="pro-box-social">
+                        <div class="icon">
+                            <img src="img/Ellipse%202%20(1).png" alt="" style="margin: -15px;"/>
+                            <img src="img/twitter.png" alt="" class="inner-icon"/>
+                        </div>
+                        <div class="icon">
+                            <img src="img/Ellipse%202%20(1).png" alt="" style="margin: -15px;"/>
+                            <img src="img/facebook-f.png" alt="" class="inner-icon-facebook"/>
+                        </div>
+                        <div class="icon">
+                            <img src="img/Ellipse%202%20(1).png" alt="" style="margin: -15px;"/>
+                            <img src="img/instagram.png" alt="" class="inner-icon"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="2" class="pro-box-section active-pro-box-section"
+            >
+                <div class="pro-box-image">
+                    <img src="img/unsplash_FVh_yqLR9eA.png" alt="">
+                </div>
+                <div class="pro-box-content">
+                    <div class="pro-box-occupation">Dermatologist</div>
+                    <div class="pro-box-title">Bella sebastian</div>
+                    <div class="pro-box-desc">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit
+                    </div>
+                    <div class="pro-box-social">
+                        <div class="icon">
+                            <img src="img/Ellipse%202%20(1).png" alt="" style="margin: -15px;"/>
+                            <img src="img/twitter.png" alt="" class="inner-icon"/>
+                        </div>
+                        <div class="icon">
+                            <img src="img/Ellipse%202%20(1).png" alt="" style="margin: -15px;"/>
+                            <img src="img/facebook-f.png" alt="" class="inner-icon-facebook"/>
+                        </div>
+                        <div class="icon">
+                            <img src="img/Ellipse%202%20(1).png" alt="" style="margin: -15px;"/>
+                            <img src="img/instagram.png" alt="" class="inner-icon"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="3" class="pro-box-section"
+            >
+                <div class="pro-box-image">
+                    <img src="img/unsplash_mEZ3PoFGs_k.png" alt="">
+                </div>
+                <div class="pro-box-content">
+                    <div class="pro-box-occupation">Stylist expert</div>
+                    <div class="pro-box-title">Lilly Adams</div>
+                    <div class="pro-box-desc">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit
+                    </div>
+                    <div class="pro-box-social">
+                        <div class="icon">
+                            <img src="img/Ellipse%202%20(1).png" alt="" style="margin: -15px;"/>
+                            <img src="img/twitter.png" alt="" class="inner-icon"/>
+                        </div>
+                        <div class="icon">
+                            <img src="img/Ellipse%202%20(1).png" alt="" style="margin: -15px;"/>
+                            <img src="img/facebook-f.png" alt="" class="inner-icon-facebook"/>
+                        </div>
+                        <div class="icon">
+                            <img src="img/Ellipse%202%20(1).png" alt="" style="margin: -15px;"/>
+                            <img src="img/instagram.png" alt="" class="inner-icon"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="contact-us">
+        <div class="cu-bubble-wrap">
+            <div class="cu-first-bubble"><img src="img/Bubble%201.png" alt=""/></div>
+            <div class="cu-second-bubble"><img src="img/Bubble%202.png" alt=""/></div>
+        </div>
+        <div class="cu-content">
+            <div class="cu-image">
+                <img alt="" src="img/Contact%20Animations.png"/>
+            </div>
+            <div class="cu-form-wrap">
+                <div class="form-title">Contact Us</div>
+                <div class="form-under-title">Send your inquiry to<br/>our expert team</div>
+                <div class="form-desc">Lorem ipsum dolor sit amet nulla turapis tellus.</div>
+                <div class="form-content">
+                    <div class="name-input">
+                        <input placeholder="First name"/>
+                        <input placeholder="Last name"/>
+                    </div>
+                    <div class="input-wrap"><input placeholder="Email address"/></div>
+                    <div class="input-wrap"><input placeholder="Subject message"/></div>
+                    <div class="input-wrap inquiry-input">
+                        <textarea placeholder="Your inquiry here"></textarea>
+                    </div>
+                    <div class="send-msg-btn">
+                        <button>Send Message</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-wrap">
+        <div class="above-bg">
+            <img src="img/Footer%20BG%201.png" alt="" class="upper-img"/>
+            <img src="img/Footer%20BG%202.png" alt="" class="inner-img"/>
+            <img src="img/Bottom%20BG.png" alt="" class="bottom-img"/>
+        </div>
+        <div class="footer-content">
+            <div class="upper">
+                <div class="left-footer">
+                    <img src="img/Footer%20Logo.png" alt="">
+                    <div class="slogan">Beautice <span>is a Beauty Clinic WordPress Theme.</span></div>
+                    <div class="information">
+                        <div class="address">Baker Steet 101, NY, United States.</div>
+                        <div class="extra-info">
+                            <div class="phone">+521 569 8966.</div>
+                            <div class="mail">mail@company.com.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-footer">
+                    <div class="section">
+                        <div class="title">Pages</div>
+                        <div class="list">
+                            <div class="item"><img src="img/Vector.png" alt=""/><span>Home</span></div>
+                            <div class="item"><img src="img/Vector.png" alt=""/><span>About</span></div>
+                            <div class="item"><img src="img/Vector.png" alt=""/><span>Services</span></div>
+                            <div class="item"><img src="img/Vector.png" alt=""/><span>Gallery</span></div>
+                            <div class="item"><img src="img/Vector.png" alt=""/><span>Team</span></div>
+                        </div>
+                    </div>
+                    <div class="section information-section">
+                        <div class="title">Informations</div>
+                        <div class="list">
+                            <div class="item"><img src="img/Vector.png" alt=""/><span>Terms & conditions</span></div>
+                            <div class="item"><img src="img/Vector.png" alt=""/><span>Privacy policy</span></div>
+                            <div class="item"><img src="img/Vector.png" alt=""/><span>Blog</span></div>
+                            <div class="item"><img src="img/Vector.png" alt=""/><span>Contact</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="lower">
+                <div class="footer-social">
+                    <div class="social-item">
+                        <img alt="" src="img/facebook-f%20(1).png"/>
+                    </div>
+                    <div class="social-item">
+                        <img alt="" src="img/twitter%20(1).png"/>
+                    </div>
+                    <div class="social-item">
+                        <img alt="" src="img/linkedin-in.png"/>
+                    </div>
+                    <div class="social-item">
+                        <img alt="" src="img/youtube.png"/>
+                    </div>
+                    <div class="social-item">
+                        <img alt="" src="img/instagram%20(1).png"/>
+                    </div>
+
+                </div>
+                <div class="copy-right">
+                    © AltDesain Studio 2021 - All right reserved.
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="to-top-btn" id="toTopBtn" style="display: none">
+        <img alt="" src="img/arrow-up.png"/>
+    </div>
+</div>
+
+<script>
+    // function handleActiveProBoxSection(elementId) {
+    //     if (window.innerWidth > 820) {
+    //         const boxElement = document.getElementById(elementId.toString())
+    //         boxElement.style.height = "626px";
+    //         boxElement.style.width = "424px";
+    //         boxElement.style.padding = "91px 77px 96px 77px";
+    //         boxElement.style.boxShadow = "0 25px 50px 25px #F6F7FF";
+    //         boxElement.style.transition = "all 0.5s ease";
+    //     }
+    // }
+    //
+    // function handleInActiveProBoxSection(elementId) {
+    //     if (window.innerWidth > 820) {
+    //         const boxElement = document.getElementById(elementId.toString())
+    //         boxElement.style.height = "439px";
+    //         boxElement.style.width = "270px";
+    //         boxElement.style.padding = "0";
+    //         boxElement.style.boxShadow = "none";
+    //         boxElement.style.transition = "all 0.5s ease";
+    //     }
+    // }
+
+    function handleSlide(currentWidth, ableToScroll, scrollDiv, direction) {
+        if ((currentWidth < ableToScroll && direction === 'right') || (currentWidth > 0 && direction === 'left')) {
+            scrollDiv.scrollLeft += direction === 'right' ? scrollDiv.clientWidth : -scrollDiv.clientWidth
+        }
+    }
+
+    function handleSlideProduct(direction) {
+        const boxWrap = document.querySelector('.box-section-wrap')
+        const currentWidth = boxWrap.scrollLeft
+        const ableToScroll = boxWrap.scrollWidth - 600
+
+        handleSlide(currentWidth, ableToScroll, boxWrap, direction)
+    }
+
+    function handleSlideProfessionalExpert(direction) {
+        const boxWrap = document.querySelector('.pro-box-section-wrap')
+        const currentWidth = boxWrap.scrollLeft
+        const ableToScroll = boxWrap.scrollWidth - 800
+
+        handleSlide(currentWidth, ableToScroll, boxWrap, direction)
+    }
+</script>
+<script src="js/app.js"></script>
+
+</body>
+
+</html>
