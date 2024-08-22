@@ -283,7 +283,7 @@ textarea {
 input, textarea {
     font-family: Poppins, serif;
     border: 1px solid #D9DDFE;
-    padding: 17px 24px 16.58px 24px;
+    padding: 15px 24px 16.58px 23px;
     border-radius: 15px;
     background-color: #ffffff;
     outline: none;
@@ -328,6 +328,7 @@ button {
     border: none;
     color: #ffffff;
     cursor: pointer;
+    font-family: Poppins, serif;
 }
 
 button:hover {
@@ -350,7 +351,7 @@ img {
     width: 1140px;
     height: 63px;
     position: absolute;
-    top: 41px;
+    top: 40px;
     left: 150px;
     display: flex;
     justify-content: space-between;
@@ -585,7 +586,7 @@ img {
     width: 601.5px;
     height: 397.5px;
     margin-left: 22px;
-    margin-top: -8px;
+    margin-top: -5.5px;
 }
 
 .main-slider > .slide-btn {
@@ -1045,7 +1046,7 @@ img {
 
 /* Professional */
 .main-wrap > .professional-teams {
-    padding: 0 177px 0 178px;
+    padding: 0 178px 0 178px;
     margin-top: -132.89px;
     z-index: 10;
 }
@@ -1153,8 +1154,8 @@ img {
 }
 
 .main-wrap > .professional-teams > .pro-box-section-wrap > .pro-box-section > .pro-box-content > .pro-box-social {
-    margin-top: 55px;
-    margin-left: -3px;
+    margin-top: 56px;
+    margin-left: -2.5px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -1263,12 +1264,13 @@ img {
 }
 
 .main-wrap > .contact-us > .cu-content > .cu-image {
-    margin-top: 159px;
+    margin-top: 160px;
 }
 
 .main-wrap > .contact-us > .cu-content > .cu-form-wrap {
     margin-left: 100px;
     width: 520px;
+    margin-top: 1px
 }
 
 .main-wrap > .contact-us > .cu-content > .cu-form-wrap > .form-title {
@@ -1277,6 +1279,7 @@ img {
     line-height: 20px;
     text-align: left;
     color: #FF64AE;
+    margin-left: 1px;
 }
 
 .main-wrap > .contact-us > .cu-content > .cu-form-wrap > .form-under-title {
@@ -1315,16 +1318,23 @@ img {
     justify-content: space-between;
 }
 
+.main-wrap > .contact-us > .cu-content > .cu-form-wrap > .form-content > .name-input > .last-name-input {
+    padding-left: 27px !important;
+    padding-top: 15px !important;
+}
+
 .main-wrap > .contact-us > .cu-content > .cu-form-wrap > .form-content > .name-input > input {
     width: 242px;
+    height: 60px;
 }
 
 .main-wrap > .contact-us > .cu-content > .cu-form-wrap > .form-content > .input-wrap {
-    margin-top: 38.32px;
+    margin-top: 39.5px;
 }
 
 .main-wrap > .contact-us > .cu-content > .cu-form-wrap > .form-content > .input-wrap > input {
     width: 100%;
+    height: 61px;
 }
 
 .main-wrap > .contact-us > .cu-content > .cu-form-wrap > .form-content > .inquiry-input {
@@ -1471,37 +1481,37 @@ img {
     margin-left: 4px;
 }
 
-.main-wrap > .footer-wrap > .above-bg > .upper-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: #172176;
-    height: 100%;
-    width: 100%;
-    rotate: 5deg;
-    border-radius: 150px;
-}
+/*.main-wrap > .footer-wrap > .above-bg > .upper-bg {*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    background: #172176;*/
+/*    height: 100%;*/
+/*    width: 100%;*/
+/*    rotate: 5deg;*/
+/*    border-radius: 150px;*/
+/*}*/
 
-.main-wrap > .footer-wrap > .above-bg > .lower-bg {
-    position: absolute;
-    top: 0;
-    right: 0;
-    background: #DFE2FF;
-    margin-top: -18px;
-    height: 100%;
-    width: 99%;
-    rotate: 3.4deg;
-    border-radius: 150px;
-}
+/*.main-wrap > .footer-wrap > .above-bg > .lower-bg {*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    right: 0;*/
+/*    background: #DFE2FF;*/
+/*    margin-top: -18px;*/
+/*    height: 100%;*/
+/*    width: 99%;*/
+/*    rotate: 3.4deg;*/
+/*    border-radius: 150px;*/
+/*}*/
 
-.main-wrap > .footer-wrap > .above-bg > .bottom-bg {
-    background: #0D165C;
-    position: absolute;
-    bottom: -10px;
-    height: 50%;
-    width: 100%;
-    margin-top: 50px;
-}
+/*.main-wrap > .footer-wrap > .above-bg > .bottom-bg {*/
+/*    background: #0D165C;*/
+/*    position: absolute;*/
+/*    bottom: -10px;*/
+/*    height: 50%;*/
+/*    width: 100%;*/
+/*    margin-top: 50px;*/
+/*}*/
 
 .main-wrap > .footer-wrap > .footer-content {
     position: absolute;
