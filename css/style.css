@@ -702,6 +702,16 @@ img {
     }
 }
 
+@media (max-width: 576px) {
+    .main-slider > .content > .left-part-slider > .title {
+        width: 100%;
+    }
+
+    .main-slider > .content > .left-part-slider > .description {
+        width: 100%;
+    }
+}
+
 /* Core services */
 .main-wrap > .core-services {
     height: 732px;
