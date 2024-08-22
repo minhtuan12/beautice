@@ -1,0 +1,259 @@
+.footerWrap {
+    .aboveBg {
+        .upperImg {
+            z-index: 1;
+            @apply w-auto absolute
+        }
+
+        img {
+
+        }
+
+        .innerImg {
+            @apply w-auto absolute top-0 left-0 ml-[4px]
+        }
+
+        .bottomImg {
+            @apply absolute bottom-0
+        }
+
+        @apply relative w-full h-full
+    }
+
+    .footerContent {
+        .upper {
+            .leftFooter {
+                .slogan {
+                    span {
+                        font-weight: 400;
+                    }
+
+                    @apply pl-[32px] mt-[33px] text-[16px] font-bold leading-6 h-[21px] tracking-widest text-left text-[#D7DBFF];
+                }
+
+                .information {
+                    .address {
+                        font-weight: 500;
+                        line-height: 21px;
+
+                        @apply text-[14px] italic text-left tracking-widest h-[24px] ml-[0.5px]
+                    }
+
+                    .extraInfo {
+                        .phone {
+                            font-weight: 500;
+                            line-height: 21px;
+
+                            @apply w-[140px] text-[14px] italic tracking-widest text-left text-[#D7DBFF]
+                        }
+
+                        .mail {
+                            font-weight: 500;
+                            line-height: 21px;
+
+                            @apply italic tracking-widest text-left ml-[28px] underline text-[14px] text-[#D7DBFF]
+                        }
+
+                        @apply flex mt-[1px] italic h-[23px]
+                    }
+
+                    @apply pl-[32px] mt-[26px] flex flex-col text-[#D7DBFF]
+                }
+
+                @apply mt-[16px] h-[191px] w-[492px]
+            }
+
+            .rightFooter {
+                .section {
+                    .title {
+                        font-weight: 600;
+                        line-height: 27px;
+
+                        @apply text-[18px] tracking-widest text-left h-[31px]
+                    }
+
+                    .list {
+                        .item {
+                            span {
+                                font-weight: 400;
+                                line-height: 24px;
+
+                                @apply ml-[12px] text-[16px] tracking-widest text-left
+                            }
+
+                            @apply flex items-center text-[#D7DBFF] mb-[11px] ml-[4px] h-[24px]
+                        }
+
+                        @apply mt-[24px]
+                    }
+
+                    @apply w-[131px] h-[219px] text-white
+                }
+
+                .informationSection {
+                    @apply ml-[173px] w-[215px] h-[184px]
+                }
+
+                @apply ml-[130px] flex mt-[0.5px]
+            }
+
+            @apply flex
+        }
+
+        .lower {
+            .footerSocial {
+                .socialItem {
+                    @apply mr-[45px]
+                }
+
+                @apply flex items-center h-[27.84px]
+            }
+
+            .copyRight {
+                font-weight: 400;
+                line-height: 24px;
+
+                @apply w-[497px] h-[31.18px] text-[16px] tracking-widest text-left text-[#D7DBFF] mr-[-87px]
+            }
+
+            @apply flex items-center justify-between mt-[140px] h-[31.18px]
+        }
+
+        @apply absolute top-0 w-full h-full p-[225px_150px_91.16px_150px] z-10
+    }
+
+    @apply relative mt-[70px] h-[705.34px] w-full
+}
+
+@media (min-width: 1450px) {
+    .footerWrap {
+        .aboveBg {
+            img {
+                @apply relative w-full h-full
+            }
+
+            .upperImg, .innerImg {
+                @apply w-full
+            }
+
+            @apply relative w-full h-full
+        }
+
+        .footerContent {
+            .upper {
+                @apply flex justify-between
+            }
+
+            @apply absolute top-0 w-full h-full p-[225px_150px_91.16px_150px] z-10
+        }
+
+        @apply relative mt-[70px] h-[705.34px] w-full
+    }
+}
+
+@media (max-width: 1430px) {
+    .footerWrap {
+        .aboveBg {
+            .bottomImg {
+                @apply h-[600px] w-full
+            }
+
+            .upperImg, .innerImg {
+                @apply hidden
+            }
+        }
+
+        .footerContent {
+            .upper {
+                .leftFooter {
+                    .slogan {
+                        @apply pl-0
+                    }
+
+                    .information {
+                        .address, .extraInfo {
+                            @apply mt-[10px]
+                        }
+
+                        @apply pl-0
+                    }
+
+                    @apply w-full
+                }
+
+                .rightFooter {
+                    .informationSection {
+                        @apply ml-[10px] w-[215px] h-[184px]
+                    }
+
+                    .section {
+                        .item {
+                            @apply h-auto #{!important}
+                        }
+                    }
+
+                    @apply ml-[80px] flex
+                }
+
+                @apply justify-between p-[0_50px]
+            }
+
+            .lower {
+                .copyRight {
+                    @apply w-full mt-[30px] mr-0 text-center
+                }
+
+                .footerSocial {
+                    @apply mr-[-12%]
+                }
+
+                @apply items-center justify-center flex-col w-full
+            }
+
+            @apply absolute top-0 w-full h-full p-[200px_25px] z-10
+        }
+
+        @apply relative mt-[70px] h-[705.34px] w-full
+    }
+}
+
+@media (max-width: 870px) {
+    .footerWrap {
+        .aboveBg {
+            .bottomImg {
+                @apply h-[800px] w-full
+            }
+        }
+
+        .footerContent {
+            .upper {
+                .leftFooter {
+                    @apply w-full
+                }
+
+                .rightFooter {
+                    .informationSection {
+                        .list {
+                            .item {
+                                @apply mb-[30px]
+                            }
+                        }
+                        @apply ml-[100px]
+                    }
+
+                    @apply ml-0 mt-[60px]
+                }
+
+                @apply flex-col
+            }
+
+            .lower {
+                .copyRight {
+                    @apply w-full text-center mt-[30px]
+                }
+            }
+        }
+
+        @apply relative mt-[70px] h-[950px] w-full
+    }
+}

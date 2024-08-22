@@ -1,0 +1,9 @@
+.mainWrap {
+    .toTopBtn {
+        animation: scaleIn 0.2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        transform-origin: center;
+        @apply fixed h-[36px] w-[36px] bottom-[171px] rounded-[5px] right-[65px] z-[999] bg-[#FF64AE] justify-center flex items-center cursor-pointer
+    }
+
+    @apply relative min-h-screen
+}
