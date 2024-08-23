@@ -1,0 +1,46 @@
+.metricWrap {
+    .iconWrap {
+
+    }
+
+    .mainContent {
+        .quantity {
+            line-height: 45px;
+            @apply text-[36px] font-[600] text-left h-[41px] text-white
+        }
+
+        .about {
+            @apply h-[23px] text-[16px] font-[600] text-left text-[#D8DCFF]
+        }
+
+        @apply ml-[11px]
+    }
+
+    width: calc((100vw * 197px) / (1440px));
+    @apply flex justify-start h-[69px]
+}
+
+@media (max-width: 870px) {
+    .metricWrap {
+        .iconWrap {
+            img {
+                @apply w-[80%]
+            }
+        }
+
+        .mainContent {
+            .quantity {
+                line-height: normal;
+                @apply text-[22px] text-left h-auto
+            }
+
+            .about {
+                @apply h-auto text-[12px] font-[600]
+            }
+
+            @apply ml-[11px]
+        }
+
+        @apply w-full items-center #{!important}
+    }
+}

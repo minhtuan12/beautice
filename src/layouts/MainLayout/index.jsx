@@ -3,9 +3,12 @@ import styles from './styles.module.scss'
 import Header from "./components/Header/index.jsx";
 import Footer from "./components/Footer/index.jsx";
 import {pathToIcon} from "../../utils/constants.js";
+import {setIsVisibleSlidingBtn} from "../../store/slices/app/index.js";
+import {useDispatch} from "react-redux";
 
-export default function MainLayout({children}) {
+export default function MainLayout({children, isLightTheme}) {
     const [isVisibleToTopBtn, setIsVisibleToTopBtn] = useState(false)
+    const dispatch = useDispatch()
 
     const handleScroll = () => {
         const currentTop = window.pageYOffset || document.documentElement.scrollTop
@@ -24,8 +27,19 @@ export default function MainLayout({children}) {
         }
     }, [])
 
+    useEffect(() => {
+        const handleSetVisibleSlidingBtn = () => {
+            dispatch(setIsVisibleSlidingBtn(window.innerWidth <= 1430))
+        }
+        window.addEventListener('resize', handleSetVisibleSlidingBtn)
+
+        return () => {
+            window.removeEventListener('resize', handleSetVisibleSlidingBtn)
+        }
+    }, [dispatch])
+
     return <div className={styles.mainWrap}>
-        <Header/>
+        <Header isLightTheme={isLightTheme}/>
         {children}
         <Footer/>
         {

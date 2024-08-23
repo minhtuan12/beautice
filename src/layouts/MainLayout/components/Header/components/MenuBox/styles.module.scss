@@ -1,0 +1,45 @@
+.menuBoxWrap {
+    .menuList {
+        .menuItem, .activeItem {
+            &:hover {
+                &:first-child {
+                    @apply rounded-t-[15px]
+                }
+
+                &:last-child {
+                    @apply rounded-b-[15px]
+                }
+
+                .title {
+                    @apply text-[#091156] font-semibold
+                }
+
+                @apply bg-[#f7f7f7]
+            }
+
+            .title {
+                @apply font-[500] text-[18px] text-[#8b8b8b] tracking-[0.04rem]
+            }
+
+            @apply py-5 px-14
+        }
+
+        .activeItem {
+            &:first-child {
+                @apply rounded-t-[15px]
+            }
+
+            &:last-child {
+                @apply rounded-b-[15px]
+            }
+
+            .title {
+                @apply text-[#091156] font-semibold
+            }
+
+            @apply bg-[#f7f7f7]
+        }
+    }
+
+    @apply bg-white rounded-[15px] border-[1px] absolute top-16
+}

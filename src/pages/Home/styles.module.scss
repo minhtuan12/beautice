@@ -256,11 +256,11 @@
         }
 
         .angleRight {
-            @apply top-[70%] right-[50px] z-10
+            @apply top-[70%] right-[20px] z-10
         }
 
         .angleLeft {
-            @apply top-[70%] left-[50px] z-10
+            @apply top-[70%] left-[20px] z-10
         }
 
         @apply p-[0_50px]
@@ -534,7 +534,7 @@
                     }
                 }
 
-                @apply m-[0_calc((100%_-_424px)_/_2)] p-[90px] flex-none
+                @apply m-0 p-[90px] flex-none w-full
             }
         }
 

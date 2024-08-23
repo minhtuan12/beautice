@@ -6,11 +6,15 @@ import reportWebVitals from './reportWebVitals';
 import {RouterProvider} from 'react-router-dom';
 import 'animate.css';
 import {routers} from "./router/routers.js";
+import {Provider} from "react-redux";
+import store from "./store/configureStore.js";
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <RouterProvider router={routers}/>
+    <Provider store={store}>
+        <RouterProvider router={routers}/>
+    </Provider>
 );
 
 reportWebVitals();

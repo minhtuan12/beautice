@@ -93,3 +93,11 @@ img {
 *::-webkit-scrollbar-thumb:vertical {
     @apply bg-black-75
 }
+
+.angleRight {
+    @apply w-fit top-[50%] right-[50px] flex absolute
+}
+
+.angleLeft {
+    @apply w-fit top-[50%] left-[50px] flex absolute rotate-[180deg]
+}

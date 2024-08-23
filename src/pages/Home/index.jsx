@@ -1,13 +1,15 @@
-import React, {useEffect, useRef, useState} from "react";
+import React, {useRef} from "react";
 import MainLayout from "../../layouts/MainLayout/index.jsx";
 import {pathToIcon} from "../../utils/constants.js";
 import styles from './styles.module.scss'
 import ExpertCard from "./components/ExpertCard/index.jsx";
 import ServiceCard from "./components/ServiceCard/index.jsx";
 import {RightOutlined} from '@ant-design/icons'
+import {useSelector} from "react-redux";
+import {handleSlide} from "../../utils/helpers.js";
 
 export default function Home() {
-    const [isVisibleSlidingBtn, setIsVisibleSlidingBtn] = useState(false)
+    const isVisibleSlidingBtn = useSelector(state => state.app.isVisibleSlidingBtn)
     const productWrapRef = useRef()
     const expertWrapRef = useRef()
     const experts = [
@@ -57,12 +59,6 @@ export default function Home() {
         }
     ]
 
-    function handleSlide(currentWidth, ableToScroll, scrollDiv, direction) {
-        // if ((currentWidth < ableToScroll && direction === 'right') || (currentWidth > 0 && direction === 'left')) {
-            scrollDiv.scrollLeft += direction === 'right' ? scrollDiv.clientWidth : -scrollDiv.clientWidth
-        // }
-    }
-
     function handleSlideProduct(direction) {
         if (productWrapRef?.current) {
             const currentWidth = productWrapRef.current.scrollLeft
@@ -80,10 +76,6 @@ export default function Home() {
             handleSlide(currentWidth, ableToScroll, expertWrapRef.current, direction)
         }
     }
-
-    useEffect(() => {
-        setIsVisibleSlidingBtn(window.innerWidth <= 1430)
-    }, [])
 
     return <MainLayout>
         <div className={styles.mainSlider}>

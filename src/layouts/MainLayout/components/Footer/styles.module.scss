@@ -25,10 +25,10 @@
             .leftFooter {
                 .slogan {
                     span {
-                        font-weight: 400;
+                        @apply font-[400] ml-[1px]
                     }
 
-                    @apply pl-[32px] mt-[33px] text-[16px] font-bold leading-6 h-[21px] tracking-widest text-left text-[#D7DBFF];
+                    @apply pl-[32px] ml-[-1px] mt-[33px] text-[16px] font-bold leading-6 h-[21px] tracking-widest text-left text-[#D7DBFF];
                 }
 
                 .information {
@@ -36,7 +36,7 @@
                         font-weight: 500;
                         line-height: 21px;
 
-                        @apply text-[14px] italic text-left tracking-widest h-[24px] ml-[0.5px]
+                        @apply text-[14px] italic text-left tracking-widest h-[24px] ml-[0.5px] mt-[-1px]
                     }
 
                     .extraInfo {
@@ -44,7 +44,7 @@
                             font-weight: 500;
                             line-height: 21px;
 
-                            @apply w-[140px] text-[14px] italic tracking-widest text-left text-[#D7DBFF]
+                            @apply w-[140px] text-[14px] italic tracking-widest text-left text-[#D7DBFF] ml-[-1px] mt-[-0.5px]
                         }
 
                         .mail {
@@ -228,6 +228,16 @@
         .footerContent {
             .upper {
                 .leftFooter {
+                    .information {
+                        .extraInfo {
+                            .mail {
+                                @apply m-0
+                            }
+
+                            @apply flex-col mt-6
+                        }
+                    }
+
                     @apply w-full
                 }
 
@@ -238,6 +248,7 @@
                                 @apply mb-[30px]
                             }
                         }
+
                         @apply ml-[100px]
                     }
 

@@ -1,0 +1,530 @@
+.homeWrap {
+    .backgroundSliderWrap {
+        .sliderImage {
+            @apply w-full
+        }
+
+        .sliderContent {
+            .leftSlider {
+                .title {
+                    line-height: 60px;
+                    @apply text-[48px] font-[600] text-left text-white h-[133px]
+                }
+
+                .description {
+                    line-height: 24px;
+                    @apply h-[78px] text-[16px] font-[500] tracking-widest text-left text-[#D8DCFF]
+                }
+
+                .detailBtnWrap {
+                    button {
+                        border: 1px solid #ffffff;
+                        @apply w-full h-full bg-transparent rounded-[15px] tracking-widest #{!important}
+                    }
+
+                    &:hover {
+                        button {
+                            @apply bg-white text-[#091156] font-medium #{!important}
+                        }
+                    }
+
+                    width: calc((100vw * 179px) / (1440px));
+                    @apply mt-[34px] h-[52px]
+                }
+
+                width: calc((100vw * 502px) / (1440px));
+            }
+
+            .rightSlider {
+                .rightText {
+                    line-height: 24px;
+                    @apply text-[16px] font-[600] tracking-widest text-left text-white mt-[3px] mr-[-1px]
+                }
+
+                img {
+                    @apply ml-[-19px]
+                }
+
+                &:hover {
+                    img {
+                        @apply shadow-[0_0_7px_2px_#FFFFFF26] rounded-[50%]
+                    }
+
+                    .rightText {
+                        text-shadow: 10px 0 10px #FFFFFF26;
+                    }
+                }
+
+                width: calc((100vw * 275px) / (1440px));
+                @apply mt-[84px] flex items-center h-[127px] justify-between cursor-pointer
+            }
+
+            @apply p-[307px_295px_314px_150px] absolute top-0 h-full flex justify-between w-full
+        }
+
+        @apply relative
+    }
+
+    .aboutUsWrap {
+        .leftImageWrap {
+
+        }
+
+        .rightContent {
+            .mainTitle {
+                line-height: 20px;
+                @apply h-[20px] text-[16px] font-[600] text-left text-[#FF64AE] w-full ml-[1px]
+            }
+
+            .underTitle {
+                line-height: 45px;
+                @apply mt-[12px] h-[91px] text-[36px] font-[600] text-left text-[#091156] w-full
+            }
+
+            .descriptionUnder {
+                line-height: 24px;
+                @apply h-[133px] w-full text-[16px] font-[400] tracking-widest text-left mt-[10px] text-[#8B8B8B]
+            }
+
+            .learnMoreBtnWrap {
+                button {
+                    line-height: 24px;
+                    @apply w-full h-full tracking-widest text-[16px] font-[600] ml-[2px] mb-[5px]
+                }
+
+                @apply mt-[35px] h-[58.36px] w-[200px]
+            }
+
+            width: calc((100vw * 483px) / (1440px));
+        }
+
+        @apply h-[675px] w-full p-[158px_150px_157.64px_150px] flex justify-between items-start
+    }
+
+    .mainServices {
+        .waveLineBackground {
+            @apply absolute bottom-0 left-0 z-[-1]
+        }
+
+        .header {
+            .serviceTitle {
+                line-height: 20px;
+                @apply h-[20px] text-[16px] font-[600] text-center text-[#FF64AE]
+            }
+
+            .serviceDescription {
+                line-height: 24px;
+                @apply h-[33px] text-[16px] font-[400] text-center tracking-widest text-[#8B8B8B] mt-[12px]
+            }
+
+            .subTitle {
+                line-height: 45px;
+                @apply h-[53px] text-[36px] font-[600] text-center text-[#091156] mt-[12px]
+            }
+        }
+
+        .content {
+            .cardsWrap {
+                @apply flex justify-between w-full scroll-smooth
+            }
+
+            @apply mt-[68px] w-full
+        }
+
+        @apply relative h-[685.34px] p-[0_262px_184.34px_263px]
+    }
+
+    .statisticsWrap {
+        .background {
+            img {
+                @apply w-full
+            }
+        }
+
+        .statisticsContent {
+            .leftStatistics {
+                .whyTitle {
+                    line-height: 45px;
+                    @apply h-[53px] text-[36px] font-[600] text-left text-white
+                }
+
+                .whyDesc {
+                    line-height: 24px;
+                    @apply h-[80px] text-[16px] font-[400] text-left text-[#D8DCFF] mt-[12px] tracking-widest
+                }
+
+                width: calc((100vw * 486px) / (1440px));
+            }
+
+            .rightStatistics {
+                width: calc((100vw * 483px) / (1440px));
+                @apply grid grid-cols-2 grid-rows-2 h-[181px] gap-x-14 gap-y-10 mt-[10px]
+            }
+
+            @apply flex items-center justify-between p-[272px_178px_244.5px_154px] w-full h-full absolute top-0 left-0
+        }
+
+        @apply relative w-full mt-[-56.34px]
+    }
+
+    .blogWrap {
+        .rightWaveLineBackground {
+            @apply absolute top-0 right-0 z-[-1]
+        }
+
+        .bottomWaveLineBackground {
+            @apply absolute bottom-0 left-0 z-[-1]
+        }
+
+        .upperContent {
+            .blogHeader {
+                .blogMainTitle {
+                    line-height: 20px;
+                    @apply h-[20px] text-[16px] font-[600] text-center text-[#FF64AE]
+                }
+
+                .blogSubTitle {
+                    line-height: 45px;
+                    @apply mt-[12px] h-[50px] text-[36px] font-[600] text-center text-[#091156]
+                }
+
+                .blogDescription {
+                    line-height: 24px;
+                    @apply mt-[12px] h-[34px] text-[16px] font-[400] text-center text-[#8B8B8B] tracking-widest
+                }
+
+                @apply w-full p-[0_146px_0_145px]
+            }
+
+            .blogContent {
+                .blogCardWrap {
+                    @apply h-[543px] flex justify-between w-full
+                }
+
+                @apply mt-[79px] w-full
+            }
+
+            @apply w-full h-[750px]
+        }
+
+        .lowerContent {
+            .lowerLeftContent {
+                .contentTitle {
+                    line-height: 45px;
+                    @apply h-[50px] text-[36px] font-[600] text-left text-[#091156] w-full
+                }
+
+                .contentDescription {
+                    span {
+                        @apply text-[16px] font-[600] tracking-widest text-left text-[#091156]
+                    }
+
+                    line-height: 24px;
+                    @apply mt-[12px] h-[60px] w-full text-[16px] font-[400] tracking-widest text-left text-[#8B8B8B]
+                }
+
+                width: calc((100vw * 391px) / (1440px));
+            }
+
+            .lowerRightContent {
+                .inputWrap {
+                    input {
+                        @apply w-full rounded-[25px] p-[21.5px_147px_23.5px_37px] #{!important}
+                    }
+
+                    .phoneImageWrap {
+                        @apply rounded-[0_23px_23px_0] bg-[#FF64AE] absolute top-0 right-0 p-[18px_41px_17px_34px]
+                    }
+
+                    @apply w-full h-[73px] relative
+                }
+
+                .underInput {
+                    line-height: 18px;
+                    @apply text-right mt-[8px] mr-[-1px] h-[17px] text-[12px] italic font-[400] tracking-widest text-[#8B8B8B]
+                }
+
+                width: calc((100vw * 658px) / (1440px));
+                @apply mt-[13px]
+            }
+
+            @apply mt-[169px] flex justify-between
+        }
+
+        @apply relative mt-[-32.5px] h-[1292.08px] w-full p-[143px_150px_108.08px_151.5px] mb-[-57px]
+    }
+}
+
+@media (min-width: 1450px) {
+
+}
+
+@media (max-width: 1430px) {
+    .homeWrap {
+        .backgroundSliderWrap {
+            .sliderContent {
+                .leftSlider {
+                    .title {
+                        @apply w-[80%]
+                    }
+                    .detailBtnWrap {
+                        @apply w-[80%]
+                    }
+
+                    @apply w-2/3
+                }
+
+                .rightSlider {
+                    img {
+                        @apply ml-[-19px] w-1/2
+                    }
+                    @apply mr-[-12px]
+                }
+
+                @apply p-[18%_130px]
+            }
+        }
+
+        .aboutUsWrap {
+            .leftImageWrap {
+                @apply w-2/5
+            }
+
+            .rightContent {
+                .mainTitle, .underTitle, .descriptionUnder {
+                    @apply h-auto
+                }
+            }
+
+            @apply items-center
+        }
+
+        .mainServices {
+            .content {
+                .cardsWrap {
+                    @apply overflow-x-auto
+                }
+            }
+
+            @apply h-auto p-[0_50px_160px_50px]
+        }
+
+        .statisticsWrap {
+            .statisticsContent {
+                .leftStatistics {
+                    .whyTitle {
+                        @apply h-auto
+                    }
+                }
+
+                @apply flex items-center justify-between p-[20%_140px_244.5px_80px] w-full h-full absolute top-0 left-0
+            }
+        }
+
+        .blogWrap {
+            .upperContent {
+                .blogHeader {
+                    @apply w-full p-0
+                }
+
+                .blogContent {
+                    .blogCardWrap {
+                        @apply overflow-x-auto scroll-smooth h-auto
+                    }
+
+                    @apply w-[150%]
+                }
+
+                @apply overflow-hidden
+            }
+
+            .lowerContent {
+                .lowerLeftContent {
+                    .contentTitle, .contentDescription {
+                        @apply h-auto
+                    }
+
+                    .contentDescription {
+                        @apply mt-1
+                    }
+
+                    @apply w-full
+                }
+
+                .lowerRightContent {
+                    .inputWrap {
+                        input {
+                            @apply h-full rounded-[15px] #{!important}
+                        }
+
+                        .phoneImageWrap {
+                            img {
+                                @apply w-1/2
+                            }
+
+                            @apply rounded-[0_15px_15px_0] p-[18px_20px_13px_34px]
+                        }
+
+                        @apply w-full h-[50px] relative
+                    }
+
+                    .underInput {
+                        line-height: 18px;
+                        @apply text-right mt-[8px] mr-[-1px] h-[17px] text-[12px] italic font-[400] tracking-widest text-[#8B8B8B]
+                    }
+
+                    @apply mt-[20px] w-full
+                }
+
+                @apply mt-[70px] flex-col
+            }
+
+            @apply h-auto p-[150px_50px_100px_50px]
+        }
+    }
+}
+
+@media (max-width: 870px) {
+    .homeWrap {
+        .backgroundSliderWrap {
+            .sliderContent {
+                .leftSlider {
+                    .title {
+                        line-height: 30px;
+                        @apply text-[24px] h-auto mt-10 w-full
+                    }
+
+                    .description {
+                        @apply h-[20px] whitespace-nowrap overflow-hidden overflow-ellipsis mt-2 w-full
+                    }
+
+                    .detailBtnWrap {
+                        button {
+                            @apply text-[13px]
+                        }
+
+                        @apply w-[70%] h-[40px]
+                    }
+
+                    @apply w-1/2
+                }
+
+                .rightSlider {
+                    .rightText {
+                        @apply text-[13px] mr-5
+                    }
+
+                    img {
+                        @apply ml-[-19px] w-[40%]
+                    }
+
+                    @apply mb-[60px] ml-[30%] mr-0
+                }
+
+                @apply p-[15%_10%]
+            }
+        }
+
+        .aboutUsWrap {
+            .leftImageWrap {
+                @apply hidden
+            }
+
+            .rightContent {
+                .mainTitle, .underTitle, .descriptionUnder {
+                    @apply h-auto
+                }
+
+                @apply w-full
+            }
+
+            @apply p-[120px_50px_70px_50px]
+        }
+
+        .mainServices {
+            .content {
+                .cardsWrap {
+                    @apply overflow-x-auto
+                }
+            }
+
+            @apply h-auto p-[0_50px_160px_50px]
+        }
+
+        .statisticsWrap {
+            .statisticsContent {
+                .leftStatistics {
+                    @apply hidden
+                }
+
+                .rightStatistics {
+                    place-items: center;
+                    @apply w-full h-full
+                }
+
+                @apply p-[80px_50px_90px_90px] block
+            }
+        }
+
+        .blogWrap {
+            .upperContent {
+                .blogHeader {
+                    @apply w-full p-0
+                }
+
+                .blogContent {
+                    .blogCardWrap {
+                        @apply overflow-x-auto scroll-smooth h-auto
+                    }
+
+                    @apply w-[150%]
+                }
+
+                @apply overflow-hidden
+            }
+
+            .lowerContent {
+                .lowerLeftContent {
+                    .contentTitle, .contentDescription {
+                        @apply h-auto
+                    }
+
+                    .contentDescription {
+                        @apply mt-1
+                    }
+
+                    @apply w-full
+                }
+
+                .lowerRightContent {
+                    .inputWrap {
+                        input {
+                            @apply h-full rounded-[15px] #{!important}
+                        }
+
+                        .phoneImageWrap {
+                            img {
+                                @apply w-1/2
+                            }
+
+                            @apply rounded-[0_15px_15px_0] p-[18px_20px_13px_34px]
+                        }
+
+                        @apply w-full h-[50px] relative
+                    }
+
+                    .underInput {
+                        line-height: 18px;
+                        @apply text-right mt-[8px] mr-[-1px] h-[17px] text-[12px] italic font-[400] tracking-widest text-[#8B8B8B]
+                    }
+
+                    @apply mt-[20px] w-full
+                }
+
+                @apply mt-[70px] flex-col
+            }
+
+            @apply h-auto p-[150px_50px_100px_50px]
+        }
+    }
+}
