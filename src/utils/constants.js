@@ -1,1 +1,1 @@
-export const pathToIcon = '/public/figma'
+export const pathToIcon = '/public'
