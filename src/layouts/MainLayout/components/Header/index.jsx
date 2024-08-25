@@ -28,7 +28,7 @@ export default function Header({isLightTheme}) {
 
     return <div className={styles.headerWrap}>
         {
-            !isLightTheme ? <img src={`/Main Logo.svg`} alt=""/>
+            !isLightTheme ? <img src={`${pathToIcon}/Main Logo.svg`} alt=""/>
                 : <img src={`${pathToIcon}/Main Logo.png`} alt="" className={'!mt-[2px] !h-auto !ml-0'}/>
         }
 

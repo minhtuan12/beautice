@@ -1,1 +1,1 @@
-export const pathToIcon = '/public'
+export const pathToIcon = ''
