@@ -22,7 +22,7 @@ export default defineConfig({
         },
         react(),
     ],
-
+    base: '/beautice/',
     optimizeDeps: {
         force: true,
         esbuildOptions: {
