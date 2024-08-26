@@ -41,17 +41,15 @@
 
                     .extraInfo {
                         .phone {
-                            font-weight: 500;
                             line-height: 21px;
 
-                            @apply w-[140px] text-[14px] italic tracking-widest text-left text-[#D7DBFF] ml-[-1px] mt-[-0.5px]
+                            @apply w-[140px] text-[14px] italic tracking-widest text-left text-[#D7DBFF] ml-[-1px] mt-[0.5px] font-[500]
                         }
 
                         .mail {
-                            font-weight: 500;
                             line-height: 21px;
 
-                            @apply italic tracking-widest text-left ml-[28px] underline text-[14px] text-[#D7DBFF]
+                            @apply italic tracking-widest text-left ml-[28px] underline text-[14px] text-[#D7DBFF] font-[500]
                         }
 
                         @apply flex mt-[1px] italic h-[23px]
