@@ -7,6 +7,7 @@ import ServiceCard from "./components/ServiceCard/index.jsx";
 import {RightOutlined} from '@ant-design/icons'
 import {useSelector} from "react-redux";
 import {handleSlide} from "../../utils/helpers.js";
+import BoxHeader from "../../components/BoxHeader/index.jsx";
 
 export default function Home() {
     const isVisibleSlidingBtn = useSelector(state => state.app.isVisibleSlidingBtn)
@@ -109,6 +110,17 @@ export default function Home() {
         </div>
 
         <div className={styles.coreServices}>
+            {/*<BoxHeader*/}
+            {/*    title={'Main Services'}*/}
+            {/*    subTitle={'Learn services to focus on your beauty'}*/}
+            {/*    description={'Porta rhoncus orci condimentum vitae lobortis eu dignissim non massa. Non parturient amet, feugiat tellus sagittis, scelerisque eget nulla turpis.'}*/}
+            {/*    align={'center'}*/}
+            {/*    classnames={{*/}
+            {/*        titleExtraClassname: styles.servicesTitle,*/}
+            {/*        subTitleExtraClassname: styles.servicesDescription,*/}
+            {/*        descriptionExtraClassname: styles.bottomDesc*/}
+            {/*    }}*/}
+            {/*/>*/}
             <div className={styles.header}>
                 <div className={styles.servicesTitle}>
                     Main Services

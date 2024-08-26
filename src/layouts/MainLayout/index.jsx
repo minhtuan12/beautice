@@ -6,7 +6,7 @@ import {pathToIcon} from "../../utils/constants.js";
 import {setIsVisibleSlidingBtn} from "../../store/slices/app/index.js";
 import {useDispatch} from "react-redux";
 
-export default function MainLayout({children, isLightTheme}) {
+export default function MainLayout({children, isLightTheme = false}) {
     const [isVisibleToTopBtn, setIsVisibleToTopBtn] = useState(false)
     const dispatch = useDispatch()
 

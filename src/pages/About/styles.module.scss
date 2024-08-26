@@ -1,0 +1,52 @@
+.aboutWrap {
+    .introductionWrap {
+        .header {
+            .title {
+                @apply text-[16px] text-left text-[#FF64AE] ml-[1px] font-[600] leading-[20px]
+            }
+
+            .subTitle {
+                @apply h-[97px] text-[36px] text-left text-[#091156] mt-[12px] font-[600] leading-[45px]
+            }
+
+            .description {
+                width: calc((100vw * 680px) / (1440px));
+                @apply h-[51px] text-[#8B8B8B] text-[16px] tracking-widest text-left mt-[12px] font-[400] leading-[24px]
+            }
+
+            & {
+                width: calc((100vw * 732px) / (1440px));
+            }
+        }
+
+        @apply p-[0_150px]
+    }
+
+    .videoWrap {
+        img {
+            @apply w-full
+        }
+
+        .playBtn {
+            &:before {
+                @apply content-[""] block absolute
+            }
+
+            @apply inline-block absolute w-[88px] h-[88px] rounded-[50%] bg-[#091156] text-[0] top-1/2 left-1/2;
+            @apply translate-x-[-49%] translate-y-[-50%] shadow-[0_4px_33px_10px_#E7E9FF]
+        }
+
+        .triangle {
+            border-bottom: 16px solid transparent;
+            border-top: 15px solid transparent;
+            border-left: 25.67px solid white;
+
+            @apply w-[36.67px] h-[32.67px];
+            @apply absolute top-1/2 left-1/2 translate-x-[-23%] translate-y-[-44%];
+        }
+
+        @apply mt-[62px] ml-[-1px] relative
+    }
+
+    @apply p-[229px_0_0_0]
+}
