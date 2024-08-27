@@ -20,6 +20,24 @@
     @apply flex justify-start h-[69px]
 }
 
+@media (min-width: 1450px) {
+    .metricWrap {
+        .mainContent {
+            .quantity {
+                @apply text-[46px]
+            }
+
+            .about {
+                @apply text-[25px]
+            }
+
+            @apply ml-[20px]
+        }
+
+        @apply w-auto #{!important}
+    }
+}
+
 @media (max-width: 870px) {
     .metricWrap {
         .iconWrap {

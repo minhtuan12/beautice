@@ -1,13 +1,14 @@
 import React, {useEffect, useState} from "react";
 import styles from './styles.module.scss'
 import menu from "./menu.js";
-import {useNavigate} from "react-router-dom";
+import {useLocation, useNavigate} from "react-router-dom";
 import {CloseOutlined, MenuOutlined} from '@ant-design/icons'
 import {pathToIcon} from "../../../../utils/constants.js";
 import MenuBox from "./components/MenuBox/index.jsx";
 
 export default function Header({isLightTheme}) {
     const navigate = useNavigate()
+    const location = useLocation()
     const [isVisibleMenuBtn, setIsVisibleMenuBtn] = useState(window.innerWidth <= 1430)
     const [isVisibleMenuBox, setIsVisibleMenuBox] = useState(false)
 
@@ -37,7 +38,9 @@ export default function Header({isLightTheme}) {
                 !isVisibleMenuBtn ? <div className={isLightTheme ? styles.themeLightMenu : styles.mainMenu}>
                     {
                         menu.map((item, index) => (
-                            <div key={index} className={item.title === 'Home' ? styles.homeOption : styles.option}
+                            <div key={index}
+                                 className={`${item.href === location.pathname ? styles.activeOption : styles.option} 
+                                                        ${item.title === 'Home' ? 'w-[66px]' : ''}`}
                                  onClick={() => handleNavigate(item.href)}
                             >
                                 {item.title}

@@ -1,6 +1,8 @@
 .cardWrap {
     .logoWrap {
-
+        img {
+            @apply w-full
+        }
     }
 
     .content {
@@ -19,7 +21,10 @@
                 @apply ml-[9px]
             }
 
-            line-height: 17.5px;
+            & {
+                line-height: 17.5px;
+            }
+
             @apply mt-[15px] h-[19px] text-[14px] font-[600] text-left flex text-[#FF64AE] items-center
         }
 
@@ -30,12 +35,26 @@
         border: 1px solid #9BA2E0;
     }
 
-    width: calc((100vw * 347px) / (1440px));
+    & {
+        width: calc((100vw * 347px) / (1440px));
+    }
     @apply h-full rounded-[25px] bg-white cursor-pointer border-none shadow-[0_25px_50px_5px_#F6F7FF]
+}
+
+@media (min-width: 1450px) {
+    .cardWrap {
+        @apply w-[347px]
+    }
 }
 
 @media (max-width: 1430px) {
     .cardWrap {
+        .logoWrap {
+            img {
+                @apply rounded-t-[25px]
+            }
+        }
+
         .content {
             .name, .description {
                 @apply h-auto text-[15px]
@@ -62,6 +81,12 @@
 
 @media (max-width: 870px) {
     .cardWrap {
+        .logoWrap {
+            img {
+                @apply rounded-t-[25px]
+            }
+        }
+
         .content {
             .name, .description {
                 @apply h-auto text-[15px]
@@ -78,9 +103,9 @@
             @apply p-[20px] w-full
         }
 
-        &:last-child {
-            @apply mr-[calc(100%_-_calc((150%_/_3)_/_2)_-_calc(((100vw_-_100px)_-_calc((150%_/_3)_/_2))_/_2))]
-        }
+        //&:last-child {
+        //    @apply mr-[calc(100%_-_calc((150%_/_3)_/_2)_-_calc(((100vw_-_100px)_-_calc((150%_/_3)_/_2))_/_2))]
+        //}
 
         @apply w-[calc((150%_/_3)_/_2)] m-[0_calc(((100vw_-_100px)_-_calc((150%_/_3)_/_2))_/_2)] h-auto flex-none
     }

@@ -19,7 +19,9 @@
                 @apply ml-[9px] mt-[2px]
             }
 
-            line-height: 17.5px;
+            & {
+                line-height: 17.5px;
+            }
             @apply mt-[17px] text-[14px] font-[600] text-left flex text-[#FF64AE] items-center
         }
 
@@ -30,8 +32,11 @@
         border: 1px solid #9BA2E0;
     }
 
-    width: calc((100vw * 261px) / (1440px));
-    border: 1px solid #E2E2E2;
+    & {
+        width: calc((100vw * 261px) / (1440px));
+        border: 1px solid #E2E2E2;
+        scroll-snap-align: center;
+    }
     @apply h-[303px] rounded-[25px] p-[30px_36px_47px_35px] bg-white cursor-pointer
 }
 

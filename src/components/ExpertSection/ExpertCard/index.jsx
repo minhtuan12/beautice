@@ -1,6 +1,6 @@
 import React from "react";
-import styles from "../../styles.module.scss";
-import {pathToIcon} from "../../../../utils/constants.js";
+import styles from "../styles.module.scss";
+import {pathToIcon} from "../../../utils/constants.js";
 
 export default function ExpertCard({expert, index}) {
     const handleClickSocialLink = (link) => {

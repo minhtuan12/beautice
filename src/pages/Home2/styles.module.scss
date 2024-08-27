@@ -125,6 +125,7 @@
 
         .content {
             .cardsWrap {
+                scroll-snap-type: x mandatory;
                 @apply flex justify-between w-full scroll-smooth
             }
 
@@ -256,7 +257,127 @@
 }
 
 @media (min-width: 1450px) {
+    .homeWrap {
+        .backgroundSliderWrap {
+            .sliderContent {
+                .rightSlider {
+                    @apply justify-center
+                }
 
+                @apply left-[50%] translate-x-[-50%] p-0 top-1/2 translate-y-[-100%] h-auto w-auto
+            }
+        }
+
+        .aboutUsWrap {
+            .rightContent {
+                @apply ml-32
+            }
+
+            @apply w-auto p-0 justify-center relative left-1/2 translate-x-[-50%] top-1/2 items-center
+        }
+
+        .mainServices {
+            .content {
+                .cardsWrap {
+                    @apply justify-center gap-[50px]
+                }
+            }
+            @apply p-0
+        }
+
+        .statisticsWrap {
+            .statisticsContent {
+                .leftStatistics {
+                    .whyTitle {
+                        @apply text-[46px]
+                    }
+
+                    .whyDesc {
+                        @apply text-[20px]
+                    }
+                }
+
+                @apply justify-center gap-[200px]
+            }
+        }
+
+        .blogWrap {
+            .upperContent {
+                .blogHeader {
+                    .blogMainTitle {
+                        line-height: 20px;
+                        @apply h-[20px] text-[16px] font-[600] text-center text-[#FF64AE]
+                    }
+
+                    .blogSubTitle {
+                        line-height: 45px;
+                        @apply mt-[12px] h-[50px] text-[36px] font-[600] text-center text-[#091156]
+                    }
+
+                    .blogDescription {
+                        line-height: 24px;
+                        @apply mt-[12px] h-[34px] text-[16px] font-[400] text-center text-[#8B8B8B] tracking-widest
+                    }
+
+                    @apply w-full p-[0_146px_0_145px]
+                }
+
+                .blogContent {
+                    .blogCardWrap {
+                        @apply h-[543px] flex justify-center w-full gap-[80px]
+                    }
+
+                    @apply mt-[79px] w-full
+                }
+            }
+
+            .lowerContent {
+                .lowerLeftContent {
+                    .contentTitle {
+                        line-height: 45px;
+                        @apply h-[50px] text-[36px] font-[600] text-left text-[#091156] w-full
+                    }
+
+                    .contentDescription {
+                        span {
+                            @apply text-[16px] font-[600] tracking-widest text-left text-[#091156]
+                        }
+
+                        line-height: 24px;
+                        @apply mt-[12px] h-[60px] w-full text-[16px] font-[400] tracking-widest text-left text-[#8B8B8B]
+                    }
+
+                    width: calc((100vw * 391px) / (1440px));
+                }
+
+                .lowerRightContent {
+                    .inputWrap {
+                        input {
+                            @apply w-full rounded-[25px] p-[21.5px_147px_23.5px_37px] #{!important}
+                        }
+
+                        .phoneImageWrap {
+                            @apply rounded-[0_23px_23px_0] bg-[#FF64AE] absolute top-0 right-0 p-[18px_41px_17px_34px]
+                        }
+
+                        @apply w-full h-[73px] relative
+                    }
+
+                    .underInput {
+                        line-height: 18px;
+                        @apply text-right mt-[8px] mr-[-1px] h-[17px] text-[12px] italic font-[400] tracking-widest text-[#8B8B8B]
+                    }
+
+                    width: calc((100vw * 658px) / (1440px));
+                    @apply mt-[13px]
+                }
+
+                @apply mt-[169px] flex justify-between
+            }
+
+            @apply relative mt-[-32.5px] h-[1292.08px] w-full p-[143px_150px_108.08px_151.5px] mb-[-57px]
+        }
+    }
 }
 
 @media (max-width: 1430px) {
@@ -267,6 +388,7 @@
                     .title {
                         @apply w-[80%]
                     }
+
                     .detailBtnWrap {
                         @apply w-[80%]
                     }
@@ -278,6 +400,7 @@
                     img {
                         @apply ml-[-19px] w-1/2
                     }
+
                     @apply mr-[-12px]
                 }
 

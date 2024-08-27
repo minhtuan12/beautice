@@ -16,3 +16,11 @@
         transform: scale(1);
     }
 }
+
+@media (min-width: 1450px) {
+    .mainWrap {
+        .toTopBtn {
+            @apply fixed h-[56px] w-[56px]
+        }
+    }
+}

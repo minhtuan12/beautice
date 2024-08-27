@@ -2,46 +2,16 @@ import React, {useRef} from "react";
 import MainLayout from "../../layouts/MainLayout/index.jsx";
 import {pathToIcon} from "../../utils/constants.js";
 import styles from './styles.module.scss'
-import ExpertCard from "./components/ExpertCard/index.jsx";
+import ExpertCard from "../../components/ExpertSection/ExpertCard/index.jsx";
 import ServiceCard from "./components/ServiceCard/index.jsx";
 import {RightOutlined} from '@ant-design/icons'
 import {useSelector} from "react-redux";
 import {handleSlide} from "../../utils/helpers.js";
-import BoxHeader from "../../components/BoxHeader/index.jsx";
+import ExpertSection from "../../components/ExpertSection/index.jsx";
 
 export default function Home() {
     const isVisibleSlidingBtn = useSelector(state => state.app.isVisibleSlidingBtn)
     const productWrapRef = useRef()
-    const expertWrapRef = useRef()
-    const experts = [
-        {
-            avatar: `${pathToIcon}/unsplash_pTrhfmj2jDA.png`,
-            occupation: 'Surgeon',
-            name: 'Briyan Nevalli',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit',
-            facebookUrl: '',
-            twitterUrl: '',
-            instagramUrl: ''
-        },
-        {
-            avatar: `${pathToIcon}/unsplash_FVh_yqLR9eA.png`,
-            occupation: 'Dermatologist',
-            name: 'Bella sebastian',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit',
-            facebookUrl: '',
-            twitterUrl: '',
-            instagramUrl: ''
-        },
-        {
-            avatar: `${pathToIcon}/unsplash_mEZ3PoFGs_k.png`,
-            occupation: 'Stylist expert',
-            name: 'Lilly Adams',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit',
-            facebookUrl: '',
-            twitterUrl: '',
-            instagramUrl: ''
-        }
-    ]
     const services = [
         {
             logo: `${pathToIcon}/Animation1.png`,
@@ -66,15 +36,6 @@ export default function Home() {
             const ableToScroll = productWrapRef.current.scrollWidth - 600
 
             handleSlide(currentWidth, ableToScroll, productWrapRef.current, direction)
-        }
-    }
-
-    function handleSlideProfessionalExpert(direction) {
-        if (expertWrapRef?.current) {
-            const currentWidth = expertWrapRef.current.scrollLeft
-            const ableToScroll = expertWrapRef.current.scrollWidth - 800
-
-            handleSlide(currentWidth, ableToScroll, expertWrapRef.current, direction)
         }
     }
 
@@ -184,34 +145,11 @@ export default function Home() {
             </div>
         </div>
 
-        <div className={styles.professionalTeams}>
-            <div className={styles.proHeader}>
-                <div className={styles.proHeaderTitle}>Professional Teams</div>
-                <div className={styles.proHeaderUnderTitle}>The Professional expert</div>
-                <div className={styles.proHeaderDesc}>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut
-                    aliquam.
-                </div>
-            </div>
-
-            {
-                isVisibleSlidingBtn ? <>
-                    <div className={styles.proAngleRight} onClick={() => handleSlideProfessionalExpert('right')}>
-                        <RightOutlined/>
-                    </div>
-                    <div className={styles.proAngleLeft} onClick={() => handleSlideProfessionalExpert('left')}>
-                        <RightOutlined/>
-                    </div>
-                </> : ''
-            }
-
-            <div className={styles.proBoxSectionWrap} ref={expertWrapRef}>
-                {
-                    experts.map((expert, index) => (
-                        <ExpertCard key={index} expert={expert} index={index}/>
-                    ))
-                }
-            </div>
-        </div>
+        <ExpertSection
+            title={'Professional Teams'}
+            subTitle={'The Professional expert'}
+            description={'Lorem ipsum dolor sit amet, consectetur adipiscing elit utaliquam.'}
+        />
 
         <div className={styles.contactUs}>
             <div className={styles.cuBubbleWrap}>

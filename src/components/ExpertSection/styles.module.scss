@@ -1,0 +1,168 @@
+.professionalTeams {
+    .proHeader {
+        .proHeaderTitle {
+            font-weight: 600;
+            line-height: 20px;
+
+            @apply text-[16px] text-center text-[#FF64AE]
+        }
+
+        .proHeaderUnderTitle {
+            font-weight: 600;
+            line-height: 45px;
+
+            @apply text-[36px] text-center h-[53px] text-[#091156] mt-[12px]
+        }
+
+        .proHeaderDesc {
+            font-weight: 400;
+            line-height: 24px;
+
+            @apply text-[16px] tracking-widest h-[51px] text-center text-[#8B8B8B] mt-[12px]
+        }
+
+        @apply flex flex-col items-center
+    }
+
+    .proAngleRight {
+        @apply right-[50px] flex top-[60%] absolute
+    }
+
+    .proAngleLeft {
+        @apply left-[50px] flex top-[60%] absolute rotate-[180deg]
+    }
+
+    .proBoxSectionWrap {
+        .proBoxSection {
+            .proBoxImage {
+                @apply flex justify-center
+            }
+
+            .proBoxContent {
+                .proBoxOccupation {
+                    font-weight: 600;
+                    line-height: 20px;
+
+                    @apply text-[16px] text-center text-[#FF64AE]
+                }
+
+                .proBoxTitle {
+                    font-weight: 600;
+                    line-height: 22.5px;
+
+                    @apply text-[18px] text-center h-[37px] text-[#091156] mt-[15px]
+                }
+
+                .proBoxDesc {
+                    font-weight: 400;
+                    line-height: 21px;
+
+                    @apply text-[14px] tracking-widest text-center text-[#8B8B8B] mt-[6px]
+                }
+
+                .proBoxSocial {
+                    .icon {
+                        @apply relative w-fit h-fit cursor-pointer
+                    }
+
+                    @apply mt-[56px] flex items-center justify-between h-[49px] w-full p-[0_14px_0_10px]
+                }
+
+                @apply mt-[53px]
+            }
+
+            & {
+                scroll-snap-align: center;
+            }
+
+            @apply mt-[-5px] bg-white h-[439px] w-[270px] rounded-[42px] p-0 cursor-pointer
+        }
+
+        .activeProBoxSection {
+            scroll-snap-align: center;
+            @apply mt-0 h-[626px] w-[424px] shadow-[0_25px_50px_25px_#F6F7FF] p-[91px_77px_96px_77px]
+        }
+
+        & {
+            scroll-snap-type: x mandatory;
+        }
+
+        @apply mt-[87px] flex items-center justify-between
+    }
+
+    @apply p-[0_178px_0_178px] mt-[-132.89px] z-10
+}
+
+@media (min-width: 1450px) {
+    .professionalTeams {
+        @apply p-0 w-[1085px] relative left-[50%] translate-x-[-50%]
+    }
+}
+
+@media (max-width: 1430px) {
+    .professionalTeams {
+        .proBoxSectionWrap {
+            .proBoxSection {
+                @apply flex-none h-[626px] w-[424px] shadow-[0_25px_50px_25px_#F6F7FF] p-[91px_77px_96px_77px] m-[0_calc((100%_-_424px)_/_2)]
+            }
+
+            @apply w-full mt-[40px] overflow-x-auto scroll-smooth
+        }
+
+        .proAngleRight {
+            @apply right-[50px] flex top-[60%] absolute
+        }
+
+        .proAngleLeft {
+            @apply left-[50px] flex top-[60%] absolute rotate-[180deg]
+        }
+
+        @apply relative p-[0_50px] w-full
+    }
+}
+
+@media (max-width: 870px) {
+    .professionalTeams {
+        .proHeader {
+            .proHeaderDesc {
+                @apply mt-[50px]
+            }
+        }
+
+        .proBoxSectionWrap {
+            .proBoxSection {
+                .proBoxContent {
+                    .proBoxDesc {
+                        @apply mt-6
+                    }
+
+                    .proBoxSocial {
+                        .icon {
+                            .innerIcon {
+                                @apply top-[8px] left-[10px]
+                            }
+
+                            .innerIconFacebook {
+                                @apply top-[8px] left-[10px]
+                            }
+                        }
+
+                        @apply mt-10 p-0 w-full
+                    }
+                }
+
+                @apply m-0 p-[90px] flex-none w-full
+            }
+        }
+
+        .proAngleRight {
+            @apply right-[20px]
+        }
+
+        .proAngleLeft {
+            @apply left-[20px]
+        }
+
+        @apply p-[0_50px]
+    }
+}

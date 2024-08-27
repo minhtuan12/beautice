@@ -2,6 +2,7 @@ import React from "react";
 import styles from './styles.module.scss'
 import MainLayout from "../../layouts/MainLayout/index.jsx";
 import {pathToIcon} from "../../utils/constants.js";
+import ExpertSection from "../../components/ExpertSection/index.jsx";
 
 export default function About() {
     return <MainLayout>
@@ -15,7 +16,8 @@ export default function About() {
                         We are a leading beauty clinic that has been around since 2002
                     </div>
                     <div className={styles.description}>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus
+                        venenatis
                     </div>
                 </div>
                 <div className={styles.videoWrap}>
@@ -23,6 +25,19 @@ export default function About() {
                     <div className={styles.playBtn}>
                         <div className={styles.triangle}></div>
                     </div>
+                </div>
+            </div>
+
+            <div className={styles.expertsWrap}>
+                <div className={styles.bubbleBackground}>
+                    <img alt={''} src={`${pathToIcon}/Bubble BG.png`}/>
+                </div>
+                <div className={styles.content}>
+                    <ExpertSection
+                        title={'Professional Teams'}
+                        subTitle={'The Professional expert'}
+                        description={'Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam.'}
+                    />
                 </div>
             </div>
 

@@ -79,6 +79,7 @@ export default function Home2() {
             handleSlide(currentWidth, ableToScroll, serviceWrapRef.current, direction)
         }
     }
+    // console.log(newsWrapRef?.current.clientWidth)
 
     const handleSlideNews = (direction) => {
         if (newsWrapRef?.current) {

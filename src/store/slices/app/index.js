@@ -3,7 +3,7 @@ import {createSlice} from "@reduxjs/toolkit";
 const appSlice = createSlice({
     name: 'app',
     initialState: {
-        isVisibleSlidingBtn: window.innerWidth <= 1430
+        isVisibleSlidingBtn: window.innerWidth <= 1430,
     },
     reducers: {
         setIsVisibleSlidingBtn: (state, action) => ({

@@ -19,33 +19,53 @@
             }
         }
 
-        @apply p-[0_150px]
-    }
-
-    .videoWrap {
-        img {
-            @apply w-full
-        }
-
-        .playBtn {
-            &:before {
-                @apply content-[""] block absolute
+        .videoWrap {
+            img {
+                @apply w-full
             }
 
-            @apply inline-block absolute w-[88px] h-[88px] rounded-[50%] bg-[#091156] text-[0] top-1/2 left-1/2;
-            @apply translate-x-[-49%] translate-y-[-50%] shadow-[0_4px_33px_10px_#E7E9FF]
+            .playBtn {
+                &:before {
+                    @apply content-[""] block absolute
+                }
+
+                &:hover {
+                    .triangle {
+                        @apply border-l-[#091156]
+                    }
+
+                    transition: .3s;
+                    @apply bg-white cursor-pointer
+                }
+
+                .triangle {
+                    border-bottom: 16px solid transparent;
+                    border-top: 15px solid transparent;
+                    border-left: 25.67px solid white;
+
+                    @apply w-[36.67px] h-[32.67px];
+                    @apply absolute top-1/2 left-1/2 translate-x-[-23%] translate-y-[-44%];
+                }
+
+                @apply inline-block absolute w-[88px] h-[88px] rounded-[50%] bg-[#091156] text-[0] top-1/2 left-1/2;
+                @apply translate-x-[-49%] translate-y-[-50%] shadow-[0_4px_33px_10px_#E7E9FF]
+            }
+
+            @apply mt-[62px] ml-[-1px] relative
         }
 
-        .triangle {
-            border-bottom: 16px solid transparent;
-            border-top: 15px solid transparent;
-            border-left: 25.67px solid white;
+        @apply p-[0_150px] relative z-[1]
+    }
 
-            @apply w-[36.67px] h-[32.67px];
-            @apply absolute top-1/2 left-1/2 translate-x-[-23%] translate-y-[-44%];
+    .expertsWrap {
+        .bubbleBackground {
+            @apply absolute top-0 right-0 z-[-1]
         }
 
-        @apply mt-[62px] ml-[-1px] relative
+        .content {
+        }
+
+        @apply relative z-[1] p-[655px_179px_149.5px_178px] mt-[-385px] h-[1533.5px]
     }
 
     @apply p-[229px_0_0_0]

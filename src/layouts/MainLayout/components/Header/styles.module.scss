@@ -5,13 +5,12 @@
 
     .rightHeader {
         .mainMenu, .themeLightMenu {
-            .homeOption {
-                .plusIcon {
-                    @apply w-[7px] h-[7px] mt-0
-                }
-
+            .plusIcon {
+                @apply w-[7px] h-[7px] mt-0
+            }
+            .activeOption {
                 @media (max-width: 1430px) {
-                    @apply flex items-center justify-between cursor-pointer w-[66px] text-[#41487F] #{!important}
+                    @apply flex items-center justify-between cursor-pointer text-[#41487F] #{!important}
                 }
 
                 @apply flex items-center justify-between cursor-pointer w-[66px];
@@ -23,7 +22,7 @@
                     @apply text-[#41487F] #{!important}
                 }
 
-                @apply cursor-pointer
+                @apply cursor-pointer flex items-center justify-between
             }
 
             @media (max-width: 1430px) {
@@ -35,7 +34,7 @@
         }
 
         .themeLightMenu {
-            .homeOption {
+            .activeOption {
                 //@media (max-width: 1430px) {
                 //    @apply flex items-center justify-between cursor-pointer w-[66px] text-[#41487F] #{!important}
                 //}
