@@ -1,7 +1,9 @@
 import {
-    HomeOutlined, InfoOutlined, AppstoreOutlined,
-    PictureOutlined,
+    AppstoreOutlined,
+    HomeOutlined,
     IdcardOutlined,
+    InfoOutlined,
+    PictureOutlined,
     VerticalAlignTopOutlined
 } from '@ant-design/icons'
 
@@ -14,12 +16,12 @@ export const mainMenu = [
             {
                 title: 'Home',
                 href: '/',
-                icon: <VerticalAlignTopOutlined />
+                icon: <VerticalAlignTopOutlined rotate={90}/>
             },
             {
                 title: 'Home 2',
                 href: '/home2',
-                icon: <VerticalAlignTopOutlined />
+                icon: <VerticalAlignTopOutlined rotate={90}/>
             }
         ]
     },

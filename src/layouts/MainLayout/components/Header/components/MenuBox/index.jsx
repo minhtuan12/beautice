@@ -32,7 +32,7 @@ export default function MenuBox({menu, isHomeMenu = false}) {
                                 ${isContactBtn ? ' border-t-[1px]' : ''}`}
                         >
                             <div className={'flex items-center'}>
-                                {item.icon}
+                                {!isHomeMenu ? item.icon : ''}
                                 <div className={`${styles.title} ${isContactBtn ? '!text-[#FF64AE]' : ''}`}>
                                     {item.title} {!_.isEmpty(item.children) ? '+' : ''}
                                 </div>
@@ -45,7 +45,8 @@ export default function MenuBox({menu, isHomeMenu = false}) {
                                                  className={`${styles.childItem} ${checkIsActiveRoute(child) ? '!text-[#091156] !font-semibold' : ''}`}
                                                  onClick={() => navigate(child.href)}
                                             >
-                                                <div className={'rotate-[90deg]'}>{child.icon}</div> <span className={'ml-2'}>{child.title}</span>
+                                                {child.icon}
+                                                <span className={'ml-2'}>{child.title}</span>
                                             </div>
                                         ))
                                     }
