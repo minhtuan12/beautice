@@ -1,6 +1,6 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import styles from './styles.module.scss'
-import {homeMenu, mainMenu} from "./menu.js";
+import {mainMenu} from "./menu.js";
 import {useLocation, useNavigate} from "react-router-dom";
 import {CloseOutlined, MenuOutlined} from '@ant-design/icons'
 import {pathToIcon} from "../../../../utils/constants.js";
@@ -9,6 +9,8 @@ import MenuBox from "./components/MenuBox/index.jsx";
 export default function Header({isLightTheme}) {
     const navigate = useNavigate()
     const location = useLocation()
+    const menuBtnRef = useRef()
+    const homeMenuBtnRef = useRef()
     const [isVisibleMenuBtn, setIsVisibleMenuBtn] = useState(window.innerWidth <= 1430)
     const [isVisibleMenuBox, setIsVisibleMenuBox] = useState(false)
     const [isVisibleHomeMenu, setIsVisibleHomeMenu] = useState(false)
@@ -17,18 +19,35 @@ export default function Header({isLightTheme}) {
         navigate(pathname)
     }
 
-    const handleOpenHomeMenu = () => {
+    const handleToggleHomeMenu = (e) => {
         setIsVisibleHomeMenu(!isVisibleHomeMenu)
+        e.stopPropagation()
+    }
+
+    const handleToggleMainMenu = (e) => {
+        setIsVisibleMenuBox(!isVisibleMenuBox)
+        e.stopPropagation()
     }
 
     useEffect(() => {
         const handleSetVisibleMenuBtn = () => {
             setIsVisibleMenuBtn(window.innerWidth <= 1430)
         }
+        const handleClickOut = (e) => {
+            if (homeMenuBtnRef?.current && !homeMenuBtnRef?.current?.contains(e.target)) {
+                setIsVisibleHomeMenu(false)
+            }
+            if (menuBtnRef?.current && !menuBtnRef?.current?.contains(e.target)) {
+                setIsVisibleMenuBox(false)
+            }
+        }
+
         window.addEventListener('resize', handleSetVisibleMenuBtn)
+        document.addEventListener("mousedown", handleClickOut)
 
         return () => {
             window.removeEventListener('resize', handleSetVisibleMenuBtn)
+            document.addEventListener("mousedown", handleClickOut)
         }
     }, [])
 
@@ -46,14 +65,16 @@ export default function Header({isLightTheme}) {
                             <div key={index}
                                  className={`${item?.href === location.pathname ? styles.activeOption : styles.option} 
                                                         ${item.title === 'Home' ? 'w-[66px]' : ''}`}
-                                 onClick={() => item.title === 'Home' ? handleOpenHomeMenu() :
+                                 onClick={() => item.title === 'Home' ? handleToggleHomeMenu() :
                                      handleNavigate(item?.href)
                                  }
+                                 ref={item.title === 'Home' ? homeMenuBtnRef : null}
+                                 onBlur={() => setIsVisibleHomeMenu(!isVisibleHomeMenu)}
                             >
                                 {item.title}
                                 {
                                     (item.title === 'Home' && isVisibleHomeMenu) ?
-                                        <MenuBox isHomeMenu menu={homeMenu}/> : ''
+                                        <MenuBox isHomeMenu menu={mainMenu[0].children}/> : ''
                                 }
                                 {
                                     item.title === 'Home' ?
@@ -83,7 +104,8 @@ export default function Header({isLightTheme}) {
             {
                 isVisibleMenuBtn ? <>
                     <div className={`${styles.menuBtn} ${isVisibleMenuBox ? 'rotate-[90deg]' : ''}`}
-                         onClick={() => setIsVisibleMenuBox(!isVisibleMenuBox)}>
+                         onClick={handleToggleMainMenu}
+                    >
                         {isVisibleMenuBox ? <CloseOutlined/> : <MenuOutlined/>}
                     </div>
                     {

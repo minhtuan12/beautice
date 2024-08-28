@@ -18,7 +18,7 @@
             }
 
             .title {
-                @apply font-[500] text-[18px] text-[#8b8b8b] tracking-[0.04rem]
+                @apply font-[500] text-[18px] text-[#8b8b8b] tracking-[0.04rem] ml-[10px]
             }
 
             @apply py-5 px-14
@@ -41,7 +41,19 @@
         }
     }
 
-    @apply bg-white rounded-[15px] border-[1px] absolute top-16 right-[35px]
+    @apply bg-white rounded-[15px] border-[1px] absolute top-12 right-0 w-[230px]
+}
+
+.childrenWrap {
+    .childItem {
+        &:last-child {
+            @apply p-[16px_0_10px_16px]
+        }
+
+        @apply p-[16px_0_16px_16px] text-[16px] font-[500] text-[#8b8b8b] tracking-[0.04rem] flex items-center
+    }
+
+    @apply mt-4 ml-1
 }
 
 .homeMenuWrap {

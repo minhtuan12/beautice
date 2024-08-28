@@ -14,7 +14,7 @@
                     @apply flex items-center justify-between cursor-pointer text-[#41487F] #{!important}
                 }
 
-                @apply flex items-center justify-between cursor-pointer w-[66px];
+                @apply flex items-center justify-between cursor-pointer w-[66px] select-none;
                 @apply text-[#41487F] #{!important}
             }
 
@@ -23,7 +23,7 @@
                     @apply text-[#41487F] #{!important}
                 }
 
-                @apply cursor-pointer flex items-center justify-between
+                @apply cursor-pointer flex items-center justify-between select-none
             }
 
             @media (max-width: 1430px) {
