@@ -33,23 +33,16 @@
 
                 .information {
                     .address {
-                        font-weight: 500;
-                        line-height: 21px;
-
-                        @apply text-[14px] italic text-left tracking-widest h-[24px] ml-[0.5px] mt-[-1px]
+                        @apply font-[500] leading-[21px] text-[14px] italic text-left tracking-widest h-[24px] ml-[0.5px] mt-[-1px]
                     }
 
                     .extraInfo {
                         .phone {
-                            line-height: 21px;
-
-                            @apply w-[140px] text-[14px] italic tracking-widest text-left text-[#D7DBFF] ml-[-1px] mt-[0.5px] font-[500]
+                            @apply leading-[21px] w-[140px] text-[14px] italic tracking-widest text-left text-[#D7DBFF] ml-[-1px] mt-[0.5px] font-[500]
                         }
 
                         .mail {
-                            line-height: 21px;
-
-                            @apply italic tracking-widest text-left ml-[28px] underline text-[14px] text-[#D7DBFF] font-[500]
+                            @apply leading-[21px] italic tracking-widest text-left ml-[28px] underline text-[14px] text-[#D7DBFF] font-[500]
                         }
 
                         @apply flex mt-[1px] italic h-[23px]
@@ -64,18 +57,13 @@
             .rightFooter {
                 .section {
                     .title {
-                        font-weight: 600;
-                        line-height: 27px;
-
-                        @apply text-[18px] tracking-widest text-left h-[31px]
+                        @apply font-[600] leading-[27px] text-[18px] tracking-widest text-left h-[31px]
                     }
 
                     .list {
                         .item {
                             span {
-                                font-weight: 400;
-                                line-height: 24px;
-
+                                @apply font-[400] leading-[24px];
                                 @apply ml-[12px] text-[16px] tracking-widest text-left
                             }
 
@@ -108,8 +96,7 @@
             }
 
             .copyRight {
-                font-weight: 400;
-                line-height: 24px;
+                @apply font-[400] leading-[24px];
 
                 @apply w-[497px] h-[31.18px] text-[16px] tracking-widest text-left text-[#D7DBFF] mr-[-87px]
             }
@@ -138,11 +125,15 @@
         }
 
         .footerContent {
-            .upper {
-                @apply flex justify-between
+            .lower {
+                @apply justify-center absolute bottom-[100px] left-1/2 translate-x-[-50%]
             }
 
-            @apply absolute top-0 w-full h-full p-[225px_150px_91.16px_150px] z-10
+            .upper {
+                @apply absolute left-1/2 translate-x-[-50%]
+            }
+
+            @apply justify-between flex flex-col
         }
 
         @apply relative mt-[70px] h-[705.34px] w-full

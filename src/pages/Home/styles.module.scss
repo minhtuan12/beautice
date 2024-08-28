@@ -1,31 +1,23 @@
 /* Slider */
 .mainSlider {
     .firstBubble, .secondBubble {
-        z-index: -1;
-        @apply absolute left-0 top-0
+        @apply absolute left-0 top-0 z-[-1]
     }
 
     .content {
         .leftPartSlider {
             .title {
-                font-weight: 600;
-                line-height: 60px;
-
-                @apply w-[430px] h-[128px] text-[48px] text-left
+                @apply font-[600] leading-[60px] w-[430px] h-[128px] text-[48px] text-left text-[#091156]
             }
 
             .description {
-                font-weight: 500;
-                line-height: 24px;
-
-                @apply w-[474px] h-[54px] text-[16px] text-left tracking-widest
+                @apply leading-[24px] font-[500];
+                @apply w-[474px] h-[54px] text-[16px] text-left tracking-widest text-[#091156]
             }
 
             .detailBtn {
                 button {
-                    font-weight: 600;
-                    line-height: 24px;
-
+                    @apply leading-[24px] font-[600];
                     @apply w-[200px] h-[58.36px] rounded-[50px] text-[16px] tracking-widest text-center mt-[28px]
                 }
             }
@@ -110,12 +102,12 @@
                 }
 
                 .description {
-                    @apply w-[70%]
+                    @apply w-[70%] mt-[20px]
                 }
 
                 .detailBtn {
                     button {
-                        @apply w-[35%] mt-[60px]
+                        @apply w-[35%] mt-[50px]
                     }
                 }
             }
@@ -128,7 +120,7 @@
                 @apply ml-0 w-full
             }
 
-            @apply w-full absolute left-1/2 p-[0_50px] block
+            @apply w-full absolute left-1/2 p-[0_60px] block
         }
 
         @apply h-[1200px] w-full overflow-hidden flex flex-col
@@ -151,23 +143,15 @@
 .coreServices {
     .header {
         .servicesTitle {
-            font-weight: 600;
-            line-height: 20px;
-
-            @apply text-[16px] text-center text-[#FF64AE] ml-[1px]
+            @apply font-[600] leading-[20px] text-[16px] text-center text-[#FF64AE] ml-[1px]
         }
 
         .servicesDescription {
-            font-weight: 600;
-            line-height: 45px;
-
-            @apply p-[0_145px] h-[97px] w-[732px] text-[36px] text-center text-[#091156] mt-[12px]
+            @apply p-[0_145px] font-[600] leading-[45px] h-[97px] w-[732px] text-[36px] text-center text-[#091156] mt-[12px]
         }
 
         .bottomDesc {
-            font-weight: 400;
-            line-height: 24px;
-
+            @apply leading-[24px] font-[400];
             @apply h-[51px] w-[848px] text-[#8B8B8B] text-[16px] tracking-widest text-center mt-[12px]
         }
 
@@ -194,30 +178,17 @@
 
             .boxContent {
                 .boxTitle {
-                    font-weight: 600;
-                    line-height: 22.5px;
-
-                    @apply mt-[58px] w-full h-[37px] text-[18px] text-center text-[#091156]
+                    @apply font-[600] leading-[22.5px] mt-[58px] w-full h-[37px] text-[18px] text-center text-[#091156]
                 }
 
                 .boxDesc {
-                    font-weight: 400;
-                    line-height: 21px;
-
-                    @apply mt-[6px] w-[274px] h-[80px] text-[14px] tracking-widest text-center text-[#8B8B8B]
+                    @apply font-[400] leading-[21px] mt-[6px] w-[274px] h-[80px] text-[14px] tracking-widest text-center text-[#8B8B8B]
                 }
 
                 @apply mt-[223px] ml-[0.5px]
             }
 
-            & {
-                scroll-snap-align: center;
-            }
             @apply bg-[#fff] h-[458px] w-[343px] rounded-[42px] p-[59px_35px_52px_34px] shadow-[0_25px_50px_25px_#F6F7FF] z-10
-        }
-
-        & {
-            scroll-snap-type: x mandatory;
         }
 
         @apply mt-[82px] flex justify-between items-center
@@ -285,31 +256,21 @@
     .content {
         .leftContent {
             .contentTitle {
-                font-weight: 600;
-                line-height: 20px;
-
-                @apply text-[16px] text-left text-[#FF64AE]
+                @apply font-[600] leading-[20px] text-[16px] text-left text-[#FF64AE]
             }
 
             .contentUnderTitle {
-                font-weight: 600;
-                line-height: 45px;
-
-                @apply h-[52px] w-[664px] text-[36px] text-left text-[#091156] mt-[12px]
+                @apply font-[600] leading-[45px] h-[52px] w-[664px] text-[36px] text-left text-[#091156] mt-[12px]
             }
 
             .contentDesc {
-                font-weight: 400;
-                line-height: 24px;
-
+                @apply leading-[24px] font-[400];
                 @apply w-[483px] h-[196px] text-[16px] tracking-widest text-left text-[#8B8B8B] mt-[12px]
             }
 
             .optionBtn {
                 button {
-                    font-weight: 600;
-                    line-height: 24px;
-
+                    @apply leading-[24px] font-[600];
                     @apply h-[58.36px] w-[200px] text-[16px] tracking-widest text-center
                 }
 
@@ -319,9 +280,7 @@
                     }
 
                     .optionTitle {
-                        font-weight: 600;
-                        line-height: 24px;
-
+                        @apply leading-[24px] font-[600];
                         @apply text-[16px] tracking-widest text-left text-[#8B8B8B] ml-[13px] cursor-pointer
                     }
 
@@ -414,6 +373,12 @@
     .aboutUs {
         .content {
             .leftContent {
+                .underImageWrap {
+                    img {
+                        @apply ml-[-50px] mt-[20px] mb-[-40px]
+                    }
+                }
+
                 .contentDesc {
                     @apply w-full mt-[50px]
                 }
@@ -436,7 +401,7 @@
             @apply px-0
         }
 
-        @apply p-[0_50px]
+        @apply p-[0_50px_0_70px]
     }
 }
 
@@ -475,23 +440,15 @@
 
         .cuFormWrap {
             .formTitle {
-                font-weight: 600;
-                line-height: 20px;
-
-                @apply text-[16px] text-left ml-[1px] text-[#FF64AE] #{!important}
+                @apply text-[16px] font-[600] leading-[20px] text-left ml-[1px] text-[#FF64AE] #{!important}
             }
 
             .formUnderTitle {
-                font-weight: 600;
-                line-height: 45px;
-
-                @apply h-[97px] text-[36px] text-left mt-[12px] text-[#091156]
+                @apply font-[600] leading-[45px] h-[97px] text-[36px] text-left mt-[12px] text-[#091156]
             }
 
             .formDesc {
-                font-weight: 400;
-                line-height: 24px;
-
+                @apply leading-[24px] font-[400];
                 @apply text-[16px] tracking-widest text-left mt-[12px] h-[28px] text-[#8B8B8B]
             }
 
@@ -526,9 +483,7 @@
 
                 .sendMsgBtn {
                     button {
-                        font-weight: 600;
-                        line-height: 24px;
-
+                        @apply leading-[24px] font-[600];
                         @apply text-[16px] tracking-widest text-center w-[248px] h-[58px]
                     }
 
@@ -624,7 +579,7 @@
 
                     .sendMsgBtn {
                         button {
-                            @apply w-[35%]
+                            @apply w-[45%]
                         }
                     }
                 }
@@ -632,7 +587,7 @@
                 @apply w-full ml-0 ml-[50%] translate-x-[-50%]
             }
 
-            @apply p-[206px_50px_0_50px] w-full
+            @apply p-[206px_60px_0_60px] w-full
         }
     }
 }

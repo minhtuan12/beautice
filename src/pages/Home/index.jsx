@@ -131,7 +131,7 @@ export default function Home() {
         <ExpertSection
             title={'Professional Teams'}
             subTitle={'The Professional expert'}
-            description={'Lorem ipsum dolor sit amet, consectetur adipiscing elit utaliquam.'}
+            description={'Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam.'}
         />
 
         <div className={styles.contactUs}>

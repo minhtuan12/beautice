@@ -5,13 +5,11 @@
 
     .content {
         .name {
-            line-height: 22.5px;
-            @apply w-full h-[37px] text-[18px] font-[600] text-left text-[#091156]
+            @apply leading-[22.5px] w-full h-[37px] text-[18px] font-[600] text-left text-[#091156]
         }
 
         .description {
-            line-height: 21px;
-            @apply w-full h-[63px] text-[14px] font-[400] tracking-widest text-left text-[#8B8B8B]
+            @apply leading-[21px] w-full h-[63px] text-[14px] font-[400] tracking-widest text-left text-[#8B8B8B]
         }
 
         .learnMore {
@@ -19,10 +17,7 @@
                 @apply ml-[9px] mt-[2px]
             }
 
-            & {
-                line-height: 17.5px;
-            }
-            @apply mt-[17px] text-[14px] font-[600] text-left flex text-[#FF64AE] items-center
+            @apply leading-[17.5px] mt-[17px] text-[14px] font-[600] text-left flex text-[#FF64AE] items-center
         }
 
         @apply mt-[25px]

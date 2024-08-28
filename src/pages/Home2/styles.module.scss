@@ -7,12 +7,11 @@
         .sliderContent {
             .leftSlider {
                 .title {
-                    line-height: 60px;
-                    @apply text-[48px] font-[600] text-left text-white h-[133px]
+                    @apply leading-[60px] text-[48px] font-[600] text-left text-white h-[133px]
                 }
 
                 .description {
-                    line-height: 24px;
+                    @apply leading-[24px];
                     @apply h-[78px] text-[16px] font-[500] tracking-widest text-left text-[#D8DCFF]
                 }
 
@@ -28,16 +27,21 @@
                         }
                     }
 
-                    width: calc((100vw * 179px) / (1440px));
+                    & {
+                        width: calc((100vw * 179px) / (1440px));
+                    }
+
                     @apply mt-[34px] h-[52px]
                 }
 
-                width: calc((100vw * 502px) / (1440px));
+                & {
+                    width: calc((100vw * 502px) / (1440px));
+                }
             }
 
             .rightSlider {
                 .rightText {
-                    line-height: 24px;
+                    @apply leading-[24px];
                     @apply text-[16px] font-[600] tracking-widest text-left text-white mt-[3px] mr-[-1px]
                 }
 
@@ -55,7 +59,10 @@
                     }
                 }
 
-                width: calc((100vw * 275px) / (1440px));
+                & {
+                    width: calc((100vw * 275px) / (1440px));
+                }
+
                 @apply mt-[84px] flex items-center h-[127px] justify-between cursor-pointer
             }
 
@@ -72,30 +79,30 @@
 
         .rightContent {
             .mainTitle {
-                line-height: 20px;
-                @apply h-[20px] text-[16px] font-[600] text-left text-[#FF64AE] w-full ml-[1px]
+                @apply leading-[20px] h-[20px] text-[16px] font-[600] text-left text-[#FF64AE] w-full ml-[1px]
             }
 
             .underTitle {
-                line-height: 45px;
-                @apply mt-[12px] h-[91px] text-[36px] font-[600] text-left text-[#091156] w-full
+                @apply leading-[45px] mt-[12px] h-[91px] text-[36px] font-[600] text-left text-[#091156] w-full
             }
 
             .descriptionUnder {
-                line-height: 24px;
+                @apply leading-[24px];
                 @apply h-[133px] w-full text-[16px] font-[400] tracking-widest text-left mt-[10px] text-[#8B8B8B]
             }
 
             .learnMoreBtnWrap {
                 button {
-                    line-height: 24px;
+                    @apply leading-[24px];
                     @apply w-full h-full tracking-widest text-[16px] font-[600] ml-[2px] mb-[5px]
                 }
 
                 @apply mt-[35px] h-[58.36px] w-[200px]
             }
 
-            width: calc((100vw * 483px) / (1440px));
+            & {
+                width: calc((100vw * 483px) / (1440px));
+            }
         }
 
         @apply h-[675px] w-full p-[158px_150px_157.64px_150px] flex justify-between items-start
@@ -108,18 +115,16 @@
 
         .header {
             .serviceTitle {
-                line-height: 20px;
-                @apply h-[20px] text-[16px] font-[600] text-center text-[#FF64AE]
+                @apply leading-[20px] h-[20px] text-[16px] font-[600] text-center text-[#FF64AE]
             }
 
             .serviceDescription {
-                line-height: 24px;
+                @apply leading-[24px];
                 @apply h-[33px] text-[16px] font-[400] text-center tracking-widest text-[#8B8B8B] mt-[12px]
             }
 
             .subTitle {
-                line-height: 45px;
-                @apply h-[53px] text-[36px] font-[600] text-center text-[#091156] mt-[12px]
+                @apply leading-[45px] h-[53px] text-[36px] font-[600] text-center text-[#091156] mt-[12px]
             }
         }
 
@@ -145,20 +150,24 @@
         .statisticsContent {
             .leftStatistics {
                 .whyTitle {
-                    line-height: 45px;
-                    @apply h-[53px] text-[36px] font-[600] text-left text-white
+                    @apply leading-[45px] h-[53px] text-[36px] font-[600] text-left text-white
                 }
 
                 .whyDesc {
-                    line-height: 24px;
+                    @apply leading-[24px];
                     @apply h-[80px] text-[16px] font-[400] text-left text-[#D8DCFF] mt-[12px] tracking-widest
                 }
 
-                width: calc((100vw * 486px) / (1440px));
+                & {
+                    width: calc((100vw * 486px) / (1440px));
+                }
             }
 
             .rightStatistics {
-                width: calc((100vw * 483px) / (1440px));
+                & {
+                    width: calc((100vw * 483px) / (1440px));
+                }
+
                 @apply grid grid-cols-2 grid-rows-2 h-[181px] gap-x-14 gap-y-10 mt-[10px]
             }
 
@@ -180,17 +189,15 @@
         .upperContent {
             .blogHeader {
                 .blogMainTitle {
-                    line-height: 20px;
-                    @apply h-[20px] text-[16px] font-[600] text-center text-[#FF64AE]
+                    @apply leading-[20px] h-[20px] text-[16px] font-[600] text-center text-[#FF64AE]
                 }
 
                 .blogSubTitle {
-                    line-height: 45px;
-                    @apply mt-[12px] h-[50px] text-[36px] font-[600] text-center text-[#091156]
+                    @apply leading-[45px] mt-[12px] h-[50px] text-[36px] font-[600] text-center text-[#091156]
                 }
 
                 .blogDescription {
-                    line-height: 24px;
+                    @apply leading-[24px];
                     @apply mt-[12px] h-[34px] text-[16px] font-[400] text-center text-[#8B8B8B] tracking-widest
                 }
 
@@ -211,8 +218,7 @@
         .lowerContent {
             .lowerLeftContent {
                 .contentTitle {
-                    line-height: 45px;
-                    @apply h-[50px] text-[36px] font-[600] text-left text-[#091156] w-full
+                    @apply leading-[45px] h-[50px] text-[36px] font-[600] text-left text-[#091156] w-full
                 }
 
                 .contentDescription {
@@ -220,11 +226,13 @@
                         @apply text-[16px] font-[600] tracking-widest text-left text-[#091156]
                     }
 
-                    line-height: 24px;
+                    @apply leading-[24px];
                     @apply mt-[12px] h-[60px] w-full text-[16px] font-[400] tracking-widest text-left text-[#8B8B8B]
                 }
 
-                width: calc((100vw * 391px) / (1440px));
+                & {
+                    width: calc((100vw * 391px) / (1440px));
+                }
             }
 
             .lowerRightContent {
@@ -241,11 +249,13 @@
                 }
 
                 .underInput {
-                    line-height: 18px;
-                    @apply text-right mt-[8px] mr-[-1px] h-[17px] text-[12px] italic font-[400] tracking-widest text-[#8B8B8B]
+                    @apply leading-[18px] text-right mt-[8px] mr-[-1px] h-[17px] text-[12px] italic font-[400] tracking-widest text-[#8B8B8B]
                 }
 
-                width: calc((100vw * 658px) / (1440px));
+                & {
+                    width: calc((100vw * 658px) / (1440px));
+                }
+
                 @apply mt-[13px]
             }
 
@@ -282,6 +292,7 @@
                     @apply justify-center gap-[50px]
                 }
             }
+
             @apply p-0
         }
 
@@ -305,17 +316,15 @@
             .upperContent {
                 .blogHeader {
                     .blogMainTitle {
-                        line-height: 20px;
-                        @apply h-[20px] text-[16px] font-[600] text-center text-[#FF64AE]
+                        @apply leading-[20px] h-[20px] text-[16px] font-[600] text-center text-[#FF64AE]
                     }
 
                     .blogSubTitle {
-                        line-height: 45px;
-                        @apply mt-[12px] h-[50px] text-[36px] font-[600] text-center text-[#091156]
+                        @apply leading-[45px] mt-[12px] h-[50px] text-[36px] font-[600] text-center text-[#091156]
                     }
 
                     .blogDescription {
-                        line-height: 24px;
+                        @apply leading-[24px];
                         @apply mt-[12px] h-[34px] text-[16px] font-[400] text-center text-[#8B8B8B] tracking-widest
                     }
 
@@ -334,8 +343,7 @@
             .lowerContent {
                 .lowerLeftContent {
                     .contentTitle {
-                        line-height: 45px;
-                        @apply h-[50px] text-[36px] font-[600] text-left text-[#091156] w-full
+                        @apply leading-[45px] h-[50px] text-[36px] font-[600] text-left text-[#091156] w-full
                     }
 
                     .contentDescription {
@@ -343,11 +351,13 @@
                             @apply text-[16px] font-[600] tracking-widest text-left text-[#091156]
                         }
 
-                        line-height: 24px;
+                        @apply leading-[24px];
                         @apply mt-[12px] h-[60px] w-full text-[16px] font-[400] tracking-widest text-left text-[#8B8B8B]
                     }
 
-                    width: calc((100vw * 391px) / (1440px));
+                    & {
+                        width: calc((100vw * 391px) / (1440px));
+                    }
                 }
 
                 .lowerRightContent {
@@ -364,11 +374,13 @@
                     }
 
                     .underInput {
-                        line-height: 18px;
-                        @apply text-right mt-[8px] mr-[-1px] h-[17px] text-[12px] italic font-[400] tracking-widest text-[#8B8B8B]
+                        @apply leading-[18px] text-right mt-[8px] mr-[-1px] h-[17px] text-[12px] italic font-[400] tracking-widest text-[#8B8B8B]
                     }
 
-                    width: calc((100vw * 658px) / (1440px));
+                    & {
+                        width: calc((100vw * 658px) / (1440px));
+                    }
+
                     @apply mt-[13px]
                 }
 
@@ -492,8 +504,7 @@
                     }
 
                     .underInput {
-                        line-height: 18px;
-                        @apply text-right mt-[8px] mr-[-1px] h-[17px] text-[12px] italic font-[400] tracking-widest text-[#8B8B8B]
+                        @apply leading-[18px] text-right mt-[8px] mr-[-1px] h-[17px] text-[12px] italic font-[400] tracking-widest text-[#8B8B8B]
                     }
 
                     @apply mt-[20px] w-full
@@ -513,8 +524,7 @@
             .sliderContent {
                 .leftSlider {
                     .title {
-                        line-height: 30px;
-                        @apply text-[24px] h-auto mt-10 w-full
+                        @apply leading-[30px] text-[24px] h-auto mt-10 w-full
                     }
 
                     .description {
@@ -637,8 +647,7 @@
                     }
 
                     .underInput {
-                        line-height: 18px;
-                        @apply text-right mt-[8px] mr-[-1px] h-[17px] text-[12px] italic font-[400] tracking-widest text-[#8B8B8B]
+                        @apply leading-[18px] text-right mt-[8px] mr-[-1px] h-[17px] text-[12px] italic font-[400] tracking-widest text-[#8B8B8B]
                     }
 
                     @apply mt-[20px] w-full

@@ -5,8 +5,7 @@
 
     .mainContent {
         .quantity {
-            line-height: 45px;
-            @apply text-[36px] font-[600] text-left h-[41px] text-white
+            @apply leading-[45px] text-[36px] font-[600] text-left h-[41px] text-white
         }
 
         .about {
@@ -51,8 +50,7 @@
 
         .mainContent {
             .quantity {
-                line-height: normal;
-                @apply text-[22px] text-left h-auto
+                @apply leading-normal text-[22px] text-left h-auto
             }
 
             .about {

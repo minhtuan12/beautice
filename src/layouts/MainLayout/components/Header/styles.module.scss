@@ -78,7 +78,7 @@
             }
         }
 
-        @apply flex justify-between items-center
+        @apply flex justify-between items-center relative
     }
 
     @media (min-width: 1450px) {
@@ -123,6 +123,6 @@
             @apply select-none w-[170px] h-[60%] mt-[10px]
         }
 
-        @apply w-full h-[63px] absolute top-[41px] left-0 p-[0_45px_0_20px] flex justify-between items-center
+        @apply w-full h-[63px] absolute top-[41px] left-0 p-[0_45px_0_40px] flex justify-between items-center
     }
 }

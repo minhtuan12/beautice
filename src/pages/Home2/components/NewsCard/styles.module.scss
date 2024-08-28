@@ -7,13 +7,11 @@
 
     .content {
         .name {
-            line-height: 22.5px;
-            @apply w-full h-[58px] text-[18px] font-[600] text-left text-[#091156]
+            @apply leading-[22.5px] w-full h-[58px] text-[18px] font-[600] text-left text-[#091156]
         }
 
         .description {
-            line-height: 21px;
-            @apply w-full h-[74px] text-[14px] font-[400] tracking-widest text-left text-[#8B8B8B] p-[0_17px_0_0]
+            @apply leading-[21px] w-full h-[74px] text-[14px] font-[400] tracking-widest text-left text-[#8B8B8B] p-[0_17px_0_0]
         }
 
         .learnMore {
@@ -21,11 +19,7 @@
                 @apply ml-[9px]
             }
 
-            & {
-                line-height: 17.5px;
-            }
-
-            @apply mt-[15px] h-[19px] text-[14px] font-[600] text-left flex text-[#FF64AE] items-center
+            @apply leading-[17.5px] mt-[15px] h-[19px] text-[14px] font-[600] text-left flex text-[#FF64AE] items-center
         }
 
         @apply p-[54.5px_21px_72px_38px]
