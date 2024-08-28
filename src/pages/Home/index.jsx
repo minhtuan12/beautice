@@ -2,16 +2,13 @@ import React, {useRef} from "react";
 import MainLayout from "../../layouts/MainLayout/index.jsx";
 import {pathToIcon} from "../../utils/constants.js";
 import styles from './styles.module.scss'
-import ExpertCard from "../../components/ExpertSection/ExpertCard/index.jsx";
 import ServiceCard from "./components/ServiceCard/index.jsx";
-import {RightOutlined} from '@ant-design/icons'
-import {useSelector} from "react-redux";
-import {handleSlide} from "../../utils/helpers.js";
 import ExpertSection from "../../components/ExpertSection/index.jsx";
+import {useSelector} from "react-redux";
 
 export default function Home() {
-    const isVisibleSlidingBtn = useSelector(state => state.app.isVisibleSlidingBtn)
     const productWrapRef = useRef()
+    const visibleImageUnderTitle = useSelector(state => state.app.visibleImageUnderTitle)
     const services = [
         {
             logo: `${pathToIcon}/Animation1.png`,
@@ -29,15 +26,6 @@ export default function Home() {
             description: 'Non parturient amet, feugiat tellus sagittis, scelerisque eget nulla turpis.'
         }
     ]
-
-    function handleSlideProduct(direction) {
-        if (productWrapRef?.current) {
-            const currentWidth = productWrapRef.current.scrollLeft
-            const ableToScroll = productWrapRef.current.scrollWidth - 600
-
-            handleSlide(currentWidth, ableToScroll, productWrapRef.current, direction)
-        }
-    }
 
     return <MainLayout>
         <div className={styles.mainSlider}>
@@ -95,17 +83,6 @@ export default function Home() {
                 </div>
             </div>
 
-            {
-                isVisibleSlidingBtn ? <>
-                    <div className={styles.angleRight} onClick={() => handleSlideProduct('right')}>
-                        <RightOutlined/>
-                    </div>
-                    <div className={styles.angleLeft} onClick={() => handleSlideProduct('left')}>
-                        <RightOutlined/>
-                    </div>
-                </> : ''
-            }
-
             <div className={styles.boxSectionWrap} ref={productWrapRef}>
                 {
                     services.map((service, index) => (
@@ -125,6 +102,12 @@ export default function Home() {
                     <div className={styles.contentUnderTitle}>
                         We are the best beauty clinic
                     </div>
+                    {
+                        visibleImageUnderTitle ?
+                            <div className={styles.underImageWrap}>
+                                <img src={`${pathToIcon}/unsplash_LRXYS0tSyGc.png`} alt=""/>
+                            </div> : ''
+                    }
                     <div className={styles.contentDesc}>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit, quam suscipit purus donec amet.
                         Egestas volutpat facilisi eu libero. Nunc, ipsum ornare mauris sit quam quis enim. Varius tellus
@@ -139,7 +122,7 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-                <div className={styles.rightContent}>
+                <div className={`${styles.rightContent} ${visibleImageUnderTitle ? '!hidden' : ''}`}>
                     <img src={`${pathToIcon}/unsplash_LRXYS0tSyGc.png`} alt=""/>
                 </div>
             </div>
@@ -161,13 +144,16 @@ export default function Home() {
                 </div>
             </div>
             <div className={styles.cuContent}>
-                <div className={styles.cuImage}>
+                <div className={`${styles.cuImage} ${visibleImageUnderTitle ? '!hidden' : ''}`}>
                     <img alt="" src={`${pathToIcon}/Contact Animations.png`}/>
                 </div>
                 <div className={styles.cuFormWrap}>
                     <div className={styles.formTitle}>Contact Us</div>
                     <div className={styles.formUnderTitle}>Send your inquiry to<br/>our expert team</div>
                     <div className={styles.formDesc}>Lorem ipsum dolor sit amet nulla turapis tellus.</div>
+                    {
+                        visibleImageUnderTitle ? <img alt="" src={`${pathToIcon}/Contact Animations.png`}/> : ''
+                    }
                     <div className={styles.formContent}>
                         <div className={styles.nameInput}>
                             <input placeholder="First name"/>

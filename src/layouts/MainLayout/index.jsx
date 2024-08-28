@@ -3,7 +3,7 @@ import styles from './styles.module.scss'
 import Header from "./components/Header/index.jsx";
 import Footer from "./components/Footer/index.jsx";
 import {pathToIcon} from "../../utils/constants.js";
-import {setIsVisibleSlidingBtn} from "../../store/slices/app/index.js";
+import {setIsVisibleSlidingBtn, setVisibleImageUnderTitle} from "../../store/slices/app/index.js";
 import {useDispatch} from "react-redux";
 
 export default function MainLayout({children, isLightTheme = false}) {
@@ -30,6 +30,7 @@ export default function MainLayout({children, isLightTheme = false}) {
     useEffect(() => {
         const handleSetVisibleSlidingBtn = () => {
             dispatch(setIsVisibleSlidingBtn(window.innerWidth <= 1430))
+            dispatch(setVisibleImageUnderTitle(window.innerWidth <= 1300))
         }
         window.addEventListener('resize', handleSetVisibleSlidingBtn)
 

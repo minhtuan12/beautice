@@ -24,14 +24,6 @@
         @apply flex flex-col items-center
     }
 
-    .proAngleRight {
-        @apply right-[50px] flex top-[60%] absolute
-    }
-
-    .proAngleLeft {
-        @apply left-[50px] flex top-[60%] absolute rotate-[180deg]
-    }
-
     .proBoxSectionWrap {
         .proBoxSection {
             .proBoxImage {
@@ -71,20 +63,12 @@
                 @apply mt-[53px]
             }
 
-            & {
-                scroll-snap-align: center;
+            &:hover {
+                transition: all 0.3s ease;
+                @apply p-[91px_77px_96px_77px] w-[424px] shadow-[0_25px_50px_25px_#F6F7FF]
             }
 
-            @apply mt-[-5px] bg-white h-[439px] w-[270px] rounded-[42px] p-0 cursor-pointer
-        }
-
-        .activeProBoxSection {
-            scroll-snap-align: center;
-            @apply mt-0 h-[626px] w-[424px] shadow-[0_25px_50px_25px_#F6F7FF] p-[91px_77px_96px_77px]
-        }
-
-        & {
-            scroll-snap-type: x mandatory;
+            @apply mt-[5px] bg-white h-[626px] w-[270px] rounded-[42px] p-0 cursor-pointer p-[91px_0_96px_0]
         }
 
         @apply mt-[87px] flex items-center justify-between
@@ -103,18 +87,10 @@
     .professionalTeams {
         .proBoxSectionWrap {
             .proBoxSection {
-                @apply flex-none h-[626px] w-[424px] shadow-[0_25px_50px_25px_#F6F7FF] p-[91px_77px_96px_77px] m-[0_calc((100%_-_424px)_/_2)]
+                @apply flex-none h-[626px] w-[424px] shadow-[0_25px_50px_25px_#F6F7FF] p-[91px_77px_96px_77px] m-0
             }
 
-            @apply w-full mt-[40px] overflow-x-auto scroll-smooth
-        }
-
-        .proAngleRight {
-            @apply right-[50px] flex top-[60%] absolute
-        }
-
-        .proAngleLeft {
-            @apply left-[50px] flex top-[60%] absolute rotate-[180deg]
+            @apply w-full mt-[40px] flex flex-wrap justify-center gap-[40px]
         }
 
         @apply relative p-[0_50px] w-full
@@ -151,16 +127,8 @@
                     }
                 }
 
-                @apply m-0 p-[90px] flex-none w-full
+                @apply m-0 p-[90px]
             }
-        }
-
-        .proAngleRight {
-            @apply right-[20px]
-        }
-
-        .proAngleLeft {
-            @apply left-[20px]
         }
 
         @apply p-[0_50px]

@@ -2,12 +2,12 @@ import React from "react";
 import styles from "../styles.module.scss";
 import {pathToIcon} from "../../../utils/constants.js";
 
-export default function ExpertCard({expert, index}) {
+export default function ExpertCard({expert}) {
     const handleClickSocialLink = (link) => {
         window.open(link)
     }
 
-    return <div className={`${styles.proBoxSection} ${index === 1 ? styles.activeProBoxSection : ''}`}>
+    return <div className={`${styles.proBoxSection}`}>
         <div className={styles.proBoxImage}>
             <img src={expert.avatar} alt=""/>
         </div>

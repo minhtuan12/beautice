@@ -1,4 +1,4 @@
-.menuBoxWrap {
+.menuBoxWrap, .homeMenuWrap {
     .menuList {
         .menuItem, .activeItem {
             &:hover {
@@ -41,5 +41,19 @@
         }
     }
 
-    @apply bg-white rounded-[15px] border-[1px] absolute top-16
+    @apply bg-white rounded-[15px] border-[1px] absolute top-16 right-[35px]
+}
+
+.homeMenuWrap {
+    .menuList {
+        .menuItem, .activeItem {
+            .title {
+                @apply text-[16px]
+            }
+
+            @apply px-6 py-4
+        }
+    }
+
+    @apply right-[calc(100vw_-_55%)]
 }

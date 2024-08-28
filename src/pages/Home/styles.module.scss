@@ -115,7 +115,7 @@
 
                 .detailBtn {
                     button {
-                        @apply w-full mt-[60px]
+                        @apply w-[35%] mt-[60px]
                     }
                 }
             }
@@ -242,21 +242,13 @@
 
         .boxSectionWrap {
             .boxSection {
-                @apply m-[0_calc((100%_-_343px)_/_2)]
+                @apply m-0
             }
 
-            @apply mt-[82px] flex items-center w-full overflow-x-auto scroll-smooth
+            @apply mt-[82px] flex flex-wrap items-center justify-center w-full gap-[30px]
         }
 
-        .angleRight {
-            @apply w-fit top-[65%] right-[50px] flex absolute
-        }
-
-        .angleLeft {
-            @apply w-fit top-[65%] left-[50px] flex absolute rotate-[180deg]
-        }
-
-        @apply h-[732px] mt-[100px] p-[0_120px] relative
+        @apply h-auto mt-[100px] p-[0_120px] relative
     }
 }
 
@@ -269,12 +261,6 @@
 
             .bottomDesc {
                 @apply mt-[60px] mb-[20px]
-            }
-        }
-
-        .boxSectionWrap {
-            .boxSection {
-                @apply rounded-none
             }
         }
 
@@ -404,6 +390,12 @@
             }
 
             .leftContent {
+                .underImageWrap {
+                    img {
+                        @apply ml-[-63px]
+                    }
+                }
+
                 .contentDesc {
                     @apply mt-12
                 }
@@ -601,7 +593,7 @@
             @apply flex-col pt-60 w-full
         }
 
-        @apply h-auto mt-[-300px]
+        @apply h-auto mt-[100px]
     }
 }
 
@@ -632,7 +624,7 @@
 
                     .sendMsgBtn {
                         button {
-                            @apply w-full
+                            @apply w-[35%]
                         }
                     }
                 }

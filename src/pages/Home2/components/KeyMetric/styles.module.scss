@@ -16,7 +16,10 @@
         @apply ml-[11px]
     }
 
-    width: calc((100vw * 197px) / (1440px));
+    & {
+        width: calc((100vw * 197px) / (1440px));
+    }
+
     @apply flex justify-start h-[69px]
 }
 

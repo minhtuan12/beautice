@@ -5,12 +5,8 @@ import {pathToIcon} from "../../utils/constants.js";
 import MainServiceCard from "./components/MainServiceCard/index.jsx";
 import KeyMetric from "./components/KeyMetric/index.jsx";
 import NewsCard from "./components/NewsCard/index.jsx";
-import {RightOutlined} from "@ant-design/icons";
-import {useSelector} from "react-redux";
-import {handleSlide} from "../../utils/helpers.js";
 
 export default function Home2() {
-    const isVisibleSlidingBtn = useSelector(state => state.app.isVisibleSlidingBtn)
     const mainServices = [
         {
             logo: `${pathToIcon}/icon-2.png`,
@@ -70,23 +66,6 @@ export default function Home2() {
 
     const serviceWrapRef = useRef()
     const newsWrapRef = useRef()
-
-    const handleSlideService = (direction) => {
-        if (serviceWrapRef?.current) {
-            const currentWidth = serviceWrapRef.current.scrollLeft
-            const ableToScroll = serviceWrapRef.current.scrollWidth - 600
-
-            handleSlide(currentWidth, ableToScroll, serviceWrapRef.current, direction)
-        }
-    }
-    // console.log(newsWrapRef?.current.clientWidth)
-
-    const handleSlideNews = (direction) => {
-        if (newsWrapRef?.current) {
-            const scrollWidth = newsWrapRef?.current.clientWidth - 1 / 2 * window.innerWidth + 50
-            newsWrapRef.current.scrollLeft += direction === 'right' ? scrollWidth : -scrollWidth
-        }
-    }
 
     return <MainLayout isLightTheme={true}>
         <div className={styles.homeWrap}>
@@ -150,16 +129,6 @@ export default function Home2() {
                     </div>
                 </div>
                 <div className={styles.content}>
-                    {
-                        isVisibleSlidingBtn ? <>
-                            <div className={'angleRight'} onClick={() => handleSlideService('right')}>
-                                <RightOutlined/>
-                            </div>
-                            <div className={'angleLeft'} onClick={() => handleSlideService('left')}>
-                                <RightOutlined/>
-                            </div>
-                        </> : ''
-                    }
                     <div className={styles.cardsWrap} ref={serviceWrapRef}>
                         {
                             mainServices.map((service, index) => (
@@ -214,16 +183,6 @@ export default function Home2() {
                         </div>
                     </div>
                     <div className={styles.blogContent}>
-                        {
-                            isVisibleSlidingBtn ? <>
-                                <div className={'angleRight'} onClick={() => handleSlideNews('right')}>
-                                    <RightOutlined/>
-                                </div>
-                                <div className={'angleLeft'} onClick={() => handleSlideNews('left')}>
-                                    <RightOutlined/>
-                                </div>
-                            </> : ''
-                        }
                         <div className={styles.blogCardWrap} ref={newsWrapRef}>
                             {
                                 newsList.map((news, index) => (
