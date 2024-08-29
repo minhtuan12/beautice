@@ -157,12 +157,20 @@
     .mainSlider {
         .content {
             .leftPartSlider {
+                .title {
+                    @apply h-auto w-full
+                }
+
                 .detailBtn {
                     button {
                         @apply mt-[100px]
                     }
+
+                    @apply w-full
                 }
             }
+
+            @apply px-[20px] mt-[50px]
         }
     }
 }
@@ -277,7 +285,27 @@
 
 @media (max-width: 440px) {
     .coreServices {
+        .header {
+            .servicesDescription {
+                @apply h-auto
+            }
+        }
+
         .boxSectionWrap {
+            .boxSection {
+                .boxContent {
+                    .boxTitle {
+                        @apply h-auto
+                    }
+
+                    .boxDesc {
+                        @apply w-full h-auto mt-[20px]
+                    }
+                }
+
+                @apply w-full h-auto mt-[100px]
+            }
+
             @apply mt-[140px]
         }
     }
@@ -495,8 +523,12 @@
                     }
                 }
 
+                .contentDesc, .contentUnderTitle {
+                    @apply h-auto
+                }
+
                 .optionBtn {
-                    @apply mt-[200px]
+                    @apply w-full
                 }
             }
         }
@@ -700,6 +732,10 @@
     .contactUs {
         .cuContent {
             .cuFormWrap {
+                .formUnderTitle, .formDesc {
+                    @apply h-auto
+                }
+
                 .formDesc {
                     @apply mt-[100px]
                 }

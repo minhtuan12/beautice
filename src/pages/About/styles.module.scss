@@ -59,7 +59,7 @@
                 }
             }
 
-            @apply mt-[62px] ml-[-1px] relative cursor-pointer
+            @apply mt-[62px] ml-[-1px] relative cursor-pointer shadow-[0_25px_50px_25px_#F6F7FF]
         }
 
         @apply p-[0_150px] relative z-10
@@ -96,7 +96,7 @@
                     width: calc((100vw * 732px) / (1440px));
                 }
 
-                @apply text-[36px] font-[600] leading-[45px] text-center text-white h-[97px] mt-[12px]
+                @apply text-[36px] font-[600] leading-[45px] text-center text-white h-[97px] mt-[12px] p-[0_60px]
             }
 
             .sloganDescription {
@@ -104,7 +104,7 @@
                     width: calc((100vw * 680px) / (1440px));
                 }
 
-                @apply text-[16px] font-[400] leading-[24px] tracking-widest text-center text-[#CACACA] h-[56px] mt-[12px]
+                @apply text-[16px] font-[400] leading-[24px] tracking-widest text-center text-[#CACACA] h-[56px] mt-[12px] ml-[26px]
             }
 
             @apply w-full p-[164px_354px_168px_354px]
@@ -142,6 +142,26 @@
 
                 .logosWrap {
                     img {
+                        &:first-child {
+                            @apply ml-[2px] mt-[1px]
+                        }
+
+                        &:nth-child(2) {
+                            @apply ml-[-4px] mt-[1px]
+                        }
+
+                        &:nth-child(3) {
+                            @apply mt-[1px]
+                        }
+
+                        &:nth-child(4) {
+                            @apply w-[147px] h-[84px] mt-[-3px] ml-[-1px]
+                        }
+
+                        &:last-child {
+                            @apply mt-[1px] mr-[-2px]
+                        }
+
                         @apply w-[147px] h-[80px]
                     }
 
@@ -151,12 +171,11 @@
                 @apply mt-[123px] w-full p-[0_86px_0_89px] ml-[-13px]
             }
 
-            @apply w-full p-[0_153px_124px_150px]
+            @apply w-full p-[0_153px_50px_150px]
         }
 
         @apply mt-[112px] relative
     }
-
 
     @apply p-[229px_0_0_0]
 }

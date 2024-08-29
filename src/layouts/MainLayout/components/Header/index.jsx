@@ -6,6 +6,7 @@ import {CloseOutlined, MenuOutlined} from '@ant-design/icons'
 import {pathToIcon} from "../../../../utils/constants.js";
 import MenuBox from "./components/MenuBox/index.jsx";
 import {Drawer, Menu} from "antd";
+import {useSelector} from "react-redux";
 
 export default function Header({isLightTheme}) {
     const navigate = useNavigate()
@@ -15,6 +16,7 @@ export default function Header({isLightTheme}) {
     const [isVisibleMenuBtn, setIsVisibleMenuBtn] = useState(window.innerWidth <= 1430)
     const [isVisibleMenuBox, setIsVisibleMenuBox] = useState(false)
     const [isVisibleHomeMenu, setIsVisibleHomeMenu] = useState(false)
+    const visibleStickyHeader = useSelector(state => state.app.visibleStickyHeader)
 
     const handleNavigate = (pathname) => {
         navigate(pathname)
@@ -52,7 +54,7 @@ export default function Header({isLightTheme}) {
         }
     }, [])
 
-    return <div className={styles.headerWrap}>
+    return <div className={`${styles.headerWrap} ${visibleStickyHeader ? styles.stickyHeader : ''}`}>
         {
             !isLightTheme ? <img src={`${pathToIcon}/Main Logo.svg`} alt=""/>
                 : <img src={`${pathToIcon}/Main Logo.png`} alt="" className={'!mt-[2px] !h-auto !ml-0'}/>

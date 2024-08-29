@@ -24,7 +24,7 @@ export default function MenuBox({menu, isHomeMenu = false}) {
         <div className={styles.menuList}>
             {
                 menu.map((item, index) => {
-                    const isContactBtn = item.title === 'Contact' 
+                    const isContactBtn = item.label === 'Contact' 
 
                     return (
                         <div key={index} onClick={() => handleClickMenuItem(item)}
@@ -32,9 +32,9 @@ export default function MenuBox({menu, isHomeMenu = false}) {
                                 ${isContactBtn ? ' border-t-[1px]' : ''}`}
                         >
                             <div className={'flex items-center'}>
-                                {!isHomeMenu ? item.icon : ''}
+                                {item.icon}
                                 <div className={`${styles.title} ${isContactBtn ? '!text-[#FF64AE]' : ''}`}>
-                                    {item.title} {!_.isEmpty(item.children) ? '+' : ''}
+                                    {item.label} {!_.isEmpty(item.children) ? '+' : ''}
                                 </div>
                             </div>
                             {
@@ -46,7 +46,7 @@ export default function MenuBox({menu, isHomeMenu = false}) {
                                                  onClick={() => navigate(child.href)}
                                             >
                                                 {child.icon}
-                                                <span className={'ml-2'}>{child.title}</span>
+                                                <span className={'ml-2'}>{child.label}</span>
                                             </div>
                                         ))
                                     }

@@ -285,6 +285,12 @@
 
         .footerContent {
             .upper {
+                .leftFooter {
+                    .slogan {
+                        @apply h-auto
+                    }
+                }
+
                 .rightFooter {
                     .section {
                         .list {
@@ -306,7 +312,7 @@
                         @apply mt-[30px]
                     }
 
-                    @apply flex-wrap
+                    @apply flex-wrap mt-[120px]
                 }
 
                 @apply w-[70%]
@@ -314,5 +320,17 @@
         }
 
         @apply h-[1150px] mt-[150px]
+    }
+}
+
+@media (max-width: 360px) {
+    .footerWrap {
+        .footerContent {
+            .lower {
+                .footerSocial {
+                    @apply gap-[30px]
+                }
+            }
+        }
     }
 }

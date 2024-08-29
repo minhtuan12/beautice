@@ -3,7 +3,11 @@ import styles from './styles.module.scss'
 import Header from "./components/Header/index.jsx";
 import Footer from "./components/Footer/index.jsx";
 import {pathToIcon} from "../../utils/constants.js";
-import {setIsVisibleSlidingBtn, setVisibleImageUnderTitle} from "../../store/slices/app/index.js";
+import {
+    setIsVisibleSlidingBtn,
+    setVisibleImageUnderTitle,
+    setVisibleStickyHeader
+} from "../../store/slices/app/index.js";
 import {useDispatch} from "react-redux";
 
 export default function MainLayout({children, isLightTheme = false}) {
@@ -13,6 +17,7 @@ export default function MainLayout({children, isLightTheme = false}) {
     const handleScroll = () => {
         const currentTop = window.pageYOffset || document.documentElement.scrollTop
         setIsVisibleToTopBtn(currentTop > 800)
+        dispatch(setVisibleStickyHeader(currentTop > 340))
     }
 
     const handleGoToTop = () => {

@@ -9,6 +9,7 @@
                 animation: spin-animation .3s;
                 @apply w-[7px] h-[7px] mt-0
             }
+
             .activeOption {
                 @media (max-width: 1430px) {
                     @apply flex items-center justify-between cursor-pointer text-[#41487F] #{!important}
@@ -92,6 +93,23 @@
     @apply w-[1140px] h-[63px] absolute top-[39px] left-[150px] flex justify-between items-center z-10
 }
 
+.stickyHeader {
+    //.rightHeader {
+    //    .contactBtn {
+    //        button {
+    //            @apply h-[45px] w-[130px] text-[15px]
+    //        }
+    //    }
+    //}
+    //
+    //& {
+    //    animation: slideDown 0.35s ease-out;
+    //    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px #{!important};
+    //}
+    //
+    //@apply fixed bg-white w-full h-[95px] left-1/2 top-0 translate-x-[-50%] p-[25px_60px] z-[9999]
+}
+
 @keyframes spin-animation {
     0% {
         transform: rotate(0deg);
@@ -100,6 +118,16 @@
     100% {
         transform: rotate(90deg);
     }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        //@apply left-1/2
+    }
+    //to {
+    //    transform: translateY(0);
+    //}
 }
 
 .minusIcon {
