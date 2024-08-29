@@ -3,6 +3,7 @@ import styles from './styles.module.scss'
 import MainLayout from "../../layouts/MainLayout/index.jsx";
 import {pathToIcon} from "../../utils/constants.js";
 import ExpertSection from "../../components/ExpertSection/index.jsx";
+import OurSection from "./components/OurSection/index.jsx";
 
 export default function About() {
     return <MainLayout>
@@ -54,6 +55,39 @@ export default function About() {
                     </div>
                     <div className={styles.sloganDescription}>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis
+                    </div>
+                </div>
+            </div>
+
+            <div className={styles.bottomContentWrap}>
+                <div className={styles.bubbleBgFooter}>
+                    <img alt={''} src={`${pathToIcon}/Bubble BG Footer.png`}/>
+                </div>
+                <div className={styles.mainContent}>
+                    <div className={styles.ourVision}>
+                        <OurSection
+                            imageUrl={`${pathToIcon}/Illustration-1.png`}
+                            title={'Our Vision'}
+                            subTitle={'Be the best and go international'}
+                            description={<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit, quam suscipit purus donec amet. Egestas volutpat facilisi eu libero.<br/><br/> Nunc, ipsum ornare mauris sit quam quis enim. Varius tellus in suspendisse placerat.</span>}
+                        />
+                    </div>
+                    <div className={styles.ourMission}>
+
+                    </div>
+                    <div className={styles.ourClients}>
+                        <div className={styles.ocTitle}>
+
+                        </div>
+                        <div className={styles.ocSubTitle}>
+
+                        </div>
+                        <div className={styles.ocDesc}>
+
+                        </div>
+                        <div className={styles.logosWrap}>
+
+                        </div>
                     </div>
                 </div>
             </div>

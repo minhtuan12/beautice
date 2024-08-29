@@ -272,7 +272,7 @@
     }
 }
 
-@media (max-width: 560px) {
+@media (max-width: 440px) {
     .footerWrap {
         .aboveBg {
             .bottomImg {
@@ -284,18 +284,11 @@
             .upper {
                 .rightFooter {
                     .section {
-                        .title {
-                            @apply text-center
-                        }
-
                         .list {
                             .item {
                                 @apply w-fit
                             }
-                            @apply grid grid-cols-2 gap-x-[30px]
                         }
-
-                        @apply relative left-1/2 translate-x-[-50%] h-fit w-fit
                     }
 
                     .informationSection {
@@ -313,7 +306,7 @@
                     @apply flex-wrap
                 }
 
-                @apply w-[60%]
+                @apply w-[70%]
             }
         }
 

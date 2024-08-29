@@ -153,6 +153,20 @@
     }
 }
 
+@media (max-width: 440px) {
+    .mainSlider {
+        .content {
+            .leftPartSlider {
+                .detailBtn {
+                    button {
+                        @apply mt-[100px]
+                    }
+                }
+            }
+        }
+    }
+}
+
 /* Services */
 .coreServices {
     .header {
@@ -258,6 +272,14 @@
         }
 
         @apply p-[0_50px]
+    }
+}
+
+@media (max-width: 440px) {
+    .coreServices {
+        .boxSectionWrap {
+            @apply mt-[140px]
+        }
     }
 }
 
@@ -463,6 +485,24 @@
     }
 }
 
+@media (max-width: 440px) {
+    .aboutUs {
+        .content {
+            .leftContent {
+                .underImageWrap {
+                    img {
+                        @apply mt-[100px]
+                    }
+                }
+
+                .optionBtn {
+                    @apply mt-[200px]
+                }
+            }
+        }
+    }
+}
+
 /* Contact us */
 .contactUs {
     .cuBubbleWrap {
@@ -650,6 +690,18 @@
                             @apply w-[200px] h-[50px]
                         }
                     }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 440px) {
+    .contactUs {
+        .cuContent {
+            .cuFormWrap {
+                .formDesc {
+                    @apply mt-[100px]
                 }
             }
         }

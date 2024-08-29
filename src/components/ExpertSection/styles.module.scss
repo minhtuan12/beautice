@@ -118,3 +118,39 @@
         @apply p-[0_50px]
     }
 }
+
+@media (max-width: 440px) {
+    .professionalTeams {
+        .proHeader {
+            .proHeaderDesc {
+                @apply mt-[100px]
+            }
+        }
+
+        .proBoxSectionWrap {
+            .proBoxSection {
+                .proBoxContent {
+                    .proBoxDesc {
+                        @apply mt-6
+                    }
+
+                    .proBoxSocial {
+                        .icon {
+                            .innerIcon {
+                                @apply top-[8px] left-[10px]
+                            }
+
+                            .innerIconFacebook {
+                                @apply top-[8px] left-[10px]
+                            }
+                        }
+
+                        @apply mt-10 p-0 w-full
+                    }
+                }
+
+                @apply m-0 p-[75px_30px] w-full
+            }
+        }
+    }
+}

@@ -113,5 +113,44 @@
         @apply w-full relative h-[529px]
     }
 
+    .bottomContentWrap {
+        .bubbleBgFooter {
+            @apply top-[74px] absolute z-[-1]
+        }
+
+        .mainContent {
+            .ourVision {
+                @apply relative left-1/2 translate-x-[-50%]
+            }
+
+            .ourMission {
+
+            }
+
+            .ourClients {
+                .ocTitle {
+
+                }
+
+                .ocSubTitle {
+
+                }
+
+                .ocDesc {
+
+                }
+
+                .logosWrap {
+
+                }
+            }
+
+            @apply w-full p-[0_153px_124px_152px]
+        }
+
+        @apply mt-[112px] relative
+    }
+
+
     @apply p-[229px_0_0_0]
 }

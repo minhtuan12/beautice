@@ -1,0 +1,27 @@
+.sectionWrap {
+    .imageWrap {
+        & {
+            width: calc((100vw * 475px) / (1440px));
+        }
+    }
+
+    .content {
+        .title {
+            @apply text-[16px] font-[600] leading-[20px] text-left text-[#FF64AE] h-[20px] mt-[11px]
+        }
+
+        .subTitle {
+            @apply text-[36px] font-[600] leading-[45px] text-left text-[#091156] h-[79px] mt-[12px]
+        }
+
+        .description {
+            @apply text-[16px] font-[400] leading-[24px] tracking-widest text-left text-[#8B8B8B] h-[157px] mt-[24px]
+        }
+
+        & {
+            width: calc((100vw * 475px) / (1440px));
+        }
+    }
+
+    @apply w-full flex justify-between
+}
