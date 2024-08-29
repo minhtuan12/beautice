@@ -155,6 +155,9 @@
         .footerContent {
             .upper {
                 .leftFooter {
+                    img {
+                        @apply ml-[-30px]
+                    }
                     .slogan {
                         @apply pl-0
                     }
@@ -248,7 +251,7 @@
                     @apply ml-0 mt-[90px] justify-between
                 }
 
-                @apply flex-col absolute left-1/2 translate-x-[-50%] p-0
+                @apply flex-col absolute left-1/2 translate-x-[-50%] p-0 w-3/4
             }
 
             .lower {
@@ -264,7 +267,7 @@
                     @apply w-full text-center
                 }
 
-                @apply absolute bottom-[60px] left-0 p-[0_30px]
+                @apply absolute bottom-[60px] left-0 p-[0_30px] w-full
             }
         }
 

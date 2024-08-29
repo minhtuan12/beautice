@@ -124,28 +124,34 @@
             }
 
             .ourMission {
-
+                @apply mt-[106px] relative left-1/2 translate-x-[-50%]
             }
 
             .ourClients {
                 .ocTitle {
-
+                    @apply text-[16px] font-[600] leading-[20px] text-center text-[#FF64AE]
                 }
 
                 .ocSubTitle {
-
+                    @apply text-[36px] font-[600] leading-[45px] text-center mt-[12px] h-[53px] text-[#091156]
                 }
 
                 .ocDesc {
-
+                    @apply text-[16px] font-[400] leading-[24px] tracking-widest text-center text-[#8B8B8B] h-[31px] mt-[12px]
                 }
 
                 .logosWrap {
+                    img {
+                        @apply w-[147px] h-[80px]
+                    }
 
+                    @apply mt-[96px] h-[84px] flex w-full justify-between ml-[11px]
                 }
+
+                @apply mt-[123px] w-full p-[0_86px_0_89px] ml-[-13px]
             }
 
-            @apply w-full p-[0_153px_124px_152px]
+            @apply w-full p-[0_153px_124px_150px]
         }
 
         @apply mt-[112px] relative

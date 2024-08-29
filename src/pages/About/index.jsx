@@ -73,20 +73,32 @@ export default function About() {
                         />
                     </div>
                     <div className={styles.ourMission}>
-
+                        <OurSection
+                            isReverse
+                            contentWidth={'calc((100vw * 530) / 1440)'}
+                            descriptionWidth={'calc((100vw * 483) / 1440)'}
+                            imageUrl={`${pathToIcon}/Illustration-2.png`}
+                            title={'Our Mission'}
+                            subTitle={'Special & premium service to any clients'}
+                            description={<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit, quam suscipit purus donec amet. Egestas volutpat facilisi eu libero.<br/><br/> Nunc, ipsum ornare mauris sit quam quis enim. Varius tellus in suspendisse placerat.</span>}
+                        />
                     </div>
                     <div className={styles.ourClients}>
                         <div className={styles.ocTitle}>
-
+                            Our Clients
                         </div>
                         <div className={styles.ocSubTitle}>
-
+                            Well-known agencies
                         </div>
                         <div className={styles.ocDesc}>
-
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit
                         </div>
                         <div className={styles.logosWrap}>
-
+                            <img alt={''} src={`${pathToIcon}/LOGO1.png`}/>
+                            <img alt={''} src={`${pathToIcon}/LOGO2.png`}/>
+                            <img alt={''} src={`${pathToIcon}/LOGO3.png`}/>
+                            <img alt={''} src={`${pathToIcon}/LOGO4.png`}/>
+                            <img alt={''} src={`${pathToIcon}/LOGO5.png`}/>
                         </div>
                     </div>
                 </div>
