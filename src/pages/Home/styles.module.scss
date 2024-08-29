@@ -263,7 +263,7 @@
     .coreServices {
         .header {
             .servicesDescription {
-                @apply w-full p-0
+                @apply w-full p-6 mb-4
             }
 
             .bottomDesc {
@@ -279,7 +279,7 @@
             @apply top-[70%] left-[20px] z-10
         }
 
-        @apply p-[0_50px]
+        @apply p-[0_50px] mt-[60px]
     }
 }
 
@@ -455,7 +455,7 @@
             .leftContent {
                 .underImageWrap {
                     img {
-                        @apply ml-[-5px] mt-[20px] mb-[-40px]
+                        @apply ml-[-5px] mb-[-40px]
                     }
                 }
 
@@ -467,7 +467,7 @@
                     @apply mt-4
                 }
 
-                @apply w-full mt-48
+                @apply w-full mt-2
             }
 
             .rightContent {
@@ -707,7 +707,7 @@
                 @apply w-full ml-0 ml-[50%] translate-x-[-50%]
             }
 
-            @apply p-[206px_60px_0_60px] w-full
+            @apply p-[120px_60px_0_60px] w-full
         }
     }
 }
