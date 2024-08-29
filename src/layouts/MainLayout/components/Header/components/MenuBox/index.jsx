@@ -24,7 +24,7 @@ export default function MenuBox({menu, isHomeMenu = false}) {
         <div className={styles.menuList}>
             {
                 menu.map((item, index) => {
-                    const isContactBtn = item.title === 'Contact'
+                    const isContactBtn = item.title === 'Contact' 
 
                     return (
                         <div key={index} onClick={() => handleClickMenuItem(item)}

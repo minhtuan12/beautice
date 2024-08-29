@@ -4,67 +4,73 @@ import {
     IdcardOutlined,
     InfoOutlined,
     PictureOutlined,
-    VerticalAlignTopOutlined
+    VerticalAlignTopOutlined,
+    MailOutlined
 } from '@ant-design/icons'
 
 export const mainMenu = [
     {
-        title: 'Home',
+        label: 'Home',
         href: '/',
         icon: <HomeOutlined/>,
         children: [
             {
-                title: 'Home',
+                key: '/',
+                label: 'Home',
                 href: '/',
                 icon: <VerticalAlignTopOutlined rotate={90}/>
             },
             {
-                title: 'Home 2',
+                key: '/home2',
+                label: 'Home 2',
                 href: '/home2',
                 icon: <VerticalAlignTopOutlined rotate={90}/>
             }
         ]
     },
     {
-        title: 'About',
+        key: '/about',
+        label: 'About',
         href: '/about',
         icon: <InfoOutlined/>,
-        children: []
     },
     {
-        title: 'Service',
+        key: '/service',
+        label: 'Service',
         href: '/service',
         icon: <AppstoreOutlined/>,
-        children: []
     },
     {
-        title: 'Gallery',
+        key: '/gallery',
+        label: 'Gallery',
         href: '/gallery',
         icon: <PictureOutlined/>,
-        children: []
     },
     {
-        title: 'Blog',
+        key: '/blog',
+        label: 'Blog',
         href: '/blog',
         icon: <IdcardOutlined/>,
-        children: []
     },
     {
-        title: 'Contact',
+        type: 'divider',
+    },
+    {
+        key: '/#',
+        label: 'Contact',
         href: null,
-        icon: null,
-        children: []
+        icon: <MailOutlined />,
     }
 ]
 
 export const homeMenu = [
     {
-        title: 'Home',
+        label: 'Home',
         href: '/',
         icon: ''
     },
     {
-        title: 'Home 2',
+        label: 'Home 2',
         href: '/home2',
         icon: ''
     }

@@ -101,3 +101,121 @@ img {
 .angleLeft {
     @apply w-fit top-[50%] left-[50px] flex absolute rotate-[180deg]
 }
+
+.custom-drawer {
+    .ant-drawer-title {
+        @apply ml-2
+    }
+
+    .ant-drawer-close {
+        span {
+            @apply text-[#091156] text-[20px]
+        }
+
+        @apply bg-transparent #{!important}
+    }
+
+    .ant-drawer-body {
+        @apply py-4 px-2
+    }
+}
+
+.custom-menu {
+    //.ant-menu-item:last-child:not(.ant-menu-submenu) {
+    //    span {
+    //        svg {
+    //            @apply fill-[#ff64ae]
+    //        }
+    //    }
+    //
+    //    .ant-menu-title-content {
+    //        @apply text-[#ff64ae]
+    //    }
+    //}
+    //
+    //.ant-menu-submenu .ant-menu-item:last-child {
+    //    span {
+    //        svg {
+    //            @apply fill-[#8b8b8b]
+    //        }
+    //    }
+    //
+    //    .ant-menu-title-content {
+    //        @apply text-[20px] tracking-[0.04rem] text-[#8b8b8b] font-[500]
+    //    }
+    //}
+
+    .ant-menu-item-selected {
+        span {
+            svg {
+                @apply fill-[#091156]
+            }
+        }
+
+        .ant-menu-title-content {
+            @apply text-[#091156]
+        }
+    }
+
+    .ant-menu-submenu-inline, .custom-menu .ant-menu-item {
+        .ant-menu-submenu-title {
+            @apply h-[60px] m-0 ml-1 #{!important}
+        }
+
+        @apply p-0 #{!important}
+    }
+
+    .ant-menu-submenu-inline, .ant-menu-item {
+        span {
+            svg {
+                @apply text-[20px] text-[#8b8b8b] font-[500]
+            }
+        }
+
+        span {
+            @apply text-[20px] tracking-[0.04rem] text-[#8b8b8b] font-[500]
+        }
+
+        &:hover {
+            @apply bg-[transparent]
+        }
+
+        @apply py-2
+    }
+
+    .ant-menu-submenu-selected {
+        i {
+            &:before, &:after {
+                @apply bg-[#091156]
+
+            }
+        }
+
+        .ant-menu-submenu-title {
+            .ant-menu-item-icon {
+                svg {
+                    @apply fill-[#091156]
+                }
+            }
+
+            .ant-menu-title-content {
+                @apply text-[#091156]
+            }
+        }
+
+        .ant-menu-item-selected {
+
+            svg {
+                @apply fill-[#091156]
+            }
+
+            span {
+                @apply text-[#091156]
+            }
+        }
+    }
+
+    .ant-menu-item {
+        @apply h-[64px]
+    }
+}

@@ -193,10 +193,14 @@
                 }
 
                 .footerSocial {
-                    @apply mr-[-12%]
+                    .socialItem {
+                        @apply mr-0 w-[30px]
+                    }
+
+                    @apply mr-0 gap-[50px]
                 }
 
-                @apply items-center justify-center flex-col w-full
+                @apply items-center justify-center flex-col w-full mt-[180px]
             }
 
             @apply absolute top-0 w-full h-full p-[200px_25px] z-10
@@ -234,26 +238,85 @@
                     .informationSection {
                         .list {
                             .item {
-                                @apply mb-[30px]
+                                @apply mb-[10px]
                             }
                         }
 
-                        @apply ml-[100px]
+                        @apply ml-0 flex-wrap
                     }
 
-                    @apply ml-0 mt-[60px]
+                    @apply ml-0 mt-[90px] justify-between
                 }
 
-                @apply flex-col
+                @apply flex-col absolute left-1/2 translate-x-[-50%] p-0
             }
 
             .lower {
-                .copyRight {
-                    @apply w-full text-center mt-[30px]
+                .footerSocial {
+                    .socialItem {
+                        @apply mr-0 w-[25px]
+                    }
+
+                    @apply absolute bottom-[35px] left-1/2 translate-x-[-50%] gap-[50px]
                 }
+
+                .copyRight {
+                    @apply w-full text-center
+                }
+
+                @apply absolute bottom-[60px] left-0 p-[0_30px]
             }
         }
 
         @apply relative mt-[70px] h-[950px] w-full
+    }
+}
+
+@media (max-width: 560px) {
+    .footerWrap {
+        .aboveBg {
+            .bottomImg {
+                @apply h-[1000px] w-full
+            }
+        }
+
+        .footerContent {
+            .upper {
+                .rightFooter {
+                    .section {
+                        .title {
+                            @apply text-center
+                        }
+
+                        .list {
+                            .item {
+                                @apply w-fit
+                            }
+                            @apply grid grid-cols-2 gap-x-[30px]
+                        }
+
+                        @apply relative left-1/2 translate-x-[-50%] h-fit w-fit
+                    }
+
+                    .informationSection {
+                        .list {
+                            .item {
+                                @apply mb-[10px]
+                            }
+
+                            @apply flex flex-col
+                        }
+
+                        @apply mt-[30px]
+                    }
+
+                    @apply flex-wrap
+                }
+
+                @apply w-[60%]
+            }
+        }
+
+        @apply h-[1150px] mt-[150px]
     }
 }

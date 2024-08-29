@@ -49,10 +49,10 @@
 
             &:hover {
                 transition: all 0.3s ease;
-                @apply p-[91px_77px_96px_77px] w-[424px] shadow-[0_25px_50px_25px_#F6F7FF]
+                @apply p-[91px_77px_96px_77px] bg-white w-[424px] shadow-[0_25px_50px_25px_#F6F7FF]
             }
 
-            @apply mt-[5px] bg-white h-[626px] w-[270px] rounded-[42px] p-0 cursor-pointer p-[91px_0_96px_0]
+            @apply mt-[5px] bg-transparent h-[626px] w-[270px] rounded-[42px] p-0 cursor-pointer p-[91px_0_96px_0]
         }
 
         @apply mt-[82px] flex items-center justify-between

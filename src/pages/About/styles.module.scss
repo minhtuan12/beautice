@@ -71,9 +71,46 @@
         }
 
         .content {
+            @apply w-full
         }
 
-        @apply relative z-[1] p-[655px_179px_149.5px_178px] mt-[-385px] h-[1533.5px]
+        @apply relative z-[1] p-[655px_0_149.5px_0] mt-[-385px] h-[1533.5px]
+    }
+
+    .businessSloganWrap {
+        .bgImage {
+            @apply w-full absolute top-0 left-0 z-[-1]
+        }
+
+        .bgMask {
+            @apply w-full absolute top-0 left-0 z-[-1]
+        }
+
+        .sloganContent {
+            .sloganTitle {
+                @apply text-[16px] font-[600] leading-[20px] text-center text-[#ABB4FF] h-[20px]
+            }
+
+            .sloganSubTitle {
+                & {
+                    width: calc((100vw * 732px) / (1440px));
+                }
+
+                @apply text-[36px] font-[600] leading-[45px] text-center text-white h-[97px] mt-[12px]
+            }
+
+            .sloganDescription {
+                & {
+                    width: calc((100vw * 680px) / (1440px));
+                }
+
+                @apply text-[16px] font-[400] leading-[24px] tracking-widest text-center text-[#CACACA] h-[56px] mt-[12px]
+            }
+
+            @apply w-full p-[164px_354px_168px_354px]
+        }
+
+        @apply w-full relative h-[529px]
     }
 
     @apply p-[229px_0_0_0]

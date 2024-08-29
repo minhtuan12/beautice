@@ -41,6 +41,23 @@ export default function About() {
                 </div>
             </div>
 
+            <div className={styles.businessSloganWrap}>
+                <img alt={''} src={`${pathToIcon}/unsplash_Pe9IXUuC6QU.png`} className={styles.bgImage}/>
+                <img alt={''} src={`${pathToIcon}/Background Mask.png`} className={styles.bgMask}/>
+                <div className={styles.sloganContent}>
+                    <div className={styles.sloganTitle}>
+                        Business Slogan
+                    </div>
+                    <div className={styles.sloganSubTitle}>
+                        Best responsibility and service
+                        for our customers
+                    </div>
+                    <div className={styles.sloganDescription}>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis
+                    </div>
+                </div>
+            </div>
+
         </div>
     </MainLayout>
 }

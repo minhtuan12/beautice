@@ -98,18 +98,20 @@
         .content {
             .leftPartSlider {
                 .title {
-                    @apply text-[40px] w-[70%]
+                    @apply text-[40px] w-[80%]
                 }
 
                 .description {
-                    @apply w-[70%] mt-[20px]
+                    @apply w-[80%] mt-[20px]
                 }
 
                 .detailBtn {
                     button {
-                        @apply w-[35%] mt-[50px]
+                        @apply w-[200px] mt-[50px]
                     }
                 }
+
+                @apply ml-10
             }
 
             .rightPartSlider {
@@ -133,6 +135,18 @@
             .leftPartSlider {
                 .title, .description {
                     @apply w-full
+                }
+
+                .description {
+                    @apply mt-16
+                }
+
+                .detailBtn {
+                    button {
+                        @apply h-[50px]
+                    }
+
+                    @apply w-[500px]
                 }
             }
         }
@@ -323,6 +337,16 @@
             }
 
             .leftContent {
+                .underImageWrap {
+                    img {
+                        @apply relative left-1/2 translate-x-[-50%]
+                    }
+                }
+
+                .contentDesc {
+                    @apply w-full
+                }
+
                 .contentUnderTitle {
                     @apply w-full
                 }
@@ -349,17 +373,23 @@
             }
 
             .leftContent {
-                .underImageWrap {
-                    img {
-                        @apply ml-[-63px]
-                    }
+                .contentTitle {
+                    @apply text-center
                 }
 
                 .contentDesc {
-                    @apply mt-12
+                    @apply text-center mt-8
                 }
 
-                @apply ml-[50%] translate-x-[-50%] mt-10
+                .contentUnderTitle {
+                    @apply w-full text-center
+                }
+
+                .optionBtn {
+                    @apply justify-center
+                }
+
+                @apply ml-[50%] translate-x-[-50%] mt-14
             }
 
             @apply w-full flex-col-reverse px-0
@@ -375,7 +405,7 @@
             .leftContent {
                 .underImageWrap {
                     img {
-                        @apply ml-[-50px] mt-[20px] mb-[-40px]
+                        @apply ml-[-5px] mt-[20px] mb-[-40px]
                     }
                 }
 
@@ -384,7 +414,7 @@
                 }
 
                 .optionBtn {
-                    @apply mt-[80px]
+                    @apply mt-4
                 }
 
                 @apply w-full mt-48
@@ -409,6 +439,24 @@
     .aboutUs {
         .content {
             .leftContent {
+                .underImageWrap {
+                    img {
+                        @apply ml-[-5px]
+                    }
+                }
+
+                .optionBtn {
+                    button {
+                        @apply h-[50px]
+                    }
+
+                    .playBtnOption {
+                        @apply ml-0 mt-6
+                    }
+
+                    @apply w-[350px] mt-24 flex justify-center flex-wrap relative left-1/2 translate-x-[-50%]
+                }
+
                 @apply mt-2
             }
         }
@@ -588,6 +636,22 @@
             }
 
             @apply p-[206px_60px_0_60px] w-full
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .contactUs {
+        .cuContent {
+            .cuFormWrap {
+                .formContent {
+                    .sendMsgBtn {
+                        button {
+                            @apply w-[200px] h-[50px]
+                        }
+                    }
+                }
+            }
         }
     }
 }

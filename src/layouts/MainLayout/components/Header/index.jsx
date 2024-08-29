@@ -5,6 +5,7 @@ import {useLocation, useNavigate} from "react-router-dom";
 import {CloseOutlined, MenuOutlined} from '@ant-design/icons'
 import {pathToIcon} from "../../../../utils/constants.js";
 import MenuBox from "./components/MenuBox/index.jsx";
+import {Drawer, Menu} from "antd";
 
 export default function Header({isLightTheme}) {
     const navigate = useNavigate()
@@ -61,23 +62,23 @@ export default function Header({isLightTheme}) {
             {
                 !isVisibleMenuBtn ? <div className={isLightTheme ? styles.themeLightMenu : styles.mainMenu}>
                     {
-                        mainMenu.slice(0, -1).map((item, index) => (
+                        mainMenu.slice(0, -2).map((item, index) => (
                             <div key={index}
                                  className={`${item?.href === location.pathname ? styles.activeOption : styles.option} 
-                                                        ${item.title === 'Home' ? 'w-[66px]' : ''}`}
-                                 onClick={() => item.title === 'Home' ? handleToggleHomeMenu() :
+                                                        ${item.label === 'Home' ? 'w-[66px]' : ''}`}
+                                 onClick={() => item.label === 'Home' ? handleToggleHomeMenu() :
                                      handleNavigate(item?.href)
                                  }
-                                 ref={item.title === 'Home' ? homeMenuBtnRef : null}
+                                 ref={item.label === 'Home' ? homeMenuBtnRef : null}
                                  onBlur={() => setIsVisibleHomeMenu(!isVisibleHomeMenu)}
                             >
-                                {item.title}
+                                {item.label}
                                 {
-                                    (item.title === 'Home' && isVisibleHomeMenu) ?
+                                    (item.label === 'Home' && isVisibleHomeMenu) ?
                                         <MenuBox isHomeMenu menu={mainMenu[0].children}/> : ''
                                 }
                                 {
-                                    item.title === 'Home' ?
+                                    item.label === 'Home' ?
                                         (
                                             !isVisibleHomeMenu ?
                                                 (
@@ -106,12 +107,37 @@ export default function Header({isLightTheme}) {
                     <div className={`${styles.menuBtn} ${isVisibleMenuBox ? 'rotate-[90deg]' : ''}`}
                          onClick={handleToggleMainMenu}
                     >
-                        {isVisibleMenuBox ? <CloseOutlined/> : <MenuOutlined/>}
+                        {
+                            isVisibleMenuBox ? <CloseOutlined style={{fontSize: '26px'}}/>
+                                : <MenuOutlined style={{fontSize: '26px'}}/>
+                        }
                     </div>
-                    {
-                        isVisibleMenuBox ? <MenuBox menu={mainMenu}/> : ''
-                    }
+                    {/*{*/}
+                    {/*    isVisibleMenuBox ? <MenuBox menu={mainMenu}/> : ''*/}
+                    {/*}*/}
                 </> : ''
+            }
+            {
+                isVisibleMenuBtn ?
+                    <Drawer
+                        className={'custom-drawer'}
+                        title={<div className={'text-[22px] text-[#091156] font-medium'}>Pages</div>}
+                        onClose={() => setIsVisibleMenuBox(false)}
+                        open={isVisibleMenuBox}
+                    >
+                        <Menu
+                            className={'custom-menu'}
+                            onClick={(item) => {
+                                navigate(item.key)
+                            }}
+                            mode="inline"
+                            items={mainMenu}
+                            style={{
+                                fontSize: '22px',
+                            }}
+                            selectedKeys={[location.pathname]}
+                        />
+                    </Drawer> : ''
             }
         </div>
     </div>
