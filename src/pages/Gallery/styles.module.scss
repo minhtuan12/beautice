@@ -1,0 +1,131 @@
+.galleryWrap {
+    .top {
+        .header {
+            .heading {
+                .title {
+                    @apply text-[16px] font-[600] leading-[20px] text-[#FF64AE]
+                }
+
+                .subTitle {
+                    & {
+                        width: calc((100vw * 615px) / (1440px));
+                    }
+
+                    @apply text-[36px] font-[600] leading-[45px] text-[#091156] h-[104px] mt-[12px]
+                }
+            }
+
+            .description {
+                & {
+                    width: calc((100vw * 407px) / (1440px));
+                }
+
+                @apply text-[16px] font-[400] leading-[24px] tracking-widest text-[#8B8B8B]
+            }
+
+            @apply flex flex-wrap justify-between items-center w-full pr-[20px]
+        }
+
+        .imagesWrap {
+            & {
+                grid-template-columns: repeat(auto-fill, 356px);
+            }
+
+            @apply w-full mt-[75px] grid gap-y-[38px] gap-x-[36px] place-content-center
+        }
+
+        .bottomDesc {
+            & {
+                width: calc((100vw * 660px) / (1440px));
+            }
+
+            span {
+                @apply text-[#091156]
+            }
+
+            @apply mt-[66px] text-[16px] font-[400] leading-[24px] tracking-widest text-[#8B8B8B]
+        }
+
+        @apply p-[0_150px]
+    }
+
+    .between {
+        .bgImage {
+            @apply absolute top-0 left-0 w-full
+        }
+
+        .bgMask {
+            @apply absolute top-0 left-0 w-full
+        }
+
+        .content {
+            .topContent {
+                .videoTitle {
+                    @apply text-[36px] font-[600] leading-[45px] text-center text-white h-[51px]
+                }
+
+                .videoDesc {
+                    & {
+                        width: calc((100vw * 555px) / (1440px));
+                    }
+
+                    @apply text-[16px] font-[400] leading-[24px] tracking-widest text-center h-[56px] mt-[13px] text-[#CACACA]
+                }
+
+                @apply mt-[8px] ml-[1px]
+            }
+
+            .playBtnWrap {
+                @apply grid place-items-center mt-[21px] ml-[7px]
+            }
+
+            @apply absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-48%]
+        }
+
+        @apply relative h-[628px] w-full mt-[126px]
+    }
+
+    .bottom {
+        .bubbleBg {
+            @apply absolute top-0 right-0 z-[-1]
+        }
+
+        .quotaContent {
+            .leftContent {
+                .quotaTitle {
+                    @apply text-[16px] font-[600] leading-[20px] text-[#FF64AE]
+                }
+
+                .quotaSubTitle {
+                    & {
+                        width: calc((100vw * 642px) / (1440px));
+                    }
+
+                    @apply text-[36px] font-[600] leading-[45px] text-[#091156] h-[94px] mt-[12px]
+                }
+
+                .quotaDesc {
+                    & {
+                        width: calc((100vw * 561px) / (1440px));
+                    }
+
+                    @apply text-[16px] font-[400] leading-[24px] tracking-widest text-[#8B8B8B] h-[64px] mt-[18px]
+                }
+            }
+
+            .btnWrap {
+                button {
+                    @apply w-full h-full text-[16px] font-[600] leading-[24px] tracking-widest
+                }
+
+                @apply w-[316px] h-[58px] shadow-[0_17px_22px_0_#FFEDF6] mt-[68px]
+            }
+
+            @apply flex justify-between flex-wrap w-full
+        }
+
+        @apply relative h-[389.63px] pl-[150px] pt-[120px] pr-[206.56px] mb-[253px]
+    }
+
+    @apply relative top-[229px] h-auto
+}

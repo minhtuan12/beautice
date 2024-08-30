@@ -1,0 +1,11 @@
+.playBtn {
+    .ellipse {
+        @apply absolute top-0 left-0 w-full
+    }
+
+    .polygon {
+        @apply absolute top-1/2 left-1/2 translate-x-[-40%] translate-y-[-50%]
+    }
+
+    @apply relative w-[166px] h-[167px] ml-[-7px]
+}

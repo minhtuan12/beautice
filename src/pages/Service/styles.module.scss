@@ -1,0 +1,142 @@
+.serviceWrap {
+    .introduction {
+        .background {
+            img {
+                @apply w-full h-full
+            }
+
+            @apply w-full h-full absolute top-0 z-[-1]
+        }
+
+        .content {
+            .title {
+                @apply text-[16px] font-[600] leading-[20px] text-center text-[#FF64AE]
+            }
+
+            .subTitle {
+                @apply text-[36px] font-[600] leading-[45px] text-center text-[#091156] h-[57px] mt-[12px]
+            }
+
+            .description {
+                @apply h-[28px] text-[16px] font-[400] leading-[24px] tracking-widest text-center text-[#8B8B8B] mt-[12px]
+            }
+
+            .imagesWrap {
+                .top, .bottom {
+                    @apply flex justify-between
+                }
+
+                .bottom {
+                    @apply mt-[68px]
+                }
+
+                @apply mt-[70px]
+            }
+
+            @apply w-full p-[30px_170px_87px_170px]
+        }
+
+        @apply w-full h-[893px] relative top-[199px]
+    }
+
+    .consultation, .treatments, .product {
+        .sectionDescription {
+            .desc {
+                @apply text-[16px] font-[400] leading-[24px] tracking-widest text-left h-[87px]
+            }
+
+            .option {
+                img {
+                    @apply w-[25px] h-[25px] ml-[13px]
+                }
+
+                @apply flex mt-[9px] text-[#091156] text-[16px] font-[600] leading-[24px] tracking-widest
+            }
+        }
+
+        @apply w-full p-[0_153px_0_150px]
+    }
+
+    .consultation {
+        @apply mt-[272px]
+    }
+
+    .treatments {
+        @apply mt-[101px]
+    }
+
+    .product {
+        @apply mt-[104px] ml-[1px]
+    }
+
+    .videoWrap {
+        .bgImage {
+            @apply w-full absolute top-0 left-0 z-[-1]
+        }
+
+        .bgMask {
+            @apply w-full absolute top-0 left-0 z-[-1]
+        }
+
+        .videoContent {
+            .left {
+                .videoTitle {
+                    @apply text-[36px] font-[600] leading-[45px] text-white h-[97px] w-[80%]
+                }
+
+                .videoDesc {
+                    @apply text-[16px] font-[400] leading-[24px] tracking-widest text-[#CACACA] mt-[12px] w-[80%]
+                }
+
+                & {
+                    width: calc((100vw * 732px) / (1440px));
+                }
+
+                @apply h-[165px]
+            }
+
+            .right {
+                .playBtn {
+                    .ellipse {
+                        @apply absolute top-0 left-0 w-full
+                    }
+
+                    .polygon {
+                        @apply absolute top-1/2 left-1/2 translate-x-[-40%] translate-y-[-50%]
+                    }
+
+                    @apply relative w-[166px] h-[167px] ml-[-7px]
+                }
+
+                .text {
+                    @apply text-[16px] font-[600] leading-[24px] tracking-widest text-white ml-[8px] mt-[-4px]
+                }
+
+                @apply h-[127px] flex-1 flex items-center
+            }
+
+            @apply flex flex-wrap justify-center relative h-full w-full items-center
+        }
+
+        @apply relative h-[529px] mt-[123px] p-[182px_200px_182px_150px]
+    }
+
+    .faqWrap {
+        .heading {
+            &:after {
+                content: '';
+                @apply ml-[-5px] bg-[#FF64AE] rounded-[5px] absolute block bottom-0 left-1/2 translate-x-[-50%] w-[40px] h-[5px]
+            }
+
+            @apply h-[66px] text-[36px] font-[600] leading-[45px] text-center relative ml-[10px]
+        }
+
+        .faqContent {
+            @apply mt-[49px]
+        }
+
+        @apply mt-[116px] w-full p-[0_234px] mb-[95px]
+    }
+
+    @apply w-full
+}

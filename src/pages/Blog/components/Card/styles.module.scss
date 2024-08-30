@@ -1,0 +1,7 @@
+.cardWrap {
+    .title {
+        @apply text-[16px] font-[600] leading-[20px] text-[#091156]
+    }
+
+    @apply shadow-[-2px_4px_31px_9px_#F2F4FF] rounded-[25px] w-[350px] p-[58px_28px_60px_49px]
+}

@@ -1,0 +1,137 @@
+.teamWrap {
+    .introduction {
+        .bgImage {
+            @apply absolute top-0 right-0 z-[-1]
+        }
+
+        .extraExpert {
+            .proHeader {
+                @apply ml-[-80px] #{!important}
+            }
+
+            @apply mt-0 #{!important}
+        }
+
+        @apply relative top-[229px]
+    }
+
+    .assistanceTeam {
+        .header {
+            .title {
+                @apply text-[16px] font-[600] leading-[20px] text-center text-[#FF64AE]
+            }
+
+            .subTitle {
+                @apply mt-[12px] h-[57px] text-[36px] font-[600] leading-[45px] text-center text-[#091156]
+            }
+
+            .desc {
+                @apply mt-[12px] h-[28px] text-[16px] font-[400] leading-[24px] text-center tracking-widest text-[#8B8B8B]
+            }
+        }
+
+        .teamProfileWrap {
+
+            @apply mt-[110px] w-full p-[0_286px_0_150px]
+        }
+
+        @apply mt-[382px]
+    }
+
+    .goal {
+        .background {
+            @apply absolute top-0 left-0 w-full h-full
+        }
+
+        .backgroundMask {
+            @apply absolute top-0 left-0 w-full h-full
+        }
+
+        .goalContent {
+            .goalTitle {
+                & {
+                    width: calc((100vw * 480px) / (1440px));
+                }
+
+                @apply text-[36px] font-[600] leading-[45px] text-center text-white h-[97px] ml-[24px] mt-[-23px]
+            }
+
+            .goalDesc {
+                & {
+                    width: calc((100vw * 680px) / (1440px));
+                }
+
+                @apply text-[16px] font-[400] leading-[24px] tracking-widest text-center text-[#CACACA] ml-[-2px]
+            }
+
+            @apply absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] grid place-items-center
+        }
+
+        @apply mt-[125px] relative h-[529px]
+    }
+
+    .testimonialsWrap {
+        .topBg {
+            @apply absolute top-0 left-0
+        }
+
+        .bottomBg {
+            @apply absolute bottom-0 right-0
+        }
+
+        .mainContent {
+            .mainHeader {
+                .mainTitle {
+                    @apply text-[16px] font-[600] leading-[20px] text-center text-[#FF64AE]
+                }
+
+                .mainSubTitle {
+                    @apply text-[36px] font-[600] leading-[45px] text-center text-[#091156] h-[57px] mt-[12px]
+                }
+
+                .mainDesc {
+                    @apply text-[16px] font-[400] leading-[24px] tracking-widest text-center text-[#8B8B8B] mt-[12px]
+                }
+
+                & {
+                    width: calc((100vw * 680px) / (1440px));
+                }
+
+                @apply mt-[4px]
+            }
+
+            .bottomContent {
+                .customersWrap {
+                    & {
+                        grid-template-columns: repeat(4, 544px);
+                        scroll-snap-type: x mandatory
+                    }
+
+                    @apply grid overflow-auto w-auto place-content-start gap-x-[30px] scroll-smooth
+                }
+
+                @apply w-[545px] relative left-1/2 translate-x-[-50%] mt-[62px] ml-[2px]
+            }
+
+            .arrowIconLeft {
+                @apply absolute top-1/2 left-0 translate-y-[-320%] translate-x-[187%] cursor-pointer
+            }
+
+            .arrowIconRight {
+                @apply absolute top-1/2 right-0 translate-y-[330%] translate-x-[192%] cursor-pointer
+            }
+
+            .inactiveArrowIconLeft {
+                @apply absolute top-1/2 left-0 translate-y-[280%] translate-x-[-165%] cursor-default
+            }
+
+            .inactiveArrowIconRight {
+                @apply absolute top-1/2 right-0 translate-y-[290%] translate-x-[170%] cursor-default
+            }
+
+            @apply w-fit absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] mt-[7px]
+        }
+
+        @apply relative h-[706.1px] mb-[-100px]
+    }
+}

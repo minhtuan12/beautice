@@ -120,6 +120,10 @@ img {
     }
 }
 
+.ant-menu {
+    @apply border-0 #{!important}
+}
+
 .custom-menu {
     //.ant-menu-item:last-child:not(.ant-menu-submenu) {
     //    span {

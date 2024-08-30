@@ -3,7 +3,7 @@ import styles from './styles.module.scss'
 import MainLayout from "../../layouts/MainLayout/index.jsx";
 import {pathToIcon} from "../../utils/constants.js";
 import ExpertSection from "../../components/ExpertSection/index.jsx";
-import OurSection from "./components/OurSection/index.jsx";
+import SectionWithSideImage from "../../components/SectionWithSideImage/index.jsx";
 
 export default function About() {
     return <MainLayout>
@@ -54,7 +54,8 @@ export default function About() {
                         for our customers
                     </div>
                     <div className={styles.sloganDescription}>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus
+                        venenatis
                     </div>
                 </div>
             </div>
@@ -65,7 +66,7 @@ export default function About() {
                 </div>
                 <div className={styles.mainContent}>
                     <div className={styles.ourVision}>
-                        <OurSection
+                        <SectionWithSideImage
                             imageUrl={`${pathToIcon}/Illustration-1.png`}
                             title={'Our Vision'}
                             subTitle={'Be the best and go international'}
@@ -73,7 +74,7 @@ export default function About() {
                         />
                     </div>
                     <div className={styles.ourMission}>
-                        <OurSection
+                        <SectionWithSideImage
                             isReverse
                             contentWidth={'calc((100vw * 530) / 1440)'}
                             descriptionWidth={'calc((100vw * 483) / 1440)'}

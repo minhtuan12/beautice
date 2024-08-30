@@ -62,16 +62,3 @@ export const mainMenu = [
         icon: <MailOutlined />,
     }
 ]
-
-export const homeMenu = [
-    {
-        label: 'Home',
-        href: '/',
-        icon: ''
-    },
-    {
-        label: 'Home 2',
-        href: '/home2',
-        icon: ''
-    }
-]

@@ -1,0 +1,103 @@
+
+@keyframes slideDown {
+    from {
+        transform: translateY(0%);
+    }
+    to {
+        transform: translateY(100%);
+    }
+}
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0%);
+    }
+}
+.custom-faqs {
+    .ant-menu-submenu-title {
+        img {
+            @apply mr-[-15px]
+        }
+
+        &:hover {
+            @apply bg-white #{!important}
+        }
+
+        @apply h-[55px] #{!important}
+    }
+
+    .ant-menu-submenu-inline {
+        &:nth-child(3) {
+            .ant-menu-submenu-title {
+                @apply mt-[-4px] #{!important}
+            }
+        }
+
+        &:last-child {
+            .ant-menu-submenu-title {
+                @apply mt-[-4px] #{!important}
+            }
+        }
+
+        .custom-slide-down-enter {
+            transition: slideDown 0.3s ease-out, opacity 0.3s ease-out;
+            @apply opacity-0
+        }
+
+        .custom-slide-down-enter-active {
+            @apply opacity-100
+        }
+
+        .custom-slide-down-leave {
+            transition: slideUp 0.25s ease-in, opacity 0.25s ease-in;
+            @apply opacity-100
+        }
+
+        .custom-slide-down-leave-active {
+            @apply opacity-0
+        }
+    }
+
+    .ant-menu-title-content {
+        @apply text-[16px] font-[600] leading-[24px] tracking-widest text-[#091156] ml-[7px]
+    }
+
+    .ant-menu-submenu-arrow {
+        @apply text-[20px]
+    }
+
+    .ant-menu-submenu-active {
+        .ant-menu-submenu-title {
+            @apply border-b-[1px] border-b-[#091156] rounded-none h-[55px]
+        }
+    }
+
+    .ant-menu-inline {
+        @apply h-[212px] bg-[#f6f7ff] rounded-b-[20px] mb-[13px] #{!important}
+    }
+
+    .ant-menu-item-only-child {
+        &:last-child {
+            @apply pb-[40px] pt-[11px]
+        }
+
+        .ant-menu-title-content {
+            @apply whitespace-normal text-[14px] h-full italic font-[400] leading-[21px] tracking-widest text-[#8B8B8B] ml-[24px]
+        }
+
+        @apply h-[100px] p-[48px_63px_0_76px] bg-[#f6f7ff] my-0
+    }
+
+
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(0%);
+    }
+    to {
+        transform: translateY(100%);
+    }
+}
