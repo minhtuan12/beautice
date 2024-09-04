@@ -37,3 +37,40 @@
 
     @apply shadow-[10px_13px_80px_14px_#F2F4FF] h-[953px] rounded-[50px]
 }
+
+@media (min-width: 1450px) {
+    .cardWrap {
+        .content {
+            @apply w-full p-[60px_62px_100px_76px] shadow-[10px_13px_80px_14px_#F2F4FF]
+        }
+
+        @apply w-[730px]
+    }
+}
+
+@media (max-width: 1430px) {
+    .cardWrap {
+        .content {
+            .subTitle, .description {
+                @apply h-auto
+            }
+
+            .btnWrap {
+                @apply mt-[50px]
+            }
+
+            @apply w-full p-[60px_62px_50px_76px] shadow-none flex-1
+        }
+
+        @apply relative left-1/2 translate-x-[-50%] w-[530px] flex flex-col h-fit
+    }
+}
+
+@media (max-width: 678px) {
+    .cardWrap {
+        .content {
+            @apply px-[40px]
+        }
+        @apply w-full h-fit
+    }
+}

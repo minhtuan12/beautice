@@ -54,15 +54,29 @@ export default function Blog() {
                                 }
                             </div>
                         </Card>
-                        <Card title={'Categories'} extraClassname={styles.categoriesWrap}>
-                            <div className={styles.categories}>
-                                {
-                                    categories.map((category, index) => (
-                                        <div key={index} className={styles.name}>{category}</div>
-                                    ))
-                                }
-                            </div>
-                        </Card>
+                        <div className={styles.flexBox}>
+                            <Card title={'Categories'} extraClassname={styles.categoriesWrap}>
+                                <div className={styles.categories}>
+                                    {
+                                        categories.map((category, index) => (
+                                            <div key={index} className={styles.name}>{category}</div>
+                                        ))
+                                    }
+                                </div>
+                            </Card>
+                            <Card title={'Social Connect'} extraClassname={`${styles.socialWrap} ${styles.hiddenBox}`}>
+                                <div className={styles.items}>
+                                    {
+                                        socialLinks.map((item, index) => (
+                                            <div key={index} className={styles.icon}>
+                                                <div className={styles.bgCircle}></div>
+                                                <img src={item.icon} alt={''}/>
+                                            </div>
+                                        ))
+                                    }
+                                </div>
+                            </Card>
+                        </div>
                         <Card title={'Cloud Tags'} extraClassname={styles.tagsWrap}>
                             <div className={styles.tags}>
                                 {

@@ -9,3 +9,31 @@
 
     @apply relative w-[166px] h-[167px] ml-[-7px]
 }
+
+@media (max-width: 860px) {
+    .playBtn {
+        .ellipse {
+            @apply w-[100px]
+        }
+
+        .polygon {
+            @apply w-[30px]
+        }
+
+        @apply relative w-[100px] h-[100px] ml-[-7px]
+    }
+}
+
+@media (max-width: 476px) {
+    .playBtn {
+        .ellipse {
+            @apply w-[80px]
+        }
+
+        .polygon {
+            @apply w-[20px]
+        }
+
+        @apply relative w-[80px] h-[80px] ml-[-7px]
+    }
+}

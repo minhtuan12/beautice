@@ -5,3 +5,9 @@
 
     @apply shadow-[-2px_4px_31px_9px_#F2F4FF] rounded-[25px] w-[350px] p-[58px_28px_60px_49px]
 }
+
+@media (max-width: 500px) {
+    .cardWrap {
+        @apply w-full pl-[35px] pr-[20px]
+    }
+}
