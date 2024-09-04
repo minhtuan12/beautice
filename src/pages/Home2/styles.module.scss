@@ -16,6 +16,10 @@
                 }
 
                 .detailBtnWrap {
+                    .playBtnNextToDetailBtn {
+                        @apply hidden
+                    }
+
                     button {
                         border: 1px solid #ffffff;
                         @apply w-full h-full bg-transparent rounded-[15px] tracking-widest #{!important}
@@ -78,6 +82,10 @@
         }
 
         .rightContent {
+            .imageUnderTitle {
+                @apply hidden
+            }
+
             .mainTitle {
                 @apply leading-[20px] h-[20px] text-[16px] font-[600] text-left text-[#FF64AE] w-full ml-[1px]
             }
@@ -130,8 +138,7 @@
 
         .content {
             .cardsWrap {
-                scroll-snap-type: x mandatory;
-                @apply flex justify-between w-full scroll-smooth
+                @apply flex justify-between w-full scroll-smooth flex-wrap
             }
 
             @apply mt-[68px] w-full
@@ -206,7 +213,7 @@
 
             .blogContent {
                 .blogCardWrap {
-                    @apply h-[543px] flex justify-between w-full
+                    @apply h-[543px] flex justify-between w-full flex-wrap
                 }
 
                 @apply mt-[79px] w-full
@@ -392,34 +399,113 @@
     }
 }
 
-@media (max-width: 1430px) {
+@media (min-width: 300px) and (max-width: 550px) {
+    .homeWrap {
+        .backgroundSliderWrap {
+            .sliderContent {
+                .leftSlider {
+                    .description {
+                        @apply hidden #{!important}
+                    }
+
+                    .detailBtnWrap {
+                        @apply mt-2 #{!important}
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 300px) and (max-width: 800px) {
     .homeWrap {
         .backgroundSliderWrap {
             .sliderContent {
                 .leftSlider {
                     .title {
-                        @apply w-[80%]
+                        @apply text-[28px] #{!important}
+                    }
+
+                    .description {
+                        display: -webkit-box;
+                        -webkit-line-clamp: 2;
+                        line-clamp: 2;
+                        -webkit-box-orient: vertical;
+                        @apply h-[50px] overflow-hidden mt-0 #{!important}
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 650px) and (max-width: 800px) {
+    .homeWrap {
+        .backgroundSliderWrap {
+            .sliderContent {
+                .leftSlider {
+                    .title {
+                        @apply text-[28px] #{!important}
+                    }
+
+                    .description {
+                        @apply text-[16px] mt-0 #{!important}
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 300px) and (max-width: 1000px) {
+    .homeWrap {
+        .backgroundSliderWrap {
+            .sliderContent {
+                .leftSlider {
+                    .title {
+                        @apply w-full h-auto
+                    }
+
+                    .description {
+                        @apply mt-5
                     }
 
                     .detailBtnWrap {
-                        @apply w-[80%]
+                        button {
+                            @apply w-1/2 #{!important}
+                        }
+
+                        .rightText {
+                            @apply leading-[24px];
+                            @apply text-[16px] font-[600] tracking-widest text-left text-white mt-[3px] mr-[-1px]
+                        }
+
+                        img {
+                            @apply h-[80px] w-[80px] mr-[5px]
+                        }
+
+                        .playBtnNextToDetailBtn {
+                            @apply flex w-1/2 items-center
+                        }
+
+                        @apply flex justify-between w-full gap-x-[50px]
                     }
 
-                    @apply w-2/3
+                    @apply absolute w-[80%] top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%]
                 }
 
                 .rightSlider {
-                    img {
-                        @apply ml-[-19px] w-1/2
-                    }
-
-                    @apply mr-[-12px]
+                    @apply hidden
                 }
 
-                @apply p-[18%_130px]
+                @apply p-[0_100px] block mt-4
             }
         }
+    }
+}
 
+@media (max-width: 1430px) {
+    .homeWrap {
         .aboutUsWrap {
             .leftImageWrap {
                 @apply w-2/5
@@ -435,13 +521,27 @@
         }
 
         .mainServices {
-            .content {
-                .cardsWrap {
-                    @apply overflow-x-auto
+            .header {
+                .serviceTitle {
+                    @apply leading-[20px] h-[20px] text-[16px] font-[600] text-center text-[#FF64AE]
+                }
+
+                .serviceDescription {
+                    @apply h-auto;
+                }
+
+                .subTitle {
+                    @apply h-auto
                 }
             }
 
-            @apply h-auto p-[0_50px_160px_50px]
+            .content {
+                .cardsWrap {
+                    @apply justify-center gap-[50px]
+                }
+            }
+
+            @apply h-auto p-[0_80px_160px_80px] mt-[60px]
         }
 
         .statisticsWrap {
@@ -459,18 +559,24 @@
         .blogWrap {
             .upperContent {
                 .blogHeader {
+                    .blogSubTitle {
+                        @apply h-auto
+                    }
+
+                    .blogDescription {
+                        @apply h-auto
+                    }
+
                     @apply w-full p-0
                 }
 
                 .blogContent {
                     .blogCardWrap {
-                        @apply overflow-x-auto scroll-smooth h-auto
+                        @apply h-auto justify-center gap-[50px]
                     }
-
-                    @apply w-[150%]
                 }
 
-                @apply overflow-hidden
+                @apply h-auto
             }
 
             .lowerContent {
@@ -513,75 +619,31 @@
                 @apply mt-[70px] flex-col
             }
 
-            @apply h-auto p-[150px_50px_100px_50px]
+            @apply h-auto p-[150px_150px_100px_150px]
         }
     }
 }
 
 @media (max-width: 870px) {
     .homeWrap {
-        .backgroundSliderWrap {
-            .sliderContent {
-                .leftSlider {
-                    .title {
-                        @apply leading-[30px] text-[24px] h-auto mt-10 w-full
-                    }
-
-                    .description {
-                        @apply h-[20px] whitespace-nowrap overflow-hidden overflow-ellipsis mt-2 w-full
-                    }
-
-                    .detailBtnWrap {
-                        button {
-                            @apply text-[13px]
-                        }
-
-                        @apply w-[70%] h-[40px]
-                    }
-
-                    @apply w-1/2
-                }
-
-                .rightSlider {
-                    .rightText {
-                        @apply text-[13px] mr-5
-                    }
-
-                    img {
-                        @apply ml-[-19px] w-[40%]
-                    }
-
-                    @apply mb-[60px] ml-[30%] mr-0
-                }
-
-                @apply p-[15%_10%]
-            }
-        }
-
         .aboutUsWrap {
             .leftImageWrap {
                 @apply hidden
             }
 
             .rightContent {
+                .imageUnderTitle {
+                    @apply flex mt-8 mb-8
+                }
+
                 .mainTitle, .underTitle, .descriptionUnder {
-                    @apply h-auto
+                    @apply h-auto text-center
                 }
 
-                @apply w-full
+                @apply w-full flex flex-col items-center
             }
 
-            @apply p-[120px_50px_70px_50px]
-        }
-
-        .mainServices {
-            .content {
-                .cardsWrap {
-                    @apply overflow-x-auto
-                }
-            }
-
-            @apply h-auto p-[0_50px_160px_50px]
+            @apply p-[120px_50px_70px_50px] h-auto
         }
 
         .statisticsWrap {
@@ -606,14 +668,8 @@
                 }
 
                 .blogContent {
-                    .blogCardWrap {
-                        @apply overflow-x-auto scroll-smooth h-auto
-                    }
-
-                    @apply w-[150%]
                 }
 
-                @apply overflow-hidden
             }
 
             .lowerContent {

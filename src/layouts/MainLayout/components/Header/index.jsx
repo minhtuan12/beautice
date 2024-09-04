@@ -57,7 +57,7 @@ export default function Header({isLightTheme}) {
     return <div className={`${styles.headerWrap} ${visibleStickyHeader ? styles.stickyHeader : ''}`}>
         {
             !isLightTheme ? <img src={`${pathToIcon}/Main Logo.svg`} alt=""/>
-                : <img src={`${pathToIcon}/Main Logo.png`} alt="" className={'!mt-[2px] !h-auto !ml-0'}/>
+                : <img src={`${pathToIcon}/Main Logo.png`} alt="" className={'!mt-[2px] !ml-0 !w-auto'}/>
         }
 
         <div className={styles.rightHeader}>
@@ -101,7 +101,7 @@ export default function Header({isLightTheme}) {
                     }
                 </div> : ''
             }
-            <div className={styles.contactBtn}>
+            <div className={styles.contactBtn} onClick={() => navigate('/contact')}>
                 <button>Contact</button>
             </div>
             {
@@ -111,7 +111,7 @@ export default function Header({isLightTheme}) {
                     >
                         {
                             isVisibleMenuBox ? <CloseOutlined style={{fontSize: '26px'}}/>
-                                : <MenuOutlined style={{fontSize: '26px'}}/>
+                                : <MenuOutlined style={{fontSize: '26px', color: isLightTheme ? '#fff' : ''}} />
                         }
                     </div>
                     {/*{*/}

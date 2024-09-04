@@ -26,7 +26,7 @@
 
     .mainContentWrap {
         .leftContent {
-
+            @apply bg-transparent
         }
 
         .rightContent {
@@ -51,9 +51,58 @@
             }
 
             .cardsWrap {
+                .categoriesWrap {
+                    .categories {
+                        .name {
+                            @apply text-[14px] font-[400] leading-[21px] tracking-widest text-[#8B8B8B] h-[23px]
+                        }
+
+                        @apply flex flex-col gap-y-[3px] w-full mt-[22px]
+                    }
+
+                    @apply mt-[83px] h-[250px]
+                }
+
+                .tagsWrap {
+                    .tags {
+                        .cloudTag {
+                            @apply w-full grid place-content-center rounded-[50px] h-[26px] shadow-[0_4px_17px_0_#EEF0FF] text-[14px] font-[400] leading-[21px] tracking-widest text-[#8B8B8B]
+                        }
+
+                        & {
+                            grid-template-columns: repeat(auto-fill, 82px);
+                        }
+
+                        @apply w-full mt-[22.5px] grid gap-y-[38px] gap-x-[8px] gap-y-[19px] ml-[-4.2px]
+                    }
+
+                    @apply mt-[83px] h-[274px]
+                }
+
+                .socialWrap {
+                    .items {
+                        .icon {
+                            img {
+                                @apply absolute top-[9px] left-[9px]
+                            }
+
+                            .bgCircle {
+                                @apply w-full h-full rounded-[50%] bg-white shadow-[0_4px_19px_11px_#F6F7FF]
+                            }
+
+                            @apply relative w-[43px] h-[43px]
+                        }
+
+                        @apply mt-[30px] flex flex-wrap gap-x-[21px] ml-[-5px]
+                    }
+
+                    @apply mt-[83px] h-[213px]
+                }
+
                 .postCard {
                     @apply mt-[28px]
                 }
+
                 @apply mt-[76px]
             }
         }
@@ -62,7 +111,19 @@
     }
 
     .bottom {
+        .pagination {
+            .page, .currentPage {
+                @apply text-[16px] w-[35px] font-[600] leading-[20px] text-center text-[#C7C7C7] basis-[35px] h-full rounded-[50%] bg-transparent grid place-content-center
+            }
 
+            .currentPage {
+                @apply shadow-[0_7px_37px_4px_#E6E9FF] bg-[#172176] text-white
+            }
+
+            @apply h-[35px] absolute translate-x-[-50%] translate-y-[-50%] top-1/2 left-1/2 inline-flex flex-nowrap justify-between gap-x-[17px] ml-[7px]
+        }
+
+        @apply mt-[115px] mb-[328px] w-full h-auto relative
     }
 
     @apply relative top-[140px]

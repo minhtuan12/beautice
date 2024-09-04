@@ -1,19 +1,19 @@
 .cardWrap {
+    .imageWrap {
+        @apply mt-[2px]
+    }
 
-}
+    .content {
+        .date {
+            @apply text-[14px] font-[600] leading-[21px] tracking-widest text-[#FF64AE] h-[25px]
+        }
 
-.imageWrap {
+        .desc {
+            @apply text-[12px] font-[400] leading-[18px] tracking-widest text-[#8B8B8B] mt-[5px]
+        }
 
-}
+        @apply w-[165px]
+    }
 
-.content {
-
-}
-
-.date {
-
-}
-
-.desc {
-
+    @apply flex justify-between h-[89px] w-full
 }

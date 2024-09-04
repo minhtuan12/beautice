@@ -29,16 +29,10 @@
         border: 1px solid #9BA2E0;
     }
 
-    & {
-        width: calc((100vw * 347px) / (1440px));
-    }
-    @apply h-full rounded-[25px] bg-white cursor-pointer border-none shadow-[0_25px_50px_5px_#F6F7FF]
+    @apply w-[347px] h-full rounded-[25px] bg-white cursor-pointer border-none shadow-[0_25px_50px_5px_#F6F7FF]
 }
 
 @media (min-width: 1450px) {
-    .cardWrap {
-        @apply w-[347px]
-    }
 }
 
 @media (max-width: 1430px) {
@@ -65,11 +59,7 @@
             @apply p-[20px] w-full
         }
 
-        &:last-child {
-            @apply mr-[calc(100%_-_calc((100%_/_3)_/_2)_-_calc(((100vw_-_100px)_-_calc((100%_/_3)_/_2))_/_2))]
-        }
-
-        @apply w-[calc((100%_/_3)_/_2)] m-[0_calc(((100vw_-_100px)_-_calc((100%_/_3)_/_2))_/_2)] h-auto flex-none
+        @apply h-auto flex-none w-full
     }
 }
 
@@ -97,10 +87,12 @@
             @apply p-[20px] w-full
         }
 
-        //&:last-child {
-        //    @apply mr-[calc(100%_-_calc((150%_/_3)_/_2)_-_calc(((100vw_-_100px)_-_calc((150%_/_3)_/_2))_/_2))]
-        //}
+        @apply h-auto flex-none
+    }
+}
 
-        @apply w-[calc((150%_/_3)_/_2)] m-[0_calc(((100vw_-_100px)_-_calc((150%_/_3)_/_2))_/_2)] h-auto flex-none
+@media (min-width: 700px) and (max-width: 1430px) {
+    .cardWrap {
+        @apply w-[400px]
     }
 }

@@ -82,6 +82,10 @@ export default function Home2() {
                         </div>
                         <div className={styles.detailBtnWrap}>
                             <button>More Details</button>
+                            <div className={styles.playBtnNextToDetailBtn}>
+                                <img alt={''} src={`${pathToIcon}/Group 4.png`}/>
+                                <div className={styles.rightText}>Tour Video</div>
+                            </div>
                         </div>
                     </div>
                     <div className={styles.rightSlider}>
@@ -102,6 +106,7 @@ export default function Home2() {
                     <div className={styles.underTitle}>
                         We are the best beauty clinic
                     </div>
+                    <img alt={''} src={`${pathToIcon}/Illustration-1.svg`} className={styles.imageUnderTitle}/>
                     <div className={styles.descriptionUnder}>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit, quam suscipit purus donec amet.
                         Egestas volutpat facilisi eu libero. Nunc, ipsum ornare mauris sit quam quis enim. Varius tellus

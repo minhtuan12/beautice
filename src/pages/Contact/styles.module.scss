@@ -1,0 +1,119 @@
+.contactWrap {
+    .background {
+        @apply absolute z-[-1] top-[85px]
+    }
+
+    .top {
+        .header {
+            .heading {
+                .title {
+                    @apply text-[16px] font-[600] leading-[20px] text-[#FF64AE]
+                }
+
+                .subTitle {
+                    @apply text-[36px] font-[600] leading-[45px] text-[#091156] mt-[12px]
+                }
+
+                @apply w-1/2
+            }
+
+            .description {
+                @apply text-[16px] font-[400] leading-[24px] tracking-widest text-[#8B8B8B] mt-[32px] w-[407px] mr-[20.33px]
+            }
+
+            @apply flex justify-between w-full
+        }
+
+        .underHeader {
+            .leftPart {
+                @apply w-fit h-fit
+            }
+
+            .formWrap {
+                .nameInput {
+                    input {
+                        @apply w-[242px] h-[60px]
+                    }
+
+                    .lastNameInput {
+                        @apply pl-[27px] pt-[15px] #{!important}
+                    }
+
+                    @apply flex items-center w-full justify-between
+                }
+
+                .inputWrap {
+                    input {
+                        @apply w-full h-[61px]
+                    }
+
+                    @apply mt-[39.5px]
+                }
+
+                .inquiryInput {
+                    textarea {
+                        @apply h-full w-full #{!important}
+                    }
+
+                    @apply h-[239.47px]
+                }
+
+                .sendMsgBtn {
+                    button {
+                        @apply leading-[24px] font-[600];
+                        @apply text-[16px] tracking-widest text-center w-[248px] h-[58px]
+                    }
+
+                    @apply mt-[54.84px]
+                }
+
+                @apply flex flex-col mt-[24px] w-[520px]
+            }
+
+            @apply mt-[35px] flex justify-between
+        }
+
+        @apply w-full p-[0_149.68px_0_150px]
+    }
+
+    .middle {
+        @apply h-[418px] mt-[112px] w-full
+    }
+
+    .bottom {
+        .bottomHeading {
+            .contactTitle {
+                @apply text-[16px] font-[600] leading-[20px] text-center text-[#FF64AE]
+            }
+
+            .contactSubTitle {
+                @apply text-[36px] font-[600] leading-[45px] text-center text-[#091156] mt-[11px]
+            }
+
+            .contactDesc {
+                @apply text-[16px] font-[400] leading-[24px] tracking-widest text-center text-[#8B8B8B] mt-[24px] ml-[1px]
+            }
+
+        }
+
+        .info {
+            .infoItem {
+                &:hover {
+                    @apply shadow-[0_25px_50px_25px_#F6F7FF] p-[79px_77px_71px_77px] w-[424px]
+                }
+
+                & {
+                    transition: all 0.3s ease;
+                }
+
+                @apply h-[402px] p-[79px_0_71px_0] rounded-[42px] w-[270px]
+            }
+
+            @apply mt-[96px] flex flex-wrap justify-between
+        }
+
+        @apply mt-[112px] w-full p-[0_201px]
+    }
+
+    @apply relative top-[229px] mb-[353px]
+}
