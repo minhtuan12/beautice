@@ -50,11 +50,13 @@ export default function Service() {
                     <div className={styles.imagesWrap}>
                         <div className={styles.top}>
                             <img alt={''} src={`${pathToIcon}/unsplash_5TJ0Hoy5FLY.png`}/>
-                            <img alt={''} src={`${pathToIcon}/unsplash_ZOT2Mewzmh8.png`}/>
+                            <img alt={''} src={`${pathToIcon}/unsplash_ZOT2Mewzmh8.png`} className={styles.hiddenImg}/>
+                            <img alt={''} src={`${pathToIcon}/unsplash_pTrhfmj2jDA (1).png`} className={styles.squareImg}/>
                         </div>
                         <div className={styles.bottom}>
                             <img alt={''} src={`${pathToIcon}/unsplash_gzfIO69Q6eM.png`}/>
-                            <img alt={''} src={`${pathToIcon}/unsplash_pTrhfmj2jDA (1).png`}/>
+                            <img alt={''} src={`${pathToIcon}/unsplash_ZOT2Mewzmh8.png`} className={styles.rectImg}/>
+                            <img alt={''} src={`${pathToIcon}/unsplash_pTrhfmj2jDA (1).png`} className={styles.hiddenImg}/>
                         </div>
                     </div>
                 </div>
@@ -120,6 +122,9 @@ export default function Service() {
                 />
             </div>
 
+            <div className={styles.titleAboveVideo}>
+                Best responsibility and service for our customers
+            </div>
             <div className={styles.videoWrap}>
                 <img alt={''} src={`${pathToIcon}/unsplash_NPjNtTExSJ4.png`} className={styles.bgImage}/>
                 <img alt={''} src={`${pathToIcon}/Background Mask (1).png`} className={styles.bgMask}/>

@@ -6,6 +6,10 @@
     }
 
     .content {
+        .imageUnderTitle {
+            @apply hidden
+        }
+
         .title {
             @apply text-[16px] font-[600] leading-[20px] text-left text-[#FF64AE] h-[20px] mt-[11px] ml-[1px]
         }
@@ -24,4 +28,60 @@
     }
 
     @apply w-full flex justify-between
+}
+
+@media (min-width: 1450px) {
+    .sectionWrap {
+        .imageWrap {
+                @apply w-[475px]
+        }
+
+        .content {
+            .imageUnderTitle {
+                @apply hidden
+            }
+
+            .title, .subTitle, .description {
+                @apply w-full #{!important}
+            }
+
+            @apply w-[545px] #{!important}
+        }
+
+        @apply w-full flex justify-between
+    }
+}
+
+@media (max-width: 1430px) {
+    .sectionWrap {
+        .content {
+            .title, .subTitle, .description {
+                @apply h-auto
+            }
+        }
+
+        @apply items-center h-auto
+    }
+}
+
+@media (max-width: 992px) {
+    .sectionWrap {
+        .imageWrap {
+            @apply hidden
+        }
+
+        .content {
+            .imageUnderTitle {
+                @apply flex mt-4 mb-4
+            }
+
+            .title, .subTitle, .description {
+                @apply w-full text-center #{!important}
+            }
+
+            @apply w-full grid place-items-center #{!important}
+        }
+
+        @apply items-center h-auto w-full block
+    }
 }

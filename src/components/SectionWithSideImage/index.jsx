@@ -24,6 +24,7 @@ export default function SectionWithSideImage(
             <div className={styles.subTitle} style={subTitleWidth ? {width: subTitleWidth} : {}}>
                 {subTitle}
             </div>
+            <img alt={''} src={imageUrl} className={styles.imageUnderTitle}/>
             <div className={styles.description} style={descriptionWidth ? {width: descriptionWidth} : {}}>
                 {description}
             </div>
