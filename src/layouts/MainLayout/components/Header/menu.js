@@ -56,7 +56,7 @@ export const mainMenu = [
         type: 'divider',
     },
     {
-        key: '/#',
+        key: '/contact',
         label: 'Contact',
         href: null,
         icon: <MailOutlined />,

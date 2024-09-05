@@ -63,3 +63,25 @@
         @apply w-full items-center #{!important}
     }
 }
+
+@media (max-width: 430px) {
+    .metricWrap {
+        .iconWrap {
+            img {
+                @apply w-[50%]
+            }
+        }
+
+        .mainContent {
+            .quantity {
+                @apply text-[18px]
+            }
+
+            .about {
+                @apply text-[10px]
+            }
+
+            @apply ml-[-20px]
+        }
+    }
+}

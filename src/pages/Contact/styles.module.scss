@@ -21,7 +21,7 @@
                 @apply text-[16px] font-[400] leading-[24px] tracking-widest text-[#8B8B8B] mt-[32px] w-[407px] mr-[20.33px]
             }
 
-            @apply flex justify-between w-full
+            @apply flex justify-between w-full flex-wrap
         }
 
         .underHeader {
@@ -70,7 +70,7 @@
                 @apply flex flex-col mt-[24px] w-[520px]
             }
 
-            @apply mt-[35px] flex justify-between
+            @apply mt-[35px] flex justify-between flex-wrap
         }
 
         @apply w-full p-[0_149.68px_0_150px]
@@ -116,4 +116,111 @@
     }
 
     @apply relative top-[229px] mb-[353px]
+}
+
+@media (min-width: 1450px) {
+    .contactWrap {
+        .background {
+            img {
+                @apply w-full
+            }
+
+            @apply w-full
+        }
+
+        .top {
+            @apply w-[1440px] relative left-1/2 translate-x-[-50%]
+        }
+
+        .middle {
+            @apply h-[618px]
+        }
+
+        .bottom {
+            @apply mt-[112px] w-[1440px] p-[0_201px] relative left-1/2 translate-x-[-50%]
+        }
+    }
+}
+
+@media (max-width: 1430px) {
+    .contactWrap {
+        .top {
+            .header {
+                .heading {
+                    .title, .subTitle {
+                        @apply text-center
+                    }
+
+                    @apply w-full
+                }
+
+                .description {
+                    @apply w-full text-center
+                }
+
+                @apply justify-center
+            }
+
+            .underHeader {
+                .formWrap {
+                    .nameInput {
+                        input {
+                            @apply w-full
+                        }
+
+                        @apply flex-wrap gap-[40px]
+                    }
+                }
+
+                @apply justify-center
+            }
+
+            @apply w-full p-[0_100px]
+        }
+
+        .bottom {
+            .info {
+                .infoItem {
+                    @apply shadow-[0_25px_50px_25px_#F6F7FF] p-[79px_77px_71px_77px] w-[424px] rounded-[42px]
+                }
+
+                @apply justify-center gap-[50px]
+            }
+
+            @apply p-[0_100px]
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .contactWrap {
+        .top {
+            .underHeader {
+                .formWrap {
+                    .sendMsgBtn {
+                        button {
+                            @apply w-full
+                        }
+                    }
+                }
+            }
+
+            @apply px-[40px]
+        }
+
+        .bottom {
+            .info {
+                .infoItem {
+
+                    &:hover {
+                        @apply p-[50px_40px] w-full
+                    }
+
+                    @apply h-auto p-[50px_40px] w-full
+                }
+            }
+
+            @apply p-[0_40px]
+        }
+    }
 }

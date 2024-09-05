@@ -7,7 +7,13 @@
         @apply absolute top-1/2 left-1/2 translate-x-[-40%] translate-y-[-50%]
     }
 
-    @apply relative w-[166px] h-[167px] ml-[-7px]
+    &:hover {
+        .polygon {
+            @apply fill-[red]
+        }
+    }
+
+    @apply relative w-[166px] h-[167px] ml-[-7px] cursor-pointer
 }
 
 @media (max-width: 860px) {

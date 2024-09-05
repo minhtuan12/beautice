@@ -168,7 +168,7 @@
                 @apply absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-48%] w-[555px]
             }
 
-            @apply relative h-[628px] w-[1440px] mt-[126px] left-1/2 translate-x-[-50%]
+            @apply relative h-[calc(100vw_/_2.29)] w-full
         }
 
         .bottom {
@@ -193,10 +193,10 @@
                     @apply w-[316px] h-[58px] shadow-[0_17px_22px_0_#FFEDF6] mt-[68px]
                 }
 
-                @apply flex justify-between flex-wrap w-full
+                @apply flex justify-center flex-wrap w-full relative gap-[300px]
             }
 
-            @apply relative w-[1440px] left-1/2 translate-x-[-50%]
+            @apply relative w-full
         }
 
         @apply relative top-[229px] h-auto
@@ -256,7 +256,7 @@
                 @apply flex justify-between flex-wrap w-full
             }
 
-            @apply h-auto pl-[200px] pt-[250px]
+            @apply h-auto pl-[200px] pt-[200px]
         }
 
         @apply relative top-[229px] h-auto
@@ -281,11 +281,12 @@
     }
 }
 
-@media (min-width: 1000px) and (max-width: 1200px){
+@media (min-width: 1000px) and (max-width: 1200px) {
     .galleryWrap {
         .between {
             @apply mb-[50px]
         }
+
         .bottom {
             @apply pt-[250px] pb-0 px-[30px]
         }
@@ -297,6 +298,7 @@
         .between {
             @apply mb-[50px]
         }
+
         .bottom {
             @apply pt-[150px] pb-0 px-[30px]
         }
@@ -318,7 +320,7 @@
         }
 
         .bottom {
-            @apply px-[30px]
+            @apply px-[30px] mt-[30px]
         }
     }
 }
@@ -326,7 +328,14 @@
 @media (max-width: 576px) {
     .galleryWrap {
         .top {
-            @apply px-[30px]
+            .imagesWrap {
+                & {
+                    grid-template-columns: repeat(auto-fill, 100%)
+                }
+
+                @apply place-items-center
+            }
+            @apply px-[20px]
         }
 
         .between {
@@ -340,6 +349,24 @@
                 .playBtnWrap {
                     @apply ml-0 mt-[-10px]
                 }
+            }
+        }
+    }
+}
+
+@media (max-width: 320px) {
+    .galleryWrap {
+        .between {
+            .content {
+                .topContent {
+                    @apply hidden
+                }
+            }
+        }
+
+        .bottom {
+            .quotaContent {
+                @apply justify-center
             }
         }
     }

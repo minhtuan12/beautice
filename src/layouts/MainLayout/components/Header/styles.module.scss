@@ -1,6 +1,6 @@
 .headerWrap {
     img {
-        @apply select-none w-[258px] h-[120%] mt-[10px] ml-[-3px]
+        @apply select-none w-[258px] h-[120%] mt-[10px] ml-[-3px] cursor-pointer
     }
 
     .rightHeader {
@@ -94,20 +94,20 @@
 }
 
 .stickyHeader {
-    //.rightHeader {
-    //    .contactBtn {
-    //        button {
-    //            @apply h-[45px] w-[130px] text-[15px]
-    //        }
-    //    }
-    //}
-    //
-    //& {
-    //    animation: slideDown 0.35s ease-out;
-    //    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px #{!important};
-    //}
-    //
-    //@apply fixed bg-white w-full h-[95px] left-1/2 top-0 translate-x-[-50%] p-[25px_60px] z-[9999]
+    .rightHeader {
+        .contactBtn {
+            button {
+                @apply h-[45px] w-[130px] text-[15px]
+            }
+        }
+    }
+
+    & {
+        animation: slideDown 0.35s ease-out;
+        box-shadow: rgba(0, 0, 0, 0.16) 0 10px 36px 0, rgba(0, 0, 0, 0.06) 0 0 0 1px #{!important};
+    }
+
+    @apply fixed bg-white w-full h-[95px] left-1/2 top-0 translate-x-[-50%] p-[25px_60px] z-[9999]
 }
 
 @keyframes spin-animation {
@@ -181,8 +181,8 @@
 
 @media (max-width: 360px) {
     .headerWrap {
-        img {
-            @apply w-[70%] ml-0
+        .darkThemeLogo {
+            @apply w-[70%] h-auto ml-0 #{!important}
         }
     }
 }

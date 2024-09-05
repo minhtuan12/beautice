@@ -69,9 +69,17 @@
 
 @media (max-width: 1430px) {
     .professionalTeams {
+        .proHeader {
+            .proHeaderTitle, .proHeaderUnderTitle, .proHeaderDesc {
+                @apply h-auto
+            }
+
+            @apply ml-0 #{!important}
+        }
+
         .proBoxSectionWrap {
             .proBoxSection {
-                @apply flex-none h-[626px] w-[424px] shadow-[0_25px_50px_25px_#F6F7FF] p-[91px_77px_96px_77px] m-0
+                @apply flex-none h-fit w-[424px] shadow-[0_25px_50px_25px_#F6F7FF] p-[91px_77px_96px_77px] m-0 bg-white
             }
 
             @apply w-full mt-[40px] flex flex-wrap justify-center gap-[40px]
@@ -123,7 +131,7 @@
     .professionalTeams {
         .proHeader {
             .proHeaderDesc {
-                @apply mt-[100px]
+                @apply mt-[20px]
             }
         }
 

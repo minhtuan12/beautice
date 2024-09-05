@@ -71,6 +71,20 @@
         .content {
             @apply px-[40px]
         }
+
         @apply w-full h-fit
+    }
+}
+
+@media (max-width: 450px) {
+    .cardWrap {
+        .content {
+            .subTitle {
+                @apply break-words
+            }
+        }
+        .btnWrap {
+            @apply w-full #{!important}
+        }
     }
 }

@@ -3,11 +3,11 @@
         .menuItem, .activeItem {
             &:hover {
                 &:first-child {
-                    @apply rounded-t-[15px]
+                    @apply rounded-t-[12px]
                 }
 
                 &:last-child {
-                    @apply rounded-b-[15px]
+                    @apply rounded-b-[12px]
                 }
 
                 .title {
@@ -26,22 +26,22 @@
 
         .activeItem {
             &:first-child {
-                @apply rounded-t-[15px]
+                @apply rounded-t-[12px]
             }
 
             &:last-child {
-                @apply rounded-b-[15px]
+                @apply rounded-b-[12px]
             }
 
             .title {
                 @apply text-[#091156] font-semibold
             }
 
-            @apply bg-[#f7f7f7]
+            @apply bg-[#f6f7ff]
         }
     }
 
-    @apply bg-white rounded-[15px] border-[1px] absolute top-12 right-0 w-[230px]
+    @apply bg-white rounded-[12px] border-[1px] absolute top-12 right-0 w-[500px]
 }
 
 .childrenWrap {
@@ -63,9 +63,9 @@
                 @apply text-[16px]
             }
 
-            @apply px-6 py-4
+            @apply px-10 py-5
         }
     }
 
-    @apply left-0 right-auto top-14 w-auto
+    @apply left-0 right-auto top-14 w-[180px]
 }

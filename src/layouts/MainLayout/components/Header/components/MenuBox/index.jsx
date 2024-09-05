@@ -24,14 +24,16 @@ export default function MenuBox({menu, isHomeMenu = false}) {
         <div className={styles.menuList}>
             {
                 menu.map((item, index) => {
-                    const isContactBtn = item.label === 'Contact' 
+                    const isContactBtn = item.label === 'Contact'
 
                     return (
                         <div key={index} onClick={() => handleClickMenuItem(item)}
                              className={`${checkIsActiveRoute(item) ? styles.activeItem : styles.menuItem} 
                                 ${isContactBtn ? ' border-t-[1px]' : ''}`}
                         >
-                            <div className={'flex items-center'}>
+                            <div className={`flex items-center 
+                                ${checkIsActiveRoute(item) ? 'text-[#091156]' : 'text-[#8b8b8b]'}`}
+                            >
                                 {item.icon}
                                 <div className={`${styles.title} ${isContactBtn ? '!text-[#FF64AE]' : ''}`}>
                                     {item.label} {!_.isEmpty(item.children) ? '+' : ''}

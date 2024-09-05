@@ -19,5 +19,15 @@
         @apply w-full mt-[46px]
     }
 
-    @apply h-full
+    @apply h-full cursor-pointer
+}
+
+@media (max-width: 576px) {
+    .cardWrap {
+        .info {
+            .method, .detail, .description {
+                @apply w-full h-auto break-words
+            }
+        }
+    }
 }

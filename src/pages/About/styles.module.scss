@@ -284,10 +284,10 @@
                     @apply w-full text-[16px] font-[400] leading-[24px] tracking-widest text-center text-[#CACACA] h-[56px] mt-[12px] ml-[26px]
                 }
 
-                @apply w-full p-[164px_354px_168px_354px]
+                @apply h-full flex flex-col justify-center
             }
 
-            @apply relative h-[529px] w-[1440px] left-1/2 translate-x-[-50%]
+            @apply relative h-[calc(100vw_/_2.72)] w-full left-1/2 translate-x-[-50%]
         }
 
         .bottomContentWrap {
@@ -479,6 +479,10 @@
 
             @apply px-[60px]
         }
+
+        .bottomContentWrap {
+            @apply mt-[150px]
+        }
     }
 }
 
@@ -536,6 +540,10 @@
                 @apply top-[180px] px-[100px] #{!important}
             }
         }
+
+        .bottomContentWrap {
+            @apply mt-[270px]
+        }
     }
 }
 
@@ -543,8 +551,12 @@
     .aboutWrap {
         .businessSloganWrap {
             .sloganContent {
-                @apply top-[130px] px-[100px] #{!important}
+                @apply top-[100px] px-[100px] #{!important}
             }
+        }
+
+        .bottomContentWrap {
+            @apply mt-[270px]
         }
     }
 }
@@ -561,16 +573,40 @@
 
 @media (max-width: 440px) {
     .aboutWrap {
+        .introductionWrap {
+            .videoWrap {
+                img {
+                    @apply w-full
+                }
+
+                .playBtn {
+                    &:before {
+                        @apply content-[""] block absolute
+                    }
+
+                    .triangle {
+                        border-bottom: 10px solid transparent;
+                        border-top: 10px solid transparent;
+                        border-left: 15px solid white;
+
+                        @apply w-[20px] h-[20px];
+                    }
+
+                    @apply w-[40px] h-[40px]
+                }
+            }
+        }
+
         .businessSloganWrap {
             .sloganContent {
-                @apply top-[100px]
+                @apply top-[80px]
             }
 
             @apply mb-[100px]
         }
 
         .bottomContentWrap {
-            @apply mb-[-200px]
+            @apply mb-[-200px] mt-[170px]
         }
     }
 }
@@ -585,17 +621,17 @@
     }
 }
 
-@media (min-width: 350px) and (max-width: 370px) {
+@media (min-width: 365px) and (max-width: 370px) {
     .aboutWrap {
         .businessSloganWrap {
             .sloganContent {
-                @apply top-[60px]
+                @apply top-[80px]
             }
         }
     }
 }
 
-@media (max-width: 350px) {
+@media (max-width: 365px) {
     .aboutWrap {
         .businessSloganWrap {
             .sloganContent {

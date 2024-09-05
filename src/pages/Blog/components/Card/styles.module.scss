@@ -8,6 +8,16 @@
 
 @media (max-width: 500px) {
     .cardWrap {
-        @apply w-full pl-[35px] pr-[20px]
+        @apply pl-[35px] pr-[20px]
+    }
+}
+
+@media (max-width: 400px) {
+    .cardWrap {
+        .title {
+            @apply text-center
+        }
+
+        @apply w-full
     }
 }

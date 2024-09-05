@@ -31,7 +31,6 @@
         }
 
         .teamProfileWrap {
-
             @apply mt-[110px] w-full p-[0_286px_0_150px]
         }
 
@@ -40,11 +39,11 @@
 
     .goal {
         .background {
-            @apply absolute top-0 left-0 w-full h-full
+            @apply absolute top-0 left-0 w-full
         }
 
         .backgroundMask {
-            @apply absolute top-0 left-0 w-full h-full
+            @apply absolute top-0 left-0 w-full
         }
 
         .goalContent {
@@ -67,7 +66,7 @@
             @apply absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] grid place-items-center
         }
 
-        @apply mt-[125px] relative h-[529px]
+        @apply mt-[125px] relative h-[calc(100vw_/_2.72)]
     }
 
     .testimonialsWrap {
@@ -97,7 +96,7 @@
                     width: calc((100vw * 680px) / (1440px));
                 }
 
-                @apply mt-[4px]
+                @apply mb-[65px]
             }
 
             .bottomContent {
@@ -133,5 +132,165 @@
         }
 
         @apply relative h-[706.1px] mb-[-100px]
+    }
+}
+
+@media (min-width: 1450px) {
+    .teamWrap {
+        .assistanceTeam {
+            .teamProfileWrap {
+                @apply w-[1004px] p-0 relative left-1/2 translate-x-[-50%]
+            }
+        }
+
+        .goal {
+            .goalContent {
+                .goalTitle {
+                    & {
+                        width: calc((100vw * 480px) / (1440px));
+                    }
+
+                    @apply text-[36px] font-[600] leading-[45px] text-center text-white h-[97px] ml-[24px] mt-[-23px]
+                }
+
+                .goalDesc {
+                    & {
+                        width: calc((100vw * 680px) / (1440px));
+                    }
+
+                    @apply text-[16px] font-[400] leading-[24px] tracking-widest text-center text-[#CACACA] ml-[-2px]
+                }
+
+                @apply absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] grid place-items-center
+            }
+
+            @apply mt-[125px] relative h-[529px] left-1/2 translate-x-[-50%] w-[1440px]
+        }
+    }
+}
+
+@media (max-width: 1430px) {
+    .teamWrap {
+        .assistanceTeam {
+            .header {
+                .title, .subTitle, .desc {
+                    @apply h-auto
+                }
+
+                @apply px-[30px]
+            }
+
+            .teamProfileWrap {
+                @apply p-[0_100px]
+            }
+        }
+
+        .goal {
+            .goalContent {
+                .goalTitle {
+                    @apply w-full text-[30px] h-auto ml-0
+                }
+
+                .goalDesc {
+                    @apply w-full text-[14px] h-auto ml-0 mt-2
+                }
+
+                @apply w-full px-[30px] mt-2
+            }
+        }
+
+        .testimonialsWrap {
+            .mainContent {
+                .mainHeader {
+                    .mainSubTitle, .mainDesc, .mainTitle {
+                        @apply h-auto
+                    }
+
+                    @apply w-full
+                }
+
+                .arrowIconLeft {
+                    @apply absolute top-1/2 left-0 translate-y-[-400%] translate-x-[360%] cursor-default
+                }
+
+                .arrowIconRight {
+                    @apply absolute top-1/2 right-0 translate-y-[350%] translate-x-[320%] cursor-pointer
+                }
+
+                .inactiveArrowIconLeft {
+                    @apply absolute top-1/2 left-0 translate-y-[350%] translate-x-[-320%] cursor-default
+                }
+
+                .inactiveArrowIconRight {
+                    @apply absolute top-1/2 right-0 translate-y-[310%] translate-x-[290%] cursor-default
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .teamWrap {
+        .testimonialsWrap {
+            .mainContent {
+                .bottomContent {
+                    .customersWrap {
+                        & {
+                            grid-template-columns: repeat(4, 300px);
+                        }
+                    }
+
+                    @apply w-[300px]
+                }
+            }
+
+            @apply mt-[90px]
+        }
+    }
+}
+
+@media (max-width: 476px) {
+    .teamWrap {
+        .assistanceTeam {
+            .teamProfileWrap {
+                @apply px-[50px]
+            }
+        }
+
+        .goal {
+            .goalContent {
+                .goalTitle {
+                    @apply text-[20px] leading-[28px]
+                }
+
+                .goalDesc {
+                    @apply hidden
+                }
+
+                @apply px-[20px] mt-2
+            }
+        }
+
+        .testimonialsWrap {
+            .mainContent {
+                .arrowIconLeft {
+                    @apply bottom-0 translate-x-[-180%] translate-y-[-80%] top-[100%] bg-white border-[3px] rounded-[50%] p-2
+                }
+
+                .arrowIconRight {
+                    @apply bottom-0 translate-x-[-180%] translate-y-[80%] top-[100%] bg-white border-[3px] rounded-[50%] p-2
+                }
+
+                .inactiveArrowIconLeft {
+                    @apply bottom-0 translate-x-[185%] translate-y-[0%] top-[105.9%] bg-white border-[3px] rounded-[50%] h-fit w-fit p-1.5
+                }
+
+                .inactiveArrowIconRight {
+                    @apply bottom-0 translate-x-[-185%] translate-y-[0%] top-[105.9%] bg-white border-[3px] rounded-[50%] h-fit w-fit p-1.5
+                }
+            }
+
+            @apply mt-[100px] mb-[50px]
+        }
     }
 }

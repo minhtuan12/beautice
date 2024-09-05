@@ -17,7 +17,7 @@ export default function MainLayout({children, isLightTheme = false}) {
     const handleScroll = () => {
         const currentTop = window.pageYOffset || document.documentElement.scrollTop
         setIsVisibleToTopBtn(currentTop > 800)
-        dispatch(setVisibleStickyHeader(currentTop > 340))
+        dispatch(setVisibleStickyHeader(currentTop > 340 && window.innerWidth >= 1440))
     }
 
     const handleGoToTop = () => {
@@ -33,6 +33,8 @@ export default function MainLayout({children, isLightTheme = false}) {
     }, [])
 
     useEffect(() => {
+        window.scrollTo({top: 0, behavior: 'auto'})
+
         const handleSetVisibleSlidingBtn = () => {
             dispatch(setIsVisibleSlidingBtn(window.innerWidth <= 1430))
             dispatch(setVisibleImageUnderTitle(window.innerWidth <= 1300))

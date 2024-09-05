@@ -6,10 +6,19 @@ import {blogs, categories, cloudTags, posts, socialLinks} from "./data.js";
 import BlogCard from "./components/BlogCard/index.jsx";
 import Card from "./components/Card/index.jsx";
 import PostCard from "./components/PostCard/index.jsx";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import {useNavigate} from "react-router-dom";
+import {setFilter} from "../../store/slices/blog/index.js";
 
 export default function Blog() {
     const filterData = useSelector(state => state.blog.filter)
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
+
+    const handleSelectPage = (page) => {
+        dispatch(setFilter({...filterData, currentPage: page}))
+        window.scrollTo({top: 300, behavior: 'smooth'})
+    }
 
     return <MainLayout>
         <div className={styles.blogWrap}>
@@ -21,7 +30,8 @@ export default function Blog() {
                         Blog
                     </div>
                     <div className={styles.breadcrumb}>
-                        Home • Blog
+                        <span className={'cursor-pointer hover:text-white'} onClick={() => navigate('/')}>
+                            Home</span> • Blog
                     </div>
                 </div>
             </div>
@@ -110,6 +120,7 @@ export default function Blog() {
                             return (
                                 <div key={index} className={`${styles.page} 
                                     ${isCurrentPage ? styles.currentPage : ''}`}
+                                     onClick={() => handleSelectPage(index + 1)}
                                 >
                                     {index + 1}
                                 </div>

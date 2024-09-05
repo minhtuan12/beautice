@@ -25,3 +25,47 @@
 
     @apply flex flex-wrap w-full justify-between items-center
 }
+
+@media (min-width: 1450px) {
+    .profileWrap {
+        .avatar {
+            @apply h-full
+        }
+
+        .information {
+            .top {
+                span {
+                    @apply text-[14px] italic font-[400] leading-[17.5px] text-[#8B8B8B]
+                }
+
+                @apply text-[18px] font-[600] leading-[22.5px] text-[#091156] mt-[-1px]
+            }
+
+            .description {
+                @apply text-[16px] font-[400] leading-[24px] tracking-widest text-[#8B8B8B] mt-[21px]
+            }
+
+            @apply mt-[-11px] w-[434px]
+        }
+
+        @apply flex flex-wrap w-full justify-between items-center
+    }
+}
+
+@media (max-width: 1430px) {
+    .profileWrap {
+        @apply justify-center gap-[50px]
+    }
+}
+
+@media (max-width: 930px) {
+    .profileWrap {
+        .information {
+            .top, .description {
+                @apply text-center h-auto
+            }
+
+            @apply w-[450px]
+        }
+    }
+}

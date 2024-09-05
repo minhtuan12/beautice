@@ -17,6 +17,14 @@
 }
 
 .custom-faqs {
+    .ant-menu-item-only-child {
+        &:hover {
+            @apply bg-transparent #{!important}
+        }
+
+        @apply cursor-default
+    }
+
     .ant-menu-submenu-title {
         img {
             @apply mr-[-15px]
@@ -98,6 +106,18 @@
             .ant-menu-title-content {
                 @apply h-auto
             }
+        }
+    }
+}
+
+@media (max-width: 650px) {
+    .custom-faqs {
+        .ant-menu-inline {
+            .ant-menu-item-only-child {
+                @apply mb-2 h-auto
+            }
+
+            @apply h-auto #{!important}
         }
     }
 }

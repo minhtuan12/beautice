@@ -32,6 +32,10 @@ export default function Header({isLightTheme}) {
         e.stopPropagation()
     }
 
+    const handleGoToHome = () => {
+        navigate('/')
+    }
+
     useEffect(() => {
         const handleSetVisibleMenuBtn = () => {
             setIsVisibleMenuBtn(window.innerWidth <= 1430)
@@ -56,8 +60,8 @@ export default function Header({isLightTheme}) {
 
     return <div className={`${styles.headerWrap} ${visibleStickyHeader ? styles.stickyHeader : ''}`}>
         {
-            !isLightTheme ? <img src={`${pathToIcon}/Main Logo.svg`} alt=""/>
-                : <img src={`${pathToIcon}/Main Logo.png`} alt="" className={'!mt-[2px] !ml-0 !w-auto'}/>
+            !isLightTheme ? <img src={`${pathToIcon}/Main Logo.svg`} alt="" onClick={handleGoToHome} />
+                : <img src={`${pathToIcon}/Main Logo.png`} alt="" className={`!mt-[2px] !ml-0 !w-auto ${styles.darkThemeLogo}`} onClick={handleGoToHome}/>
         }
 
         <div className={styles.rightHeader}>
@@ -122,6 +126,7 @@ export default function Header({isLightTheme}) {
             {
                 isVisibleMenuBtn ?
                     <Drawer
+                        width={window.innerWidth < 768 ? '100%' : 378}
                         className={'custom-drawer'}
                         title={<div className={'text-[22px] text-[#091156] font-medium'}>Pages</div>}
                         onClose={() => setIsVisibleMenuBox(false)}

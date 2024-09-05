@@ -54,7 +54,7 @@
                     @apply w-[25px] h-[25px] ml-[13px]
                 }
 
-                @apply flex mt-[9px] text-[#091156] text-[16px] font-[600] leading-[24px] tracking-widest
+                @apply flex mt-[9px] text-[#091156] text-[16px] font-[600] leading-[24px] tracking-widest cursor-pointer
             }
         }
 
@@ -113,7 +113,7 @@
                         @apply absolute top-1/2 left-1/2 translate-x-[-40%] translate-y-[-50%]
                     }
 
-                    @apply relative w-[166px] h-[167px] ml-[-7px]
+                    @apply relative w-[166px] h-[167px] ml-[-7px] cursor-pointer
                 }
 
                 .text {
@@ -152,7 +152,11 @@
 @media (min-width: 1450px) {
     .serviceWrap {
         .introduction {
-            @apply w-[1440px] left-1/2 translate-x-[-50%]
+            .content {
+                @apply relative left-1/2 translate-x-[-50%] w-[1440px]
+            }
+
+            @apply w-full
         }
 
         .consultation, .treatments, .product {
@@ -190,13 +194,13 @@
                         @apply text-[16px] font-[600] leading-[24px] tracking-widest text-white ml-[8px] mt-[-4px]
                     }
 
-                    @apply h-[127px] flex-1 flex items-center
+                    @apply h-[127px] flex-1 flex items-center justify-center
                 }
 
                 @apply flex flex-wrap justify-center relative h-full w-full items-center
             }
 
-            @apply relative h-[529px] mt-[123px] p-[182px_200px_182px_150px] w-[1440px] left-1/2 translate-x-[-50%]
+            @apply relative h-[calc(100vw_/_2.72)] pl-[300px]
         }
 
         .faqWrap {
@@ -442,11 +446,14 @@
 
 @media (max-width: 680px) {
     .serviceWrap {
+        .titleAboveVideo {
+            @apply text-[28px] leading-[40px] mb-[-120px]
+        }
         .videoWrap {
             .videoContent {
                 .left {
                     .videoDesc {
-                        @apply px-0
+                        @apply px-5
                     }
                 }
 
@@ -510,6 +517,9 @@
     .serviceWrap {
         .videoWrap {
             .videoContent {
+                .right {
+                    @apply mt-[60px]
+                }
                 @apply translate-y-[-150%]
             }
 
@@ -517,6 +527,10 @@
         }
 
         .faqWrap {
+            .heading {
+                @apply text-[30px]
+            }
+
             @apply mt-[-250px] mb-[-160px] px-[20px]
         }
     }
