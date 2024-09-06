@@ -10,12 +10,16 @@
                 @apply w-[7px] h-[7px] mt-0
             }
 
-            .activeOption {
+            .activeOption, .stickyActiveOption {
                 @media (max-width: 1430px) {
                     @apply flex items-center justify-between cursor-pointer text-[#41487F] #{!important}
                 }
 
                 @apply flex items-center justify-between cursor-pointer select-none;
+                @apply text-[#41487F] #{!important}
+            }
+
+            .stickyActiveOption {
                 @apply text-[#41487F] #{!important}
             }
 
@@ -93,7 +97,7 @@
     @apply w-[1140px] h-[63px] absolute top-[39px] left-[150px] flex justify-between items-center z-10
 }
 
-.stickyHeader {
+.stickyHeader, .stickyDarkHeader {
     .rightHeader {
         .contactBtn {
             button {
@@ -108,6 +112,16 @@
     }
 
     @apply fixed bg-white w-full h-[95px] left-1/2 top-0 translate-x-[-50%] p-[25px_60px] z-[9999]
+}
+
+.stickyDarkHeader {
+    .rightHeader {
+        .themeLightMenu {
+            .option {
+                @apply text-[#8b8b8b] hover:text-[#091156] #{!important}
+            }
+        }
+    }
 }
 
 @keyframes spin-animation {

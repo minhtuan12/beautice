@@ -58,50 +58,56 @@ export default function Header({isLightTheme}) {
         }
     }, [])
 
-    return <div className={`${styles.headerWrap} ${visibleStickyHeader ? styles.stickyHeader : ''}`}>
+    return <div
+        className={`${styles.headerWrap} ${visibleStickyHeader ? (!isLightTheme ? styles.stickyHeader : styles.stickyDarkHeader) : ''}`}>
         {
-            !isLightTheme ? <img src={`${pathToIcon}/Main Logo.svg`} alt="" onClick={handleGoToHome} />
-                : <img src={`${pathToIcon}/Main Logo.png`} alt="" className={`!mt-[2px] !ml-0 !w-auto ${styles.darkThemeLogo}`} onClick={handleGoToHome}/>
+            (!isLightTheme || visibleStickyHeader) ?
+                <img src={`${pathToIcon}/Main Logo.svg`} alt="" onClick={handleGoToHome}/>
+                : <img src={`${pathToIcon}/Main Logo.png`} alt=""
+                       className={`!mt-[2px] !ml-0 !w-auto ${styles.darkThemeLogo}`} onClick={handleGoToHome}/>
         }
 
         <div className={styles.rightHeader}>
             {
                 !isVisibleMenuBtn ? <div className={isLightTheme ? styles.themeLightMenu : styles.mainMenu}>
                     {
-                        mainMenu.slice(0, -2).map((item, index) => (
-                            <div key={index}
-                                 className={`${item?.href === location.pathname ? styles.activeOption : styles.option} 
+                        mainMenu.slice(0, -2).map((item, index) => {
+                            const isActivePage = item?.href === location.pathname || item?.children?.some(i => i.href === location.pathname)
+                            return (
+                                <div key={index}
+                                     className={`${isActivePage ? ((isLightTheme && !visibleStickyHeader) ? styles.activeOption : styles.stickyActiveOption) : styles.option}
                                                         ${item.label === 'Home' ? 'w-[66px]' : ''}`}
-                                 onClick={() => item.label === 'Home' ? handleToggleHomeMenu() :
-                                     handleNavigate(item?.href)
-                                 }
-                                 ref={item.label === 'Home' ? homeMenuBtnRef : null}
-                                 onBlur={() => setIsVisibleHomeMenu(!isVisibleHomeMenu)}
-                            >
-                                {item.label}
-                                {
-                                    (item.label === 'Home' && isVisibleHomeMenu) ?
-                                        <MenuBox isHomeMenu menu={mainMenu[0].children}/> : ''
-                                }
-                                {
-                                    item.label === 'Home' ?
-                                        (
-                                            !isVisibleHomeMenu ?
-                                                (
-                                                    isLightTheme ? <img
-                                                            className={styles.plusIcon}
-                                                            src={`${pathToIcon}/Plus Icon (1).png`}
-                                                            alt=""/>
-                                                        : <img
-                                                            className={styles.plusIcon}
-                                                            src={`${pathToIcon}/Plus Icon.png`}
-                                                            alt=""/>
-                                                ) : <span className={styles.minusIcon}>-</span>
-                                        )
-                                        : ''
-                                }
-                            </div>
-                        ))
+                                     onClick={() => item.label === 'Home' ? handleToggleHomeMenu() :
+                                         handleNavigate(item?.href)
+                                     }
+                                     ref={item.label === 'Home' ? homeMenuBtnRef : null}
+                                     onBlur={() => setIsVisibleHomeMenu(!isVisibleHomeMenu)}
+                                >
+                                    {item.label}
+                                    {
+                                        (item.label === 'Home' && isVisibleHomeMenu) ?
+                                            <MenuBox isHomeMenu menu={mainMenu[0].children}/> : ''
+                                    }
+                                    {
+                                        item.label === 'Home' ?
+                                            (
+                                                !isVisibleHomeMenu ?
+                                                    (
+                                                        (isLightTheme && !visibleStickyHeader) ? <img
+                                                                className={styles.plusIcon}
+                                                                src={`${pathToIcon}/Plus Icon (1).png`}
+                                                                alt=""/>
+                                                            : <img
+                                                                className={styles.plusIcon}
+                                                                src={`${pathToIcon}/Plus Icon.png`}
+                                                                alt=""/>
+                                                    ) : <span className={styles.minusIcon}>-</span>
+                                            )
+                                            : ''
+                                    }
+                                </div>
+                            )
+                        })
                     }
                 </div> : ''
             }
@@ -115,7 +121,7 @@ export default function Header({isLightTheme}) {
                     >
                         {
                             isVisibleMenuBox ? <CloseOutlined style={{fontSize: '26px'}}/>
-                                : <MenuOutlined style={{fontSize: '26px', color: isLightTheme ? '#fff' : ''}} />
+                                : <MenuOutlined style={{fontSize: '26px', color: isLightTheme ? '#fff' : ''}}/>
                         }
                     </div>
                     {/*{*/}
