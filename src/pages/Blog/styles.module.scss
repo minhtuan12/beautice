@@ -64,26 +64,6 @@
                         @apply mt-[83px] h-[250px]
                     }
 
-                    .socialWrap {
-                        .items {
-                            .icon {
-                                img {
-                                    @apply absolute top-[9px] left-[9px]
-                                }
-
-                                .bgCircle {
-                                    @apply w-full h-full rounded-[50%] bg-white shadow-[0_4px_19px_11px_#F6F7FF]
-                                }
-
-                                @apply relative w-[43px] h-[43px]
-                            }
-
-                            @apply mt-[30px] flex flex-wrap gap-x-[21px] ml-[-5px]
-                        }
-
-                        @apply mt-[83px] h-[213px]
-                    }
-
                     .hiddenBox {
                         @apply hidden
                     }
@@ -133,7 +113,7 @@
             }
         }
 
-        @apply mt-[108px] p-[0_150px] w-full flex justify-between flex-wrap
+        @apply mt-[108px] p-[0_150px_0_149px] w-full flex justify-between
     }
 
     .bottom {
@@ -308,99 +288,12 @@
 
 @media (max-width: 1430px) {
     .blogWrap {
-        //.top {
-        //    .bgImage {
-        //        @apply absolute top-0 left-0 z-[-1] w-full
-        //    }
-        //
-        //    .bgMask {
-        //        @apply absolute top-0 left-0 z-[-1] w-full
-        //    }
-        //
-        //    .topContent {
-        //        .contentTitle {
-        //            @apply text-[36px] font-[600] leading-[45px] text-white
-        //        }
-        //
-        //        .breadcrumb {
-        //            @apply text-[16px] font-[500] leading-[24px] tracking-widest text-[#D9D9D9] mr-[-1px] mt-[-1px]
-        //        }
-        //
-        //        @apply absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] flex w-full px-[149px] justify-between mt-[2px] items-center
-        //    }
-        //
-        //    @apply relative h-[285px]
-        //
-        //}
-
         .mainContentWrap {
             .leftContent {
-                @apply bg-transparent mt-[100px]
+                @apply bg-transparent w-1/2
             }
 
-            .rightContent {
-                .searchWrap {
-                    .glassBg {
-                        @apply absolute top-0 right-0
-                    }
-
-                    .glassIcon {
-                        @apply absolute top-[20px] right-[26px]
-                    }
-
-                    input {
-                        &::placeholder {
-                            @apply text-[16px] font-[400] leading-[24px] tracking-widest text-[#8B8B8B] #{!important}
-                        }
-
-                        @apply shadow-[-2px_4px_31px_9px_#F2F4FF] pl-[27px] rounded-[50px] w-full h-full border-none #{!important}
-                    }
-
-                    @apply relative h-[65px] w-full
-                }
-
-                .cardsWrap {
-                    .flexBox {
-                        .categoriesWrap {
-                            .categories {
-                                .name {
-                                    @apply text-[14px] font-[400] leading-[21px] tracking-widest text-[#8B8B8B] h-[23px]
-                                }
-
-                                @apply flex flex-col gap-y-[3px] w-full mt-[22px]
-                            }
-
-                            @apply mt-0
-                        }
-
-                        .socialWrap {
-                            @apply mt-[15px]
-                        }
-
-                        .hiddenBox {
-                            @apply block
-                        }
-
-                        @apply flex flex-col flex-wrap
-                    }
-
-                    .socialWrap {
-                        @apply hidden
-                    }
-
-                    .tagsWrap {
-                        @apply mt-0
-                    }
-
-                    .postCard {
-                        @apply mt-[28px]
-                    }
-
-                    @apply mt-[76px] flex flex-wrap gap-[40px] justify-center
-                }
-            }
-
-            @apply justify-center flex-col-reverse
+            @apply px-[50px] justify-center gap-[100px]
         }
 
         .bottom {
@@ -426,13 +319,7 @@
 @media (max-width: 1040px) {
     .blogWrap {
         .mainContentWrap {
-            .rightContent {
-                .cardsWrap {
-                    .socialWrap {
-                        @apply mt-[50px] #{!important}
-                    }
-                }
-            }
+            @apply gap-[40px]
         }
     }
 }
@@ -441,7 +328,7 @@
     .blogWrap {
         .mainContentWrap {
             .leftContent {
-                @apply bg-transparent mt-[100px]
+                @apply bg-transparent mt-[76px] w-full
             }
 
             .rightContent {
@@ -470,7 +357,7 @@
                         .categoriesWrap {
                             .categories {
                                 .name {
-                                    @apply text-[14px] font-[400] leading-[21px] tracking-widest text-[#8B8B8B] h-[23px]
+                                    @apply text-[14px] text-center font-[400] leading-[21px] tracking-widest text-[#8B8B8B] h-[23px]
                                 }
 
                                 @apply flex flex-col gap-y-[3px] w-full mt-[22px]
@@ -479,34 +366,38 @@
                             @apply mt-0
                         }
 
-                        .socialWrap {
-                            @apply mt-[15px]
-                        }
-
                         .hiddenBox {
-                            @apply block
+                            .tags {
+                                @apply ml-0 place-content-center
+                            }
+
+                            @apply block mt-4
                         }
 
                         @apply flex flex-col flex-wrap
                     }
 
                     .socialWrap {
-                        @apply hidden
+                        .items {
+                            @apply justify-center gap-[60px]
+                        }
+
+                        @apply block w-full mt-0
                     }
 
                     .tagsWrap {
-                        @apply mt-0
+                        @apply hidden
                     }
 
                     .postCard {
-                        @apply mt-[28px]
+                        @apply mt-[30px] h-full
                     }
 
-                    @apply mt-[76px] flex flex-wrap gap-[40px] justify-center
+                    @apply mt-[76px] flex flex-wrap gap-[30px] justify-between
                 }
             }
 
-            @apply justify-center flex-col-reverse px-[80px]
+            @apply justify-center flex-col-reverse px-[30px]
         }
 
         .bottom {
@@ -526,6 +417,46 @@
         }
 
         @apply relative top-[140px]
+    }
+}
+
+@media (max-width: 790px) {
+    .blogWrap {
+        .mainContentWrap {
+            .rightContent {
+                .cardsWrap {
+                    .postCard {
+                        @apply mt-10
+                    }
+
+                    .tagsWrap {
+                        @apply h-auto
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 664px) {
+    .blogWrap {
+        .mainContentWrap {
+            .rightContent {
+                .cardsWrap {
+                    .flexBox {
+                        @apply w-full
+                    }
+
+                    .socialWrap {
+                        .items {
+                            @apply gap-[30px]
+                        }
+
+                        @apply h-auto
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -612,6 +543,7 @@
                         .tags {
                             @apply ml-0 place-content-center
                         }
+
                         @apply h-auto
                     }
                 }

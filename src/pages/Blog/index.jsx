@@ -74,14 +74,11 @@ export default function Blog() {
                                     }
                                 </div>
                             </Card>
-                            <Card title={'Social Connect'} extraClassname={`${styles.socialWrap} ${styles.hiddenBox}`}>
-                                <div className={styles.items}>
+                            <Card title={'Cloud Tags'} extraClassname={`${styles.tagsWrap} ${styles.hiddenBox}`}>
+                                <div className={styles.tags}>
                                     {
-                                        socialLinks.map((item, index) => (
-                                            <div key={index} className={styles.icon}>
-                                                <div className={styles.bgCircle}></div>
-                                                <img src={item.icon} alt={''}/>
-                                            </div>
+                                        cloudTags.map((tag, index) => (
+                                            <div key={index} className={styles.cloudTag}>{tag}</div>
                                         ))
                                     }
                                 </div>

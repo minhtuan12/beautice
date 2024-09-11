@@ -4,15 +4,19 @@ import Header from "./components/Header/index.jsx";
 import Footer from "./components/Footer/index.jsx";
 import {pathToIcon} from "../../utils/constants.js";
 import {
+    goToPageSuccess,
     setIsVisibleSlidingBtn,
     setVisibleImageUnderTitle,
     setVisibleStickyHeader
 } from "../../store/slices/app/index.js";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import {useNavigate} from "react-router-dom";
 
 export default function MainLayout({children, isLightTheme = false}) {
     const [isVisibleToTopBtn, setIsVisibleToTopBtn] = useState(false)
+    const goToPage = useSelector(state => state.app.goToPage)
     const dispatch = useDispatch()
+    const navigate = useNavigate()
 
     const handleScroll = () => {
         const currentTop = window.pageYOffset || document.documentElement.scrollTop
@@ -45,6 +49,13 @@ export default function MainLayout({children, isLightTheme = false}) {
             window.removeEventListener('resize', handleSetVisibleSlidingBtn)
         }
     }, [dispatch])
+
+    useEffect(() => {
+        if (goToPage.path && !goToPage.redirected) {
+            dispatch(goToPageSuccess());
+            navigate(goToPage.path);
+        }
+    }, [goToPage, navigate, dispatch]);
 
     return <div className={styles.mainWrap}>
         <Header isLightTheme={isLightTheme}/>

@@ -1,6 +1,8 @@
 .cardWrap {
     .imageWrap {
-
+        img {
+            @apply w-full
+        }
     }
 
     .content {
@@ -62,7 +64,7 @@
             @apply w-full p-[60px_62px_50px_76px] shadow-none flex-1
         }
 
-        @apply relative left-1/2 translate-x-[-50%] w-[530px] flex flex-col h-fit
+        @apply relative left-1/2 translate-x-[-50%] w-full flex flex-col h-fit
     }
 }
 
@@ -83,6 +85,7 @@
                 @apply break-words
             }
         }
+
         .btnWrap {
             @apply w-full #{!important}
         }

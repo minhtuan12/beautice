@@ -226,7 +226,7 @@
                 @apply w-full text-center
             }
 
-            @apply p-[0_150px]
+            @apply p-[0_80px]
         }
 
         .between {
@@ -295,6 +295,20 @@
 
 @media (max-width: 1000px) {
     .galleryWrap {
+        .top {
+            .imagesWrap {
+                img {
+                    @apply w-full
+                }
+
+                & {
+                    grid-template-columns: repeat(auto-fill, 500px);
+                }
+            }
+
+            @apply px-[30px]
+        }
+
         .between {
             @apply mb-[50px]
         }
@@ -329,12 +343,17 @@
     .galleryWrap {
         .top {
             .imagesWrap {
+                img {
+                    @apply w-full
+                }
+
                 & {
                     grid-template-columns: repeat(auto-fill, 100%)
                 }
 
                 @apply place-items-center
             }
+
             @apply px-[20px]
         }
 
@@ -356,6 +375,10 @@
 
 @media (max-width: 320px) {
     .galleryWrap {
+        .top {
+            @apply px-[16px]
+        }
+
         .between {
             .content {
                 .topContent {

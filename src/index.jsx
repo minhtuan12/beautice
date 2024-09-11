@@ -8,12 +8,16 @@ import 'animate.css';
 import {routers} from "./router/routers.js";
 import {Provider} from "react-redux";
 import store from "./store/configureStore.js";
+import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+const queryClient = new QueryClient()
 root.render(
     <Provider store={store}>
-        <RouterProvider router={routers}/>
+        <QueryClientProvider client={queryClient}>
+            <RouterProvider router={routers}/>
+        </QueryClientProvider>
     </Provider>
 );
 

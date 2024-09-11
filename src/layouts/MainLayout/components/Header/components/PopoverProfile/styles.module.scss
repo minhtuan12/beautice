@@ -1,0 +1,34 @@
+.modalInfoWrap {
+    &::before {
+        @apply absolute content-[''] h-3 w-3 -top-1.5 right-5 rounded-t-[1px] bg-gray-100 transform rotate-45
+    }
+
+    .personalInformationWrap {
+        .name {
+            @apply text-sm text-black-20 font-bold
+        }
+
+        .role {
+            @apply text-base text-[#091156] font-semibold
+        }
+
+        @apply flex justify-center items-center flex-col p-[13px] border-b
+    }
+
+    .mainModalInfoWrap {
+        .menuInfoWrap {
+            .itemInfoWrap {
+                &:hover {
+                    @apply text-[#2f3678] bg-[#f6f7ff] rounded-md
+                }
+
+                @apply text-[16px] font-[500] tracking-[0.04] text-black-20 font-bold;
+                @apply p-2 cursor-pointer font-medium transition-all duration-300 text-[#8b8b8b] flex justify-start items-center
+            }
+
+            @apply list-none m-0 p-3 border-0
+        }
+    }
+
+    @apply min-w-[177px] bg-gray-100 rounded relative z-[999999]
+}

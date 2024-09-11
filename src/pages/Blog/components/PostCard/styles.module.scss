@@ -18,16 +18,22 @@
     @apply flex justify-between h-[89px] w-full
 }
 
+@media (max-width: 790px) {
+    .cardWrap {
+        @apply justify-center gap-[30px]
+    }
+}
+
 @media (max-width: 400px) {
     .cardWrap {
         .content {
             .date, .desc {
-                @apply text-center w-full h-auto mt-3
+                @apply text-center w-full h-auto
             }
 
             @apply w-full
         }
 
-        @apply flex-wrap justify-center h-auto
+        @apply flex-wrap justify-center h-auto gap-[10px] mb-10
     }
 }

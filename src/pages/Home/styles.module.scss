@@ -44,7 +44,7 @@
         @apply absolute bottom-0 flex items-center justify-between w-[71px] h-[8.15px] left-[685px]
     }
 
-    @apply select-none relative w-[1286.5px] h-[805px]
+    @apply select-none relative w-[1290.5px] h-[805px]
 }
 
 @media (min-width: 1450px) {
@@ -134,7 +134,7 @@
         .content {
             .leftPartSlider {
                 .title, .description {
-                    @apply w-full
+                    @apply w-full text-center
                 }
 
                 .description {
@@ -146,9 +146,13 @@
                         @apply h-[50px]
                     }
 
-                    @apply w-[500px]
+                    @apply w-full text-center
                 }
+
+                @apply ml-0
             }
+
+            @apply px-[40px]
         }
     }
 }
@@ -286,8 +290,12 @@
 @media (max-width: 440px) {
     .coreServices {
         .header {
-            .servicesDescription {
+            .servicesDescription, .bottomDesc {
                 @apply h-auto
+            }
+
+            .bottomDesc {
+                @apply mt-0
             }
         }
 
@@ -306,8 +314,10 @@
                 @apply w-full h-auto mt-[100px]
             }
 
-            @apply mt-[140px]
+            @apply mt-[0px]
         }
+
+        @apply px-[40px]
     }
 }
 
@@ -510,6 +520,8 @@
                 @apply mt-2
             }
         }
+
+        @apply px-[40px]
     }
 }
 
@@ -519,7 +531,7 @@
             .leftContent {
                 .underImageWrap {
                     img {
-                        @apply mt-[100px]
+                        @apply mt-0
                     }
                 }
 
@@ -716,6 +728,14 @@
     .contactUs {
         .cuContent {
             .cuFormWrap {
+                .formTitle, .formUnderTitle, .formDesc {
+                    @apply text-center w-full #{!important}
+                }
+
+                .formDesc {
+                    @apply mt-4
+                }
+
                 .formContent {
                     .sendMsgBtn {
                         button {
@@ -724,6 +744,8 @@
                     }
                 }
             }
+
+            @apply px-[40px]
         }
     }
 }
@@ -734,10 +756,6 @@
             .cuFormWrap {
                 .formUnderTitle, .formDesc {
                     @apply h-auto
-                }
-
-                .formDesc {
-                    @apply mt-[100px]
                 }
             }
         }

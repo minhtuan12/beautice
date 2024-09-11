@@ -62,7 +62,7 @@
             @apply mt-[62px] ml-[-1px] relative cursor-pointer shadow-[0_25px_50px_25px_#F6F7FF]
         }
 
-        @apply p-[0_150px] relative z-10
+        @apply p-[0_149px] relative z-10
     }
 
     .expertsWrap {
@@ -175,7 +175,7 @@
                 @apply mt-[123px] w-full p-[0_86px_0_89px] ml-[-13px]
             }
 
-            @apply w-full p-[0_153px_50px_150px]
+            @apply w-full p-[0_150px_50px_149px]
         }
 
         @apply mt-[112px] relative
@@ -595,6 +595,8 @@
                     @apply w-[40px] h-[40px]
                 }
             }
+
+            @apply px-[16px]
         }
 
         .businessSloganWrap {
@@ -606,6 +608,10 @@
         }
 
         .bottomContentWrap {
+            .mainContent {
+                @apply px-[16px]
+            }
+
             @apply mb-[-200px] mt-[170px]
         }
     }

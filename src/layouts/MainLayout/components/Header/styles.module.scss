@@ -1,6 +1,10 @@
 .headerWrap {
-    img {
+    img, .lightThemeIcon {
         @apply select-none w-[258px] h-[120%] mt-[10px] ml-[-3px] cursor-pointer
+    }
+
+    .lightThemeIcon {
+        @apply h-full
     }
 
     .rightHeader {
@@ -73,6 +77,52 @@
             @apply ml-[52px]
         }
 
+        .authOption {
+            span {
+                &:first-child {
+                    @apply text-[#091156]
+                }
+
+                &:nth-child(2) {
+                    @apply text-[#8b8b8b]
+                }
+
+                @apply text-[16px] font-[500] leading-[24px] tracking-widest
+            }
+        }
+
+        .avatar {
+            .infoWrap {
+                .avatarWrap {
+                    img {
+                        @apply w-full h-full object-cover m-0
+                    }
+
+                    @apply w-full h-[55px] rounded-[50%] overflow-hidden flex items-center justify-center bg-gray-90
+                }
+
+                .info {
+                    span {
+                        @apply leading-none block
+                    }
+
+                    .name {
+                        @apply font-bold flex items-center
+                    }
+
+                    @apply not-italic font-normal text-sm text-black-20 mr-1
+                }
+
+                .btnWrap {
+                    @apply flex items-center mr-0.5
+                }
+
+                @apply flex justify-start items-center
+            }
+
+            @apply ml-10 w-[55px] h-[55px] rounded-[50%]
+        }
+
         .menuBtn {
             @apply transition-[.8s]
         }
@@ -94,10 +144,14 @@
         @apply w-screen h-[63px] absolute top-[41px] left-0 p-[0_40px] flex justify-between items-center
     }
 
-    @apply w-[1140px] h-[63px] absolute top-[39px] left-[150px] flex justify-between items-center z-10
+    @apply w-[1141px] h-[63px] absolute top-[39px] left-[149px] flex justify-between items-center z-10
 }
 
 .stickyHeader, .stickyDarkHeader {
+    img {
+        @apply w-auto ml-0
+    }
+
     .rightHeader {
         .contactBtn {
             button {
@@ -111,7 +165,7 @@
         box-shadow: rgba(0, 0, 0, 0.16) 0 10px 36px 0, rgba(0, 0, 0, 0.06) 0 0 0 1px #{!important};
     }
 
-    @apply fixed bg-white w-full h-[95px] left-1/2 top-0 translate-x-[-50%] p-[25px_60px] z-[9999]
+    @apply fixed bg-white w-full h-[95px] left-1/2 top-0 translate-x-[-50%] p-[25px_60px] z-[999]
 }
 
 .stickyDarkHeader {
@@ -188,8 +242,10 @@
 @media (max-width: 576px) {
     .headerWrap {
         img {
-            @apply ml-[1%]
+            @apply ml-0 w-auto
         }
+
+        @apply px-[16px]
     }
 }
 

@@ -6,6 +6,28 @@
     @apply shadow-[-2px_4px_31px_9px_#F2F4FF] rounded-[25px] w-[350px] p-[58px_28px_60px_49px]
 }
 
+@media (max-width: 860px) {
+    .cardWrap {
+        .title {
+            @apply text-center
+        }
+
+        @apply px-[40px]
+    }
+}
+
+@media (max-width: 790px) {
+    .cardWrap {
+        @apply w-[300px] flex-1
+    }
+}
+
+@media (max-width: 664px) {
+    .cardWrap {
+        @apply w-full
+    }
+}
+
 @media (max-width: 500px) {
     .cardWrap {
         @apply pl-[35px] pr-[20px]

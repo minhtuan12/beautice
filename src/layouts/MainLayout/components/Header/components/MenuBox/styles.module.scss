@@ -3,11 +3,11 @@
         .menuItem, .activeItem {
             &:hover {
                 &:first-child {
-                    @apply rounded-t-[12px]
+                    @apply rounded-t-[8px]
                 }
 
                 &:last-child {
-                    @apply rounded-b-[12px]
+                    @apply rounded-b-[8px]
                 }
 
                 .title {
@@ -34,7 +34,7 @@
             }
 
             .title {
-                @apply text-[#091156] font-semibold
+                @apply text-[#2f3678] font-semibold
             }
 
             @apply bg-[#f6f7ff]
@@ -63,9 +63,9 @@
                 @apply text-[16px]
             }
 
-            @apply px-10 py-5
+            @apply px-8 py-5
         }
     }
 
-    @apply left-0 right-auto top-14 w-[180px]
+    @apply left-0 right-auto top-14 w-[160px]
 }

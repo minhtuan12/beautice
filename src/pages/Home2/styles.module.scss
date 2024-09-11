@@ -75,7 +75,7 @@
                 @apply mt-[84px] flex items-center h-[127px] justify-between cursor-pointer
             }
 
-            @apply p-[307px_295px_314px_150px] absolute top-0 h-full flex justify-between w-full
+            @apply p-[307px_295px_314px_149px] absolute top-0 h-full flex justify-between w-full
         }
 
         @apply relative
@@ -661,6 +661,10 @@
 
 @media (max-width: 430px) {
     .homeWrap {
+        .aboutUsWrap, .mainServices, .blogWrap {
+            @apply px-[16px]
+        }
+
         .backgroundSliderWrap {
             .sliderContent {
                 .leftSlider {
