@@ -5,6 +5,8 @@ import {pathToIcon} from "../../utils/constants.js";
 import MainServiceCard from "./components/MainServiceCard/index.jsx";
 import KeyMetric from "./components/KeyMetric/index.jsx";
 import NewsCard from "./components/NewsCard/index.jsx";
+import Button from "../../components/Button/index.jsx";
+import Input from "../../components/Input/index.jsx";
 
 export default function Home2() {
     const mainServices = [
@@ -81,7 +83,7 @@ export default function Home2() {
                             fusce et magna consequat neque vitae lobortis.
                         </div>
                         <div className={styles.detailBtnWrap}>
-                            <button>More Details</button>
+                            <Button>More Details</Button>
                             <div className={styles.playBtnNextToDetailBtn}>
                                 <img alt={''} src={`${pathToIcon}/Group 4.png`}/>
                                 <div className={styles.rightText}>Tour Video</div>
@@ -113,7 +115,7 @@ export default function Home2() {
                         in suspendisse placerat.
                     </div>
                     <div className={styles.learnMoreBtnWrap}>
-                        <button>Learn More</button>
+                        <Button>Learn More</Button>
                     </div>
                 </div>
             </div>
@@ -208,7 +210,7 @@ export default function Home2() {
                     </div>
                     <div className={styles.lowerRightContent}>
                         <div className={styles.inputWrap}>
-                            <input placeholder={'Insert your phone number here ...'}/>
+                            <Input placeholder={'Insert your phone number here ...'}/>
                             <div className={styles.phoneImageWrap}>
                                 <img alt={''} src={`${pathToIcon}/phone-volume.png`}/>
                             </div>

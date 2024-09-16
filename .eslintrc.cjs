@@ -14,6 +14,7 @@ module.exports = {
     },
     "plugins": ["react", "react-hooks"],
     "rules": {
+        "react/no-unknown-property": [2, { ignore: ["tw"] }],
         "react/prop-types": "off",
         "no-console": 1,
         "react/sort-comp": [1, {

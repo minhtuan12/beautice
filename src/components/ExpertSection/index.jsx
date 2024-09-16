@@ -1,7 +1,7 @@
 import React, {useRef} from "react";
-import styles from './styles.module.scss'
 import {experts} from "./data.js";
-import ExpertCard from "./ExpertCard/index.jsx";
+import ExpertCard from "./components/ExpertCard/index.jsx";
+import {Description, Header, Section, SectionBox, SubTitle, Title} from "./components/index.js";
 
 export default function ExpertSection(
     {
@@ -15,19 +15,19 @@ export default function ExpertSection(
     }) {
     const expertWrapRef = useRef()
 
-    return <div className={`${styles.professionalTeams} ${extraClassname}`}>
-        <div className={`${styles.proHeader} ${headerClassname}`}>
-            <div className={styles.proHeaderTitle}>{title}</div>
-            <div className={styles.proHeaderUnderTitle}>{subTitle}</div>
-            <div className={`${styles.proHeaderDesc} ${descClassname}`}>{description}</div>
-        </div>
+    return <Section extraClassname={extraClassname}>
+        <Header extraClassname={headerClassname}>
+            <Title>{title}</Title>
+            <SubTitle>{subTitle}</SubTitle>
+            <Description extraClassname={descClassname}>{description}</Description>
+        </Header>
 
-        <div className={`${styles.proBoxSectionWrap} ${boxSectionClassname}`} ref={expertWrapRef}>
+        <SectionBox extraClassname={boxSectionClassname} ref={expertWrapRef}>
             {
                 experts.map((expert, index) => (
                     <ExpertCard key={index} expert={expert} index={index}/>
                 ))
             }
-        </div>
-    </div>
+        </SectionBox>
+    </Section>
 }

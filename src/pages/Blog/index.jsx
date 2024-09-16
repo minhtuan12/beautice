@@ -5,10 +5,24 @@ import {pathToIcon} from "../../utils/constants.js";
 import {blogs, categories, cloudTags, posts, socialLinks} from "./data.js";
 import BlogCard from "./components/BlogCard/index.jsx";
 import Card from "./components/Card/index.jsx";
-import PostCard from "./components/PostCard/index.jsx";
 import {useDispatch, useSelector} from "react-redux";
 import {useNavigate} from "react-router-dom";
 import {setFilter} from "../../store/slices/blog/index.js";
+import {
+    BackgroundImageWithMask,
+    BlogWrap,
+    Cards,
+    FlexBox,
+    LeftContent,
+    MainContent,
+    Post,
+    RightContent,
+    SearchInput,
+    Title,
+    TopContent
+} from "./components/index.js";
+import PostCard from "./components/PostCard/index.jsx";
+import tw from 'twin.macro'
 
 export default function Blog() {
     const filterData = useSelector(state => state.blog.filter)
@@ -21,23 +35,23 @@ export default function Blog() {
     }
 
     return <MainLayout>
-        <div className={styles.blogWrap}>
-            <div className={styles.top}>
-                <img alt={''} src={`${pathToIcon}/unsplash_QA9fRIi6sFw.png`} className={styles.bgImage}/>
-                <img alt={''} src={`${pathToIcon}/Background Mask (4).png`} className={styles.bgMask}/>
-                <div className={styles.topContent}>
-                    <div className={styles.contentTitle}>
-                        Blog
-                    </div>
-                    <div className={styles.breadcrumb}>
-                        <span className={'cursor-pointer hover:text-white'} onClick={() => navigate('/')}>
+        <BlogWrap>
+            <div
+                tw={'relative h-[calc(100vw_/_5.06)] exlg:(h-[285px] w-full left-1/2 translate-x-[-50%] overflow-hidden)'}>
+                <BackgroundImageWithMask alt={''} src={`${pathToIcon}/unsplash_QA9fRIi6sFw.png`}/>
+                <BackgroundImageWithMask alt={''} src={`${pathToIcon}/Background Mask (4).png`}/>
+                <TopContent>
+                    <Title>Blog</Title>
+                    <div
+                        tw={'text-[16px] font-[500] leading-[24px] tracking-widest text-[#D9D9D9] mr-[-1px] mt-[-1px]'}>
+                        <span tw={'cursor-pointer hover:text-white'} onClick={() => navigate('/')}>
                             Home</span> • Blog
                     </div>
-                </div>
+                </TopContent>
             </div>
 
-            <div className={styles.mainContentWrap}>
-                <div className={styles.leftContent}>
+            <MainContent>
+                <LeftContent>
                     {
                         blogs.map((blog, index) => (
                             <div key={index} className={index !== blogs.length - 1 ? 'mb-[133px]' : ''}>
@@ -45,16 +59,18 @@ export default function Blog() {
                             </div>
                         ))
                     }
-                </div>
-                <div className={styles.rightContent}>
-                    <div className={styles.searchWrap}>
-                        <input placeholder={'Search here ...'}/>
-                        <img alt={''} src={`${pathToIcon}/BG Button.png`} className={styles.glassBg}/>
-                        <img alt={''} src={`${pathToIcon}/Vector (4).png`} className={styles.glassIcon}/>
+                </LeftContent>
+                <RightContent>
+                    <div tw={'relative h-[65px] w-full'}>
+                        <SearchInput placeholder={'Search here ...'}/>
+                        <img alt={''} src={`${pathToIcon}/BG Button.png`}
+                             tw={'absolute top-0 right-0 cursor-pointer'}/>
+                        <img alt={''} src={`${pathToIcon}/Vector (4).png`}
+                             tw={'absolute top-[20px] right-[26px] cursor-pointer'}/>
                     </div>
-                    <div className={styles.cardsWrap}>
+                    <Cards>
                         <Card title={'Recent Posts'}>
-                            <div className={styles.postCard}>
+                            <Post>
                                 {
                                     posts.map((post, index) => (
                                         <div key={index} className={index !== posts.length - 1 ? 'mb-[19px]' : ''}>
@@ -62,10 +78,10 @@ export default function Blog() {
                                         </div>
                                     ))
                                 }
-                            </div>
+                            </Post>
                         </Card>
-                        <div className={styles.flexBox}>
-                            <Card title={'Categories'} extraClassname={styles.categoriesWrap}>
+                        <FlexBox>
+                            <Card title={'Categories'} extraClassname='mt-[83px] h-[250px] asmd:mt-0'>
                                 <div className={styles.categories}>
                                     {
                                         categories.map((category, index) => (
@@ -83,7 +99,7 @@ export default function Blog() {
                                     }
                                 </div>
                             </Card>
-                        </div>
+                        </FlexBox>
                         <Card title={'Cloud Tags'} extraClassname={styles.tagsWrap}>
                             <div className={styles.tags}>
                                 {
@@ -105,9 +121,9 @@ export default function Blog() {
                                 }
                             </div>
                         </Card>
-                    </div>
-                </div>
-            </div>
+                    </Cards>
+                </RightContent>
+            </MainContent>
 
             <div className={styles.bottom}>
                 <div className={styles.pagination}>
@@ -126,6 +142,6 @@ export default function Blog() {
                     }
                 </div>
             </div>
-        </div>
+        </BlogWrap>
     </MainLayout>
 }

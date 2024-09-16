@@ -3,6 +3,7 @@
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import "./assets/scss/variables";
+@import 'tailwindcss/base.css';
 
 * {
     font-family: Poppins, serif;
@@ -30,14 +31,10 @@ body {
     @apply text-[#C5C5C5] text-base font-normal select-none leading-6 tracking-widest text-left #{!important};
 }
 
-input, textarea {
+textarea {
     font-family: Poppins, serif !important;
     outline: none !important;
     @apply border bg-white leading-[26px] text-base font-normal tracking-widest text-left p-[15px_24px_16.58px_23px] rounded-[15px] border-solid border-[#D9DDFE] #{!important};
-}
-
-input :focus-visible {
-    outline: none !important;
 }
 
 /* textarea custom */
@@ -59,19 +56,6 @@ textarea::-webkit-scrollbar-track {
 
 textarea::-webkit-scrollbar-thumb {
     @apply bg-[#bec3cd] rounded-[2px] #{!important};
-}
-
-/* button custom */
-button {
-    outline: none !important;
-    font-family: Poppins, serif;
-
-    &:hover {
-        outline: none !important;
-        @apply border-[none] bg-[#fd74b9] #{!important};
-    }
-
-    @apply text-white cursor-pointer rounded-[50px] border-[none] bg-[#ff64ae] #{!important};
 }
 
 img {
@@ -125,30 +109,6 @@ img {
 }
 
 .custom-menu {
-    //.ant-menu-item:last-child:not(.ant-menu-submenu) {
-    //    span {
-    //        svg {
-    //            @apply fill-[#ff64ae]
-    //        }
-    //    }
-    //
-    //    .ant-menu-title-content {
-    //        @apply text-[#ff64ae]
-    //    }
-    //}
-    //
-    //.ant-menu-submenu .ant-menu-item:last-child {
-    //    span {
-    //        svg {
-    //            @apply fill-[#8b8b8b]
-    //        }
-    //    }
-    //
-    //    .ant-menu-title-content {
-    //        @apply text-[20px] tracking-[0.04rem] text-[#8b8b8b] font-[500]
-    //    }
-    //}
-
     .ant-menu-item-selected {
         span {
             svg {
@@ -286,5 +246,86 @@ img {
         }
 
         @apply p-0 rounded-md w-auto max-w-[340px] overflow-hidden #{!important}
+    }
+}
+
+.formWrap {
+    input {
+        &:focus-within {
+            @apply border-[gray] #{!important}
+        }
+
+        @apply w-full h-[60px] mt-1
+    }
+
+    .passwordInputWrap {
+        .icon {
+            @apply absolute top-[55%] right-6 cursor-pointer
+        }
+
+        @apply relative
+    }
+
+    .errorInput {
+        @apply border-[#D8000C] #{!important}
+    }
+
+    .submitBtn {
+        .loadingIcon {
+            -webkit-animation: rotating 1s linear infinite;
+            -moz-animation: rotating 1s linear infinite;
+            -ms-animation: rotating 1s linear infinite;
+            -o-animation: rotating 1s linear infinite;
+            animation: rotating 1s linear infinite;
+        }
+
+        &:hover {
+            @apply bg-[#353f96] #{!important}
+        }
+
+        &:disabled {
+            cursor: not-allowed #{!important};
+            @apply bg-[#545b9c] #{!important}
+        }
+
+        @apply w-full mt-8 h-[60px] select-none rounded-[15px] flex items-center justify-center gap-x-[14px] cursor-pointer bg-[#172176] text-white font-semibold text-center text-[18px] #{!important}
+    }
+
+    .option {
+        a {
+            @apply underline ml-1 #{!important}
+        }
+
+        @apply mt-4 text-[18px] text-center
+    }
+}
+
+@-webkit-keyframes rotating {
+    from {
+        -webkit-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotating {
+    from {
+        -ms-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -ms-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
     }
 }

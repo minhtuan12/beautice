@@ -362,10 +362,14 @@
     .aboutWrap {
         .introductionWrap {
             .header {
-                .subTitle, .description {
-                    @apply h-auto
+                .subTitle, .description, .title {
+                    @apply h-auto text-center w-full
                 }
+
+                @apply w-full
             }
+
+            @apply px-[50px]
         }
 
         .expertsWrap {
@@ -386,10 +390,14 @@
                     @apply h-auto text-center w-full
                 }
 
+                .sloganDescription {
+                    @apply ml-0 px-12
+                }
+
                 @apply w-full p-0 relative top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%]
             }
 
-            @apply h-[340px] px-[100px]
+            @apply h-[340px] px-[50px]
         }
 
         .bottomContentWrap {
@@ -408,13 +416,13 @@
                     }
 
                     .logosWrap {
-                        @apply flex-wrap justify-center ml-0 mt-12 gap-y-[20px] h-auto
+                        @apply flex-wrap justify-between ml-0 mt-12 gap-y-[20px] h-auto
                     }
 
                     @apply mt-[123px] w-full p-0 ml-0
                 }
 
-                @apply w-full p-[0_100px_50px_100px]
+                @apply w-full p-[0_50px_50px_50px]
             }
 
             @apply mt-[112px] relative
@@ -450,6 +458,10 @@
 
 @media (max-width: 870px) {
     .aboutWrap {
+        .introductionWrap {
+            @apply px-[30px]
+        }
+
         .businessSloganWrap {
             .sloganContent {
                 .sloganSubTitle {
@@ -462,6 +474,18 @@
             }
 
             @apply px-[30px] h-[260px]
+        }
+
+        .bottomContentWrap {
+            .mainContent {
+                .ourClients {
+                    .logosWrap {
+                        @apply justify-center
+                    }
+                }
+
+                @apply px-[30px]
+            }
         }
     }
 }
@@ -476,8 +500,6 @@
 
                 @apply w-full
             }
-
-            @apply px-[60px]
         }
 
         .bottomContentWrap {
@@ -522,14 +544,6 @@
 
             @apply p-[20px_15px_0_15px] mt-[-50px] mb-[180px]
         }
-
-        .bottomContentWrap {
-            .mainContent {
-                @apply px-[55px]
-            }
-
-            @apply mt-0
-        }
     }
 }
 
@@ -547,11 +561,25 @@
     }
 }
 
+@media (max-width: 576px) {
+    .aboutWrap {
+        .bottomContentWrap {
+            .mainContent {
+                @apply px-[16px]
+            }
+        }
+
+        .introductionWrap {
+            @apply px-[16px]
+        }
+    }
+}
+
 @media (min-width: 510px) and (max-width: 670px) {
     .aboutWrap {
         .businessSloganWrap {
             .sloganContent {
-                @apply top-[100px] px-[100px] #{!important}
+                @apply top-[100px] px-[30px] #{!important}
             }
         }
 
@@ -627,31 +655,11 @@
     }
 }
 
-@media (min-width: 365px) and (max-width: 370px) {
+@media (max-width: 370px) {
     .aboutWrap {
         .businessSloganWrap {
             .sloganContent {
-                @apply top-[80px]
-            }
-        }
-    }
-}
-
-@media (max-width: 365px) {
-    .aboutWrap {
-        .businessSloganWrap {
-            .sloganContent {
-                @apply top-[45px]
-            }
-        }
-    }
-}
-
-@media (max-width: 326px) {
-    .aboutWrap {
-        .businessSloganWrap {
-            .sloganContent {
-                @apply top-[35px]
+                @apply hidden
             }
         }
     }

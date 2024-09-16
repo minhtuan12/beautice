@@ -4,7 +4,6 @@ import {useForm} from "react-hook-form";
 import _ from "lodash";
 import ErrorMessage from "../../../components/ErrorMessage/index.jsx";
 import {VALIDATE_PASSWORD_REGEX, VALIDATE_PHONE_REGEX} from "../../../utils/constants.js";
-import styles from './styles.module.scss'
 import InlineSVG from "react-inlinesvg";
 import EyeIcon from '../../../assets/images/icons/solid/eye.svg'
 import EyeSlashIcon from '../../../assets/images/icons/solid/eye-slash.svg'
@@ -14,6 +13,8 @@ import LoadingIcon from "../../../assets/images/icons/solid/circle-notch.svg";
 import {useMutation} from "@tanstack/react-query";
 import {register as requestRegister} from '../../../api/auth/index.js'
 import {useNavigate} from "react-router-dom";
+import Button from "../../../components/Button/index.jsx";
+import Input from "../../../components/Input/index.jsx";
 
 export default function Register() {
     const [registerData, setRegisterData] = useState({
@@ -84,11 +85,11 @@ export default function Register() {
     }, [registerData, setValue])
 
     return <AuthLayout title={'Register'}>
-        <form onSubmit={handleSubmit(handleSubmitRegister)} className={styles.formWrap}>
+        <form onSubmit={handleSubmit(handleSubmitRegister)} className={'formWrap'}>
             <label className={'flex mt-6 text-[18px] ml-1 font-medium'}>Full Name <div
                 className={'text-[red] ml-1'}>*</div></label>
-            <input
-                className={!_.isEmpty(errors.fullName?.message) ? styles.errorInput : ''}
+            <Input
+                className={!_.isEmpty(errors.fullName?.message) ? 'errorInput' : ''}
                 {
                     ...register('fullName',
                         {
@@ -102,8 +103,8 @@ export default function Register() {
 
             <label className={'flex mt-6 text-[18px] ml-1 font-medium'}>Phone number <div
                 className={'text-[red] ml-1'}>*</div></label>
-            <input
-                className={!_.isEmpty(errors.phone?.message) ? styles.errorInput : ''}
+            <Input
+                className={!_.isEmpty(errors.phone?.message) ? 'errorInput' : ''}
                 {
                     ...register('phone',
                         {
@@ -123,12 +124,12 @@ export default function Register() {
             />
             {!_.isEmpty(errors.phone?.message) ? <ErrorMessage message={errors.phone?.message}/> : ''}
 
-            <div className={styles.passwordInputWrap}>
+            <div className={'passwordInputWrap'}>
                 <label className={'flex mt-6 text-[18px] ml-1 font-medium'}>Password <div
                     className={'text-[red] ml-1'}>*</div></label>
-                <input
+                <Input
                     id={'password'}
-                    className={!_.isEmpty(errors.password?.message) ? styles.errorInput : ''}
+                    className={!_.isEmpty(errors.password?.message) ? 'errorInput' : ''}
                     type={'password'}
                     {
                         ...register('password',
@@ -148,25 +149,25 @@ export default function Register() {
                     placeholder={'Password'}
                 />
                 {
-                    visiblePassword ? <InlineSVG src={EyeIcon} width={22} height={22} className={styles.icon}
+                    visiblePassword ? <InlineSVG src={EyeIcon} width={22} height={22} className={'icon'}
                                                  onClick={() => handleChangePasswordVisibility('hide')}/> :
-                        <InlineSVG src={EyeSlashIcon} width={22} height={22} className={styles.icon}
+                        <InlineSVG src={EyeSlashIcon} width={22} height={22} className={'icon'}
                                    onClick={() => handleChangePasswordVisibility('reveal')}/>
                 }
             </div>
             {!_.isEmpty(errors.password?.message) ? <ErrorMessage message={errors.password?.message}/> : ''}
 
-            <button type="submit" className={styles.submitBtn} disabled={isPending}>
+            <Button type="submit" className={'submitBtn'} disabled={isPending}>
                 {
                     isPending ?
-                        <InlineSVG className={styles.loadingIcon} src={LoadingIcon} width={22} height={22}/>
+                        <InlineSVG className={'loadingIcon'} src={LoadingIcon} width={22} height={22}/>
                         : ''
                 }
                 Sign up
                 <InlineSVG src={RegisterIcon} width={22} height={22}/>
-            </button>
+            </Button>
 
-            <div className={styles.option}>
+            <div className={'option'}>
                 Already have an account? <a href={'/login'}>Log in</a>
             </div>
         </form>

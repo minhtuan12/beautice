@@ -10,6 +10,7 @@ import Contact from "../pages/Contact/index.jsx";
 import {rootLoader} from "./rootLoader.js";
 import Login from "../pages/Auth/Login/index.jsx";
 import Register from "../pages/Auth/Register/index.jsx";
+import Profile from "../pages/Profile/index.jsx";
 
 export const routers = createBrowserRouter([
     {
@@ -84,9 +85,9 @@ export const routers = createBrowserRouter([
     },
     {
         path: '/profile',
-        element: '',
+        element: <Profile/>,
         loader: ({request}) => rootLoader(
-            {request}, true, 'LOAD_AUTH_PAGE'
+            {request}, false, 'LOAD_AUTH_PAGE'
         )
     }
 ])

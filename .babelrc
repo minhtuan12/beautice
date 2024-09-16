@@ -1,0 +1,12 @@
+{
+    "presets": [
+        "emotion",
+        "@babel/preset-react"
+    ],
+    "plugins": [
+        "styled-components",
+        "babel-plugin-macros",
+        "babel-plugin-twin",
+        "@babel/plugin-transform-react-jsx"
+    ]
+}

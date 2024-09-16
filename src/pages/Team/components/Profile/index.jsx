@@ -1,20 +1,21 @@
 import React from "react";
-import styles from './styles.module.scss'
+import {Description, InformationSection, ProfileWrap, Top} from "../index.js";
+import tw from 'twin.macro'
 
 export default function Profile({data, index, length}) {
     const {avatar, name, position, description} = data
 
-    return <div className={`${styles.profileWrap} ${index !== length - 1 ? 'mb-[79px]' : ''}`}>
-        <div className={styles.avatar}>
+    return <ProfileWrap index={index} length={length}>
+        <div tw={'h-full'}>
             <img alt={''} src={avatar}/>
         </div>
-        <div className={styles.information}>
-            <div className={styles.top}>
-                {name} / <span>{position}</span>
-            </div>
-            <div className={styles.description}>
-                {description}
-            </div>
-        </div>
-    </div>
+        <InformationSection>
+            <Top>
+                {name} / <span tw={'text-[14px] italic font-[400] leading-[17.5px] text-[#8B8B8B]'}>
+                {position}
+            </span>
+            </Top>
+            <Description>{description}</Description>
+        </InformationSection>
+    </ProfileWrap>
 }

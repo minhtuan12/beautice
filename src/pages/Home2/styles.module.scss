@@ -379,9 +379,11 @@
                 .mainTitle, .underTitle, .descriptionUnder {
                     @apply h-auto
                 }
+
+                @apply flex-1
             }
 
-            @apply items-center
+            @apply items-center px-[50px] gap-[100px]
         }
 
         .mainServices {
@@ -405,7 +407,7 @@
                 }
             }
 
-            @apply h-auto p-[0_80px_160px_80px] mt-[60px]
+            @apply h-auto p-[0_50px_160px_50px] mt-[60px]
         }
 
         .statisticsWrap {
@@ -483,7 +485,7 @@
                 @apply mt-[70px] flex-col
             }
 
-            @apply h-auto p-[150px_150px_100px_150px]
+            @apply h-auto p-[150px_50px_100px_50px]
         }
     }
 }
@@ -519,7 +521,11 @@
                 @apply w-full flex flex-col items-center
             }
 
-            @apply p-[120px_50px_70px_50px] h-auto
+            @apply p-[120px_30px_70px_30px] h-auto
+        }
+
+        .mainServices {
+            @apply px-[30px]
         }
 
         .statisticsWrap {
@@ -588,7 +594,7 @@
                 @apply mt-[70px] flex-col
             }
 
-            @apply h-auto p-[150px_50px_100px_50px]
+            @apply h-auto p-[150px_30px_100px_30px]
         }
     }
 }
@@ -621,6 +627,10 @@
 
 @media (max-width: 576px) {
     .homeWrap {
+        .mainServices, .blogWrap, .aboutUsWrap {
+            @apply px-[16px]
+        }
+
         .backgroundSliderWrap {
             .sliderContent {
                 .leftSlider {

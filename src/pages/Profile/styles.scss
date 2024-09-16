@@ -1,0 +1,25 @@
+.avatar-custom {
+    .ant-avatar-circle {
+        @apply border-[#ff64ae] border-[2px]
+    }
+}
+
+.tab-custom {
+    .ant-tabs-tab-btn {
+        @apply tracking-[0.05rem] text-[18px] text-[#8b8b8b] #{!important}
+    }
+
+    .ant-tabs-tab-active {
+        .ant-tabs-tab-btn {
+            @apply font-medium text-[#172176] #{!important}
+        }
+    }
+
+    .ant-tabs-content-holder {
+        @apply mt-[-28px] #{!important}
+    }
+
+    .ant-tabs-ink-bar {
+        @apply bg-[#172176] #{!important}
+    }
+}

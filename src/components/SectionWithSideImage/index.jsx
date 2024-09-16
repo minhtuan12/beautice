@@ -1,5 +1,6 @@
 import React from "react";
 import styles from './styles.module.scss'
+import {useSelector} from "react-redux";
 
 export default function SectionWithSideImage(
     {
@@ -13,11 +14,14 @@ export default function SectionWithSideImage(
         subTitleWidth,
         imageClass = ''
     }) {
+    const isVisibleSlidingBtn = useSelector(state => state.app.isVisibleSlidingBtn)
+
     return <div className={`${styles.sectionWrap} ${isReverse ? 'flex-row-reverse' : ''}`}>
         <div className={`${styles.imageWrap} ${imageClass}`}>
             <img alt={''} src={imageUrl}/>
         </div>
-        <div className={styles.content} style={contentWidth ? {width: contentWidth} : {}}>
+        <div className={`${styles.content} ${(isReverse && isVisibleSlidingBtn) ? 'ml-10' : ''}`}
+             style={contentWidth ? {width: contentWidth} : {}}>
             <div className={styles.title}>
                 {title}
             </div>

@@ -70,3 +70,9 @@
         @apply w-[261px] h-[350px]
     }
 }
+
+@media (max-width: 576px) {
+    .cardWrap {
+        @apply w-[300px]
+    }
+}

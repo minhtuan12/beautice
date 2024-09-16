@@ -1,0 +1,56 @@
+.profileWrap {
+    .backgroundWrap {
+        .avatarWrap {
+            .avatar {
+                @apply w-[130px] h-[130px]
+            }
+
+            @apply border-[#17c653]
+        }
+
+        .name {
+            @apply font-semibold text-[26px] mt-4 text-[#091156] tracking-widest
+        }
+
+        .infoWrap {
+            .info {
+                a {
+                    @apply hover:text-[#1b84ff]
+                }
+
+                @apply flex justify-center items-center
+            }
+
+            @apply text-[#8b8b8b] mt-4 text-[18px] font-[500] tracking-widest
+        }
+
+        background-image: url("../../assets/images/logos/hero-bg.png");
+        background-size: cover;
+        background-position: 50%;
+        @apply h-[300px] flex items-center justify-center flex-col
+    }
+
+    .tabsWrap {
+        @apply mt-[10px] p-[0_150px_0_149px]
+    }
+
+    @media (max-width: 428px) and (min-width: 350px) {
+        .infoWrap {
+            div {
+                @apply mr-0
+            }
+
+            @apply flex justify-center flex-col items-center mb-5
+        }
+    }
+
+    @apply relative top-[200px] h-[1200px]
+}
+
+@media (max-width: 992px) {
+    .profileWrap {
+        .tabsWrap {
+            @apply px-[40px]
+        }
+    }
+}

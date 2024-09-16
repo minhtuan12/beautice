@@ -33,7 +33,7 @@
 @media (min-width: 1450px) {
     .sectionWrap {
         .imageWrap {
-                @apply w-[475px]
+            @apply w-[475px]
         }
 
         .content {
@@ -54,10 +54,16 @@
 
 @media (max-width: 1430px) {
     .sectionWrap {
+        .imageWrap {
+            @apply w-auto
+        }
+
         .content {
             .title, .subTitle, .description {
-                @apply h-auto
+                @apply h-auto w-full
             }
+
+            @apply flex-1
         }
 
         @apply items-center h-auto

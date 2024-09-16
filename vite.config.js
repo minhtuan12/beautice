@@ -19,7 +19,11 @@ export default defineConfig({
                 })
             },
         },
-        react(),
+        react({
+            babel: {
+                plugins: ['babel-plugin-macros', 'babel-plugin-styled-components'],
+            },
+        }),
     ],
     optimizeDeps: {
         force: true,
@@ -28,5 +32,5 @@ export default defineConfig({
                 '.js': 'jsx',
             },
         },
-    },
+    }
 })

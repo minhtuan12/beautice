@@ -127,6 +127,19 @@ export default {
                 'card-box': '0px 3px 4px 0px rgba(0, 0, 0, 0.03)',
             }
         },
+        screens: {
+            'exlg': {'min': '1450px'},
+            'large': {'max': '1430px'},
+            'smlg': {'max': '992px'},
+            'md': {'max': '870px'},
+            'asmd': {'max': '860px'},
+            'btab': {'max': '820px'},
+            'tab': {'max': '768px'},
+            'smtab': {'max': '680px'},
+            'smd': {'max': '576px'},
+            'ip15': {'max': '440px'},
+            'norm': {'max': '360px'}
+        }
     },
     plugins: [],
 }

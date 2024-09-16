@@ -20,11 +20,14 @@
             @apply py-20 px-14 bg-[#E4E7FFBF] w-1/2 rounded-r-[20px]
         }
 
-        box-shadow: rgba(0, 0, 0, 0.2) 0 18px 50px -10px;
+        & {
+            box-shadow: rgba(0, 0, 0, 0.2) 0 18px 50px -10px;
+        }
+
         @apply rounded-[20px] bg-white h-auto w-[1100px] absolute left-1/2 translate-x-[-50%] flex
     }
 
-    @apply relative top-[200px] h-[1100px]
+    @apply relative top-[250px] h-[1100px]
 }
 
 .bg {
@@ -33,4 +36,40 @@
     }
 
     @apply absolute z-[-1] w-full h-full
+}
+
+@media (max-width: 1430px) {
+    .authWrap {
+        @apply h-[950px] top-[250px]
+    }
+}
+
+@media (max-width: 1200px) {
+    .authWrap {
+        .authContainer {
+            .leftCard {
+                @apply hidden
+            }
+
+            .rightCard {
+                @apply w-full rounded-[20px]
+            }
+
+            @apply w-[500px]
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .authWrap {
+        .authContainer {
+            .rightCard {
+                @apply px-[20px]
+            }
+
+            @apply w-full static translate-x-[0]
+        }
+
+        @apply px-[26px] w-full
+    }
 }

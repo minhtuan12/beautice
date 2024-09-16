@@ -2,17 +2,21 @@ import React, {useEffect, useRef, useState} from "react";
 import styles from './styles.module.scss'
 import {mainMenu} from "./menu.js";
 import {useLocation, useNavigate} from "react-router-dom";
-import {CloseOutlined, MenuOutlined} from '@ant-design/icons'
+import {CloseOutlined, EnterOutlined, MenuOutlined} from '@ant-design/icons'
 import {pathToIcon} from "../../../../utils/constants.js";
 import MenuBox from "./components/MenuBox/index.jsx";
-import {Drawer, Menu, Popover} from "antd";
-import {useSelector} from "react-redux";
-import PopoverProfile from './components/PopoverProfile/index.jsx'
-import DefaultAvatar from '../../../../assets/images/logos/user-default.png'
+import {Drawer, Menu} from "antd";
+import {useDispatch, useSelector} from "react-redux";
+import _ from "lodash";
+import {removeAuthToken} from "../../../../utils/helpers.js";
+import {requestGetMeFail} from "../../../../store/slices/auth/index.js";
+import tw from 'twin.macro'
+import Button from "../../../../components/Button/index.jsx";
 
 export default function Header({isLightTheme}) {
     const navigate = useNavigate()
     const location = useLocation()
+    const dispatch = useDispatch()
     const menuBtnRef = useRef()
     const homeMenuBtnRef = useRef()
     const [isVisibleMenuBtn, setIsVisibleMenuBtn] = useState(window.innerWidth <= 1430)
@@ -67,7 +71,8 @@ export default function Header({isLightTheme}) {
             (!isLightTheme || visibleStickyHeader) ?
                 <img src={`${pathToIcon}/Main Logo.svg`} alt="" onClick={handleGoToHome}/>
                 : <img src={`${pathToIcon}/Main Logo.png`} alt=""
-                       className={`!mt-[2px] !ml-0 !w-auto ${styles.darkThemeLogo} ${styles.lightThemeIcon}`} onClick={handleGoToHome}/>
+                       className={`!mt-[2px] !ml-0 !w-auto ${styles.darkThemeLogo} ${styles.lightThemeIcon}`}
+                       onClick={handleGoToHome}/>
         }
 
         <div className={styles.rightHeader}>
@@ -115,7 +120,9 @@ export default function Header({isLightTheme}) {
                 </div> : ''
             }
             <div className={styles.contactBtn} onClick={() => navigate('/contact')}>
-                <button>Contact</button>
+                <Button tw={'!w-[158px] !h-[52px] text-[16px] font-semibold leading-6 tracking-widest large:!hidden'}>
+                    Contact
+                </Button>
             </div>
             {/*<div className={styles.avatar}>*/}
             {/*    <Popover placement="bottomRight" content={PopoverProfile}*/}
@@ -157,17 +164,44 @@ export default function Header({isLightTheme}) {
                     <Drawer
                         width={window.innerWidth < 768 ? '100%' : 378}
                         className={'custom-drawer'}
-                        title={<div className={'text-[22px] text-[#091156] font-medium'}>Menu</div>}
+                        title={
+                            <div
+                                className={`whitespace-nowrap overflow-hidden overflow-ellipsis text-[20px] ${window.innerWidth < 768 ? 'max-w-[calc(100vw_-_100px)]' : 'max-w-[250px]'} text-[#8b8b8b] font-medium`}>
+                                {
+                                    !_.isEmpty(authUser) ? `Hi, ${authUser?.full_name}` :
+                                        <>
+                                            <span className={'text-[#091156]'} onClick={() => navigate('/login')}>
+                                                Log in
+                                            </span> /
+                                            <span onClick={() => navigate('/register')}>
+                                                Sign up
+                                            </span>
+                                        </>
+                                }
+                            </div>
+                        }
                         onClose={() => setIsVisibleMenuBox(false)}
                         open={isVisibleMenuBox}
                     >
                         <Menu
                             className={'custom-menu'}
                             onClick={(item) => {
-                                navigate(item.key)
+                                if (item.key !== '/logout') {
+                                    navigate(item.key)
+                                } else {
+                                    removeAuthToken()
+                                    dispatch(requestGetMeFail())
+                                }
                             }}
                             mode="inline"
-                            items={mainMenu}
+                            items={
+                                !_.isEmpty(authUser) ? [...mainMenu, {
+                                    key: '/logout',
+                                    label: 'Log out',
+                                    href: '#',
+                                    icon: <EnterOutlined/>,
+                                }] : mainMenu
+                            }
                             style={{
                                 fontSize: '22px',
                             }}
