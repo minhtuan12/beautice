@@ -157,9 +157,9 @@ export default function Home() {
               }
             `}>
                 <div css={css`
-                  ${tw`z-10 large:flex-1 md:(w-full mt-2) smd:mt-2`};
+                  ${tw`z-10 large:flex-1 md:(w-full mt-2 !px-[30px]) smd:(mt-2 !px-[16px])`};
                   @media (max-width: 1300px) {
-                    ${tw`ml-[50%] translate-x-[-50%] mt-14`}
+                    ${tw`relative left-1/2 translate-x-[-50%] mt-14 px-[50px]`}
                   }
                 `}>
                     <div css={css`
@@ -188,7 +188,7 @@ export default function Home() {
                     <div css={css`
                       ${tw`leading-[24px] font-[400] w-[483px] h-[196px] text-[16px] tracking-widest text-left text-[#8B8B8B] mt-[12px] large:w-full md:(w-full mt-[50px]) ip15:h-auto`};
                       @media (max-width: 1300px) {
-                        ${tw`text-center mt-8`}
+                        ${tw`text-center mt-8 h-auto`}
                       }
                     `}>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit, quam suscipit purus donec amet.
@@ -198,7 +198,7 @@ export default function Home() {
                     </div>
                     <div css={css`
                       ${tw`flex items-center mt-[49px] md:mt-4 
-                        smd:(w-[350px] mt-24 flex justify-center flex-wrap relative left-1/2 translate-x-[-50%]) 
+                        smd:(w-[350px] mt-16 flex justify-center flex-wrap relative left-1/2 translate-x-[-50%]) 
                         ip15:(w-full flex-col)`
                       };
                       @media (max-width: 1300px) {

@@ -1,6 +1,6 @@
 import React from "react";
 import {pathToIcon} from "../../../../utils/constants.js";
-import {ExpertDesc, ExpertName, ExpertOccupation, ExpertSocial, SocialIcon} from "../index.js";
+import {ExpertDesc, ExpertName, ExpertOccupation, ExpertSocial, SocialIcon} from "./styles.js";
 import tw from 'twin.macro'
 
 export default function ExpertCard({expert}) {

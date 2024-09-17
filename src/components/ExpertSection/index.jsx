@@ -1,7 +1,7 @@
 import React, {useRef} from "react";
 import {experts} from "./data.js";
 import ExpertCard from "./components/ExpertCard/index.jsx";
-import {Description, Header, Section, SectionBox, SubTitle, Title} from "./components/index.js";
+import {Description, Header, Section, SectionBox, SubTitle, Title} from "./styles.js";
 
 export default function ExpertSection(
     {

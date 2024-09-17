@@ -29,7 +29,7 @@ export const MainContent = styled.div`
     ${tw`!justify-center !flex-col-reverse !px-[30px]`}
   }
   @media (max-width: 500px) {
-    ${tw`!px-[20px]`}
+    ${tw`!px-[16px]`}
   }
 `
 export const LeftContent = styled.div`

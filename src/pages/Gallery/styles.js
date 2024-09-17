@@ -7,10 +7,10 @@ export const Top = styled.div`
     exlg:(w-[1440px] relative left-1/2 translate-x-[-50%]) 
     large:!p-[0_50px]
     md:!px-[30px]
-    smd:px-[16px]`
+    smd:!px-[16px]`
   };
   @media (max-width: 320px) {
-    ${tw`px-[16px]`}
+    ${tw`!px-[16px]`}
   }
 `
 export const Header = tw.div`
@@ -72,6 +72,6 @@ export const Bottom = styled.div`
     ${tw`!pt-[150px] !pb-0 !px-[50px]`}
   }
   @media (max-width: 678px) {
-    ${tw`!px-[30px] !mt-[30px]`}
+    ${tw`!px-[16px] !mt-[30px]`}
   }
 `

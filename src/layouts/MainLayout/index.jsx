@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from "react";
-import styles from './styles.module.scss'
 import Header from "./components/Header/index.jsx";
 import Footer from "./components/Footer/index.jsx";
 import {pathToIcon} from "../../utils/constants.js";
@@ -11,6 +10,7 @@ import {
 } from "../../store/slices/app/index.js";
 import {useDispatch, useSelector} from "react-redux";
 import {useNavigate} from "react-router-dom";
+import {MainWrap, ToTopBtn} from "./styles.js";
 
 export default function MainLayout({children, isLightTheme = false}) {
     const [isVisibleToTopBtn, setIsVisibleToTopBtn] = useState(false)
@@ -57,14 +57,14 @@ export default function MainLayout({children, isLightTheme = false}) {
         }
     }, [goToPage, navigate, dispatch]);
 
-    return <div className={styles.mainWrap}>
+    return <MainWrap>
         <Header isLightTheme={isLightTheme}/>
         {children}
         <Footer/>
         {
-            isVisibleToTopBtn ? <div className={styles.toTopBtn} onClick={handleGoToTop}>
+            isVisibleToTopBtn ? <ToTopBtn onClick={handleGoToTop}>
                 <img alt="" src={`${pathToIcon}/arrow-up.png`}/>
-            </div> : ''
+            </ToTopBtn> : ''
         }
-    </div>
+    </MainWrap>
 }

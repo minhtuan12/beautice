@@ -13,7 +13,7 @@ import {
     Image,
     ImageSection,
     Top
-} from "./components.js";
+} from "./styles.js";
 import tw, {css} from "twin.macro";
 
 export default function Gallery() {

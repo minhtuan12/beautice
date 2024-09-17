@@ -1,6 +1,6 @@
 import React from "react";
 import {pathToIcon} from "../../../../utils/constants.js";
-import {Feedback, Ratio, ResponseWrap} from "../index.js";
+import {Feedback, Ratio, ResponseWrap} from "./styles.js";
 
 export default function CustomerResponse({data}) {
     const {avatar, feedback, star} = data

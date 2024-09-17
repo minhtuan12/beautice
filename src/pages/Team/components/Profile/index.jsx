@@ -1,5 +1,5 @@
 import React from "react";
-import {Description, InformationSection, ProfileWrap, Top} from "../index.js";
+import {Description, InformationSection, ProfileWrap, Top} from "./styles.js";
 import tw from 'twin.macro'
 
 export default function Profile({data, index, length}) {

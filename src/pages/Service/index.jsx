@@ -15,7 +15,7 @@ import {
     SectionDescription,
     SectionImage,
     SectionOption
-} from "./components.js";
+} from "./styles.js";
 
 const TopImage = tw(Image)`btab:w-full`
 
