@@ -3,7 +3,7 @@ import callApi from "../rootApi.js";
 export const register = (data) => {
     return callApi({
         method: 'post',
-        apiPath: `auth/register`,
+        apiPath: `api/public/auth/register`,
         variables: {
             full_name: data.fullName,
             phone: data.phone,
@@ -14,7 +14,7 @@ export const register = (data) => {
 export const login = (data) => {
     return callApi({
         method: 'post',
-        apiPath: `auth/login`,
+        apiPath: `api/public/auth/login`,
         variables: {
             phone: data.phone,
             password: data.password,
@@ -25,7 +25,7 @@ export const login = (data) => {
 export const getMe = () => {
     return callApi({
         method: 'get',
-        apiPath: `auth/me`,
+        apiPath: `api/public/auth/me`,
         variables: {}
     })
 }
