@@ -3,7 +3,7 @@ import Header from "./components/Header/index.jsx";
 import Footer from "./components/Footer/index.jsx";
 import {pathToIcon} from "../../utils/constants.js";
 import {
-    goToPageSuccess,
+    goToPageSuccess, setIsVisibleMenuBox,
     setIsVisibleSlidingBtn,
     setVisibleImageUnderTitle,
     setVisibleStickyHeader
@@ -37,6 +37,7 @@ export default function MainLayout({children, isLightTheme = false}) {
     }, [])
 
     useEffect(() => {
+        dispatch(setIsVisibleMenuBox(false))
         window.scrollTo({top: 0, behavior: 'auto'})
 
         const handleSetVisibleSlidingBtn = () => {

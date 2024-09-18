@@ -15,6 +15,7 @@ import {register as requestRegister} from '../../../api/auth/index.js'
 import {useNavigate} from "react-router-dom";
 import Button from "../../../components/Button/index.jsx";
 import Input from "../../../components/Input/index.jsx";
+import tw from 'twin.macro'
 
 export default function Register() {
     const [registerData, setRegisterData] = useState({
@@ -86,8 +87,8 @@ export default function Register() {
 
     return <AuthLayout title={'Register'}>
         <form onSubmit={handleSubmit(handleSubmitRegister)} className={'formWrap'}>
-            <label className={'flex mt-6 text-[18px] ml-1 font-medium'}>Full Name <div
-                className={'text-[red] ml-1'}>*</div></label>
+            <label tw={'flex mt-6 text-[18px] ml-1 font-medium'}>Full Name <div
+                tw={'text-[red] ml-1'}>*</div></label>
             <Input
                 className={!_.isEmpty(errors.fullName?.message) ? 'errorInput' : ''}
                 {
@@ -101,8 +102,8 @@ export default function Register() {
             />
             {!_.isEmpty(errors.fullName?.message) ? <ErrorMessage message={errors.fullName?.message}/> : ''}
 
-            <label className={'flex mt-6 text-[18px] ml-1 font-medium'}>Phone number <div
-                className={'text-[red] ml-1'}>*</div></label>
+            <label tw={'flex mt-6 text-[18px] ml-1 font-medium'}>Phone number <div
+                tw={'text-[red] ml-1'}>*</div></label>
             <Input
                 className={!_.isEmpty(errors.phone?.message) ? 'errorInput' : ''}
                 {
@@ -125,8 +126,8 @@ export default function Register() {
             {!_.isEmpty(errors.phone?.message) ? <ErrorMessage message={errors.phone?.message}/> : ''}
 
             <div className={'passwordInputWrap'}>
-                <label className={'flex mt-6 text-[18px] ml-1 font-medium'}>Password <div
-                    className={'text-[red] ml-1'}>*</div></label>
+                <label tw={'flex mt-6 text-[18px] ml-1 font-medium'}>Password <div
+                    tw={'text-[red] ml-1'}>*</div></label>
                 <Input
                     id={'password'}
                     className={!_.isEmpty(errors.password?.message) ? 'errorInput' : ''}

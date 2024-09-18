@@ -87,7 +87,7 @@ export const routers = createBrowserRouter([
         path: '/profile',
         element: <Profile/>,
         loader: ({request}) => rootLoader(
-            {request}, false, 'LOAD_AUTH_PAGE'
+            {request}, true, 'LOAD_AUTH_PAGE'
         )
     }
 ])

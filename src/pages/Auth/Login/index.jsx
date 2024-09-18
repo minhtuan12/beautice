@@ -15,6 +15,7 @@ import {notify, setAuthToken} from "../../../utils/helpers.js";
 import {useNavigate} from "react-router-dom";
 import Button from "../../../components/Button/index.jsx";
 import Input from "../../../components/Input/index.jsx";
+import tw from 'twin.macro'
 
 export default function Login() {
     const [loginData, setLoginData] = useState({
@@ -96,8 +97,8 @@ export default function Login() {
 
     return <AuthLayout title={'Login'}>
         <form onSubmit={handleSubmit(handleSubmitLogin)} className={'formWrap'}>
-            <label className={'flex mt-6 text-[18px] ml-1 font-medium'}>Phone number <div
-                className={'text-[red] ml-1'}>*</div></label>
+            <label tw={'flex mt-6 text-[18px] ml-1 font-medium'}>Phone number <div
+                tw={'text-[red] ml-1'}>*</div></label>
             <Input
                 className={(!_.isEmpty(errors.phone?.message) || errorStatus === 401) ? 'errorInput' : ''}
                 {
@@ -121,8 +122,8 @@ export default function Login() {
             {!_.isEmpty(errors.phone?.message) ? <ErrorMessage message={errors.phone?.message}/> : ''}
 
             <div className={'passwordInputWrap'}>
-                <label className={'flex mt-6 text-[18px] ml-1 font-medium'}>Password <div
-                    className={'text-[red] ml-1'}>*</div></label>
+                <label tw={'flex mt-6 text-[18px] ml-1 font-medium'}>Password <div
+                    tw={'text-[red] ml-1'}>*</div></label>
                 <Input
                     id={'password'}
                     className={!_.isEmpty(errors.password?.message) ? 'errorInput' : ''}

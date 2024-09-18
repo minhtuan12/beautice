@@ -1,12 +1,11 @@
 import React, {useEffect, useState} from 'react';
-import {Avatar, Button, Skeleton, Upload} from "antd";
+import {Avatar, Skeleton, Upload} from "antd";
 import InlineSVG from "react-inlinesvg";
 import {useDispatch, useSelector} from "react-redux";
 import _ from "lodash";
-import styles from './styles.module.scss'
 import DefaultAvatar from '../../../../assets/images/logos/user-default.png'
 import {EditOutlined} from '@ant-design/icons'
-import {capitalizeFirstLetter, notify, setAuthToken} from "../../../../utils/helpers.js";
+import {capitalizeFirstLetter, notify} from "../../../../utils/helpers.js";
 import {VALIDATE_PHONE_REGEX} from "../../../../utils/constants.js";
 import ErrorMessage from "../../../../components/ErrorMessage/index.jsx";
 import LoadingIcon from "../../../../assets/images/icons/solid/circle-notch.svg";
@@ -15,6 +14,9 @@ import {useMutation, useQueryClient} from "@tanstack/react-query";
 import {requestUpdateProfile} from "../../../../api/profile/index.js";
 import {requestGetMeSuccess} from "../../../../store/slices/auth/index.js";
 import Input from "../../../../components/Input/index.jsx";
+import Button from "../../../../components/Button/index.jsx";
+import {Container, PersonalInfoContainer, Title, UploadContainer, Wrap} from "./styles.js";
+import tw from 'twin.macro'
 
 const getBase64 = (img, callback) => {
     if (img?.type === 'image/jpeg' || img?.type === 'image/png') {
@@ -64,8 +66,8 @@ export default function InformationTab() {
         getBase64(info.file.originFileObj, (url) => {
             setImageUrl(url);
             setUpdateProfile({
-                ...updateProfile,
-                avatar: url
+                ...updateProfileData,
+                avatar: info.file.originFileObj
             })
         });
     };
@@ -80,31 +82,32 @@ export default function InformationTab() {
     /* handling request to update profile */
     const {isPending, mutate: updateProfile} = useMutation({
         mutationKey: ['update-profile'],
-        mutationFn: () => requestUpdateProfile(updateProfileData),
+        mutationFn: () => requestUpdateProfile({
+            ...updateProfileData,
+            avatar: _.isObject(updateProfileData.avatar) ? updateProfileData.avatar : null
+        }),
         onSuccess: async () => {
             notify('success', 'Updated successfully')
             await queryClient.invalidateQueries({queryKey: ['me']}).then(async () => {
                 await queryClient.refetchQueries({queryKey: ['me']})
             })
             const newProfileData = queryClient.getQueryData(['me'])
-            dispatch(requestGetMeSuccess(newProfileData.data))
+            dispatch(requestGetMeSuccess(newProfileData?.data))
         },
         onError: (err) => {
-            console.log(err)
-            // const responseStatus = err.status
-            // if (responseStatus === 400) {
-            //     const errors = err.data.details
-            //     Object.keys(errors).forEach(field => {
-            //         setError(field, {
-            //             type: 'manual',
-            //             message: errors[field]
-            //         })
-            //     })
-            // } else {
-            //     notify('error', 'Failed to sign up')
-            // }
-        },
-
+            const responseStatus = err.status
+            if (responseStatus === 400) {
+                const errors = err.data.details
+                Object.keys(errors).forEach(field => {
+                    setError(field, {
+                        type: 'manual',
+                        message: errors[field]
+                    })
+                })
+            } else {
+                notify('error', 'Failed to update profile')
+            }
+        }
     })
 
     const handleSubmitUpdateProfile = () => {
@@ -124,16 +127,14 @@ export default function InformationTab() {
     }, [updateProfileData, setValue])
 
     return (
-        <div className={styles.cardWrap}>
-            <div className={styles.title}>
-                <p className={''}>Update information</p>
-            </div>
-            <div className={'px-10 py-7'}>
+        <Wrap>
+            <Title><p>Update information</p></Title>
+            <div tw={'px-10 py-7'}>
                 {
                     isLoadingGetMe ? <Skeleton active={isLoadingGetMe}/>
-                        : <div className={styles.childrenContainer}>
-                            <div className={styles.uploadContainer}>
-                                <div className={'w-fit border-[3px] rounded-[50%] h-fit hover:border-dashed'}>
+                        : <Container>
+                            <UploadContainer>
+                                <div tw={'w-fit border-[3px] rounded-[50%] h-fit hover:border-dashed'}>
                                     <Upload
                                         name="avatar"
                                         showUploadList={false}
@@ -142,24 +143,24 @@ export default function InformationTab() {
                                         customRequest={() => {
                                         }}
                                     >
-                                        <div className={'relative'}>
+                                        <div tw={'relative'}>
                                             <Avatar
                                                 src={imageUrl ? imageUrl : (noAvatar ? DefaultAvatar : imageUrl)}
-                                                className={styles.avatar}
+                                                className={'w-[170px] h-[170px]'}
                                             />
-                                            <div className={styles.avatarEdit}>
+                                            <div tw={'absolute top-[70%] right-[-3px] h-[2rem] w-[2rem] bg-[#f9f9f9] rounded-[50%] flex items-center justify-center'}>
                                                 <EditOutlined/>
                                             </div>
                                         </div>
                                     </Upload>
                                 </div>
-                            </div>
+                            </UploadContainer>
 
-                            <div className={styles.personalInfoContainer}>
+                            <PersonalInfoContainer>
                                 <form onSubmit={handleSubmit(handleSubmitUpdateProfile)} className={'formWrap'}>
 
-                                    <label className={'flex mt-6 text-[18px] ml-1 font-medium'}>Full name <div
-                                        className={'text-[red] ml-1'}>*</div></label>
+                                    <label tw={'flex mt-6 text-[18px] ml-1 font-medium'}>Full name <div
+                                        tw={'text-[red] ml-1'}>*</div></label>
                                     <Input
                                         className={!_.isEmpty(errors.fullName?.message) ? 'errorInput' : ''}
                                         {
@@ -174,8 +175,8 @@ export default function InformationTab() {
                                     {!_.isEmpty(errors.fullName?.message) ?
                                         <ErrorMessage message={errors.fullName?.message}/> : ''}
 
-                                    <label className={'flex mt-6 text-[18px] ml-1 font-medium'}>Phone number <div
-                                        className={'text-[red] ml-1'}>*</div></label>
+                                    <label tw={'flex mt-6 text-[18px] ml-1 font-medium'}>Phone number <div
+                                        tw={'text-[red] ml-1'}>*</div></label>
                                     <Input
                                         className={!_.isEmpty(errors.phone?.message) ? 'errorInput' : ''}
                                         {
@@ -208,10 +209,10 @@ export default function InformationTab() {
                                         Update
                                     </Button>
                                 </form>
-                            </div>
-                        </div>
+                            </PersonalInfoContainer>
+                        </Container>
                 }
             </div>
-        </div>
+        </Wrap>
     );
 }

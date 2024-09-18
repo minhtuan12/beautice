@@ -2,16 +2,19 @@ import React, {useEffect, useRef, useState} from "react";
 import styles from './styles.module.scss'
 import {mainMenu} from "./menu.js";
 import {useLocation, useNavigate} from "react-router-dom";
-import {CloseOutlined, EnterOutlined, MenuOutlined} from '@ant-design/icons'
+import {CloseOutlined, EnterOutlined, MenuOutlined, UserOutlined} from '@ant-design/icons'
 import {pathToIcon} from "../../../../utils/constants.js";
 import MenuBox from "./components/MenuBox/index.jsx";
-import {Drawer, Menu} from "antd";
+import {Drawer, Menu, Popover} from "antd";
 import {useDispatch, useSelector} from "react-redux";
 import _ from "lodash";
 import {removeAuthToken} from "../../../../utils/helpers.js";
 import {requestGetMeFail} from "../../../../store/slices/auth/index.js";
 import tw from 'twin.macro'
 import Button from "../../../../components/Button/index.jsx";
+import PopoverProfile from "./components/PopoverProfile/index.jsx";
+import DefaultAvatar from '../../../../assets/images/logos/user-default.png'
+import {setIsVisibleMenuBox} from "../../../../store/slices/app/index.js";
 
 export default function Header({isLightTheme}) {
     const navigate = useNavigate()
@@ -20,8 +23,8 @@ export default function Header({isLightTheme}) {
     const menuBtnRef = useRef()
     const homeMenuBtnRef = useRef()
     const [isVisibleMenuBtn, setIsVisibleMenuBtn] = useState(window.innerWidth <= 1430)
-    const [isVisibleMenuBox, setIsVisibleMenuBox] = useState(false)
     const [isVisibleHomeMenu, setIsVisibleHomeMenu] = useState(false)
+    const isVisibleMenuBox = useSelector(state => state.app.isVisibleMenuBox)
     const visibleStickyHeader = useSelector(state => state.app.visibleStickyHeader)
     const authUser = useSelector(state => state.auth.authUser)
 
@@ -35,7 +38,7 @@ export default function Header({isLightTheme}) {
     }
 
     const handleToggleMainMenu = (e) => {
-        setIsVisibleMenuBox(!isVisibleMenuBox)
+        dispatch(setIsVisibleMenuBox(!isVisibleMenuBox))
         e?.stopPropagation()
     }
 
@@ -52,7 +55,7 @@ export default function Header({isLightTheme}) {
                 setIsVisibleHomeMenu(false)
             }
             if (menuBtnRef?.current && !menuBtnRef?.current?.contains(e.target)) {
-                setIsVisibleMenuBox(false)
+                dispatch(setIsVisibleMenuBox(false))
             }
         }
 
@@ -124,20 +127,22 @@ export default function Header({isLightTheme}) {
                     Contact
                 </Button>
             </div>
-            {/*<div className={styles.avatar}>*/}
-            {/*    <Popover placement="bottomRight" content={PopoverProfile}*/}
-            {/*             trigger="click">*/}
-            {/*        <div className={styles.infoWrap}>*/}
-            {/*            <div className={styles.avatarWrap}>*/}
-            {/*                <img src={authUser?.avatar || DefaultAvatar}*/}
-            {/*                     alt="" onError={(e) => {*/}
-            {/*                    e.currentTarget.onerror = null;*/}
-            {/*                    e.currentTarget.src = DefaultAvatar;*/}
-            {/*                }}/>*/}
-            {/*            </div>*/}
-            {/*        </div>*/}
-            {/*    </Popover>*/}
-            {/*</div>*/}
+            {!isVisibleMenuBtn ?
+                <div className={styles.avatar}>
+                    <Popover placement="bottomRight" content={PopoverProfile}
+                             trigger="click">
+                        <div className={styles.infoWrap}>
+                            <div className={styles.avatarWrap}>
+                                <img src={authUser?.avatar || DefaultAvatar}
+                                     alt="" onError={(e) => {
+                                    e.currentTarget.onerror = null;
+                                    e.currentTarget.src = DefaultAvatar;
+                                }}/>
+                            </div>
+                        </div>
+                    </Popover>
+                </div> : ''
+            }
             {
                 isVisibleMenuBtn ? <>
                     <div className={`${styles.menuBtn} ${isVisibleMenuBox ? 'rotate-[90deg]' : ''}`}
@@ -166,21 +171,21 @@ export default function Header({isLightTheme}) {
                         className={'custom-drawer'}
                         title={
                             <div
-                                className={`whitespace-nowrap overflow-hidden overflow-ellipsis text-[20px] ${window.innerWidth < 768 ? 'max-w-[calc(100vw_-_100px)]' : 'max-w-[250px]'} text-[#8b8b8b] font-medium`}>
+                                className={`whitespace-nowrap overflow-hidden text-[#091156] overflow-ellipsis text-[20px] ${window.innerWidth < 768 ? 'max-w-[calc(100vw_-_100px)]' : 'max-w-[250px]'} font-medium`}>
                                 {
                                     !_.isEmpty(authUser) ? `Hi, ${authUser?.full_name}` :
                                         <>
-                                            <span className={'text-[#091156]'} onClick={() => navigate('/login')}>
+                                            <span onClick={() => navigate('/login')}>
                                                 Log in
                                             </span> /
-                                            <span onClick={() => navigate('/register')}>
+                                            <span className={'text-[#8b8b8b]'} onClick={() => navigate('/register')}>
                                                 Sign up
                                             </span>
                                         </>
                                 }
                             </div>
                         }
-                        onClose={() => setIsVisibleMenuBox(false)}
+                        onClose={() => dispatch(setIsVisibleMenuBox(false))}
                         open={isVisibleMenuBox}
                     >
                         <Menu
@@ -189,13 +194,22 @@ export default function Header({isLightTheme}) {
                                 if (item.key !== '/logout') {
                                     navigate(item.key)
                                 } else {
-                                    removeAuthToken()
+                                    dispatch(setIsVisibleMenuBox(false))
+                                    removeAuthToken();
                                     dispatch(requestGetMeFail())
+                                    navigate('/');
                                 }
                             }}
                             mode="inline"
                             items={
                                 !_.isEmpty(authUser) ? [...mainMenu, {
+                                    type: 'divider',
+                                }, {
+                                    key: '/profile',
+                                    label: 'Profile',
+                                    href: '/profile',
+                                    icon: <UserOutlined />,
+                                }, {
                                     key: '/logout',
                                     label: 'Log out',
                                     href: '#',

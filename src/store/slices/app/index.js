@@ -4,6 +4,7 @@ const appSlice = createSlice({
     name: 'app',
     initialState: {
         isVisibleSlidingBtn: window.innerWidth <= 1430,
+        isVisibleMenuBox: false,
         visibleImageUnderTitle: window.innerWidth <= 1300,
         visibleStickyHeader: window.pageYOffset > 340 || document.documentElement.scrollTop > 340,
         goToPage: {
@@ -12,6 +13,10 @@ const appSlice = createSlice({
         },
     },
     reducers: {
+        setIsVisibleMenuBox: (state, action) => ({
+            ...state,
+            isVisibleMenuBox: action.payload
+        }),
         setIsVisibleSlidingBtn: (state, action) => ({
             ...state,
             isVisibleSlidingBtn: action.payload
@@ -42,6 +47,7 @@ const appSlice = createSlice({
 })
 
 export const {
+    setIsVisibleMenuBox,
     goToPage, goToPageSuccess,
     setVisibleStickyHeader,
     setIsVisibleSlidingBtn, setVisibleImageUnderTitle

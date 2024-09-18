@@ -5,6 +5,7 @@ import {useNavigate} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import _ from "lodash";
 import {requestGetMeFail} from "../../../../../../store/slices/auth/index.js";
+import {setIsVisibleMenuBox} from "../../../../../../store/slices/app/index.js";
 
 function PopoverProfile() {
     const navigate = useNavigate();
@@ -12,6 +13,7 @@ function PopoverProfile() {
     const authUser = useSelector(state => state.auth.authUser);
 
     const handleConfirmLogout = () => {
+        dispatch(setIsVisibleMenuBox(false))
         removeAuthToken();
         dispatch(requestGetMeFail())
         navigate('/');
