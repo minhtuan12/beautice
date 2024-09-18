@@ -15,6 +15,7 @@ import Button from "../../../../components/Button/index.jsx";
 import PopoverProfile from "./components/PopoverProfile/index.jsx";
 import DefaultAvatar from '../../../../assets/images/logos/user-default.png'
 import {setIsVisibleMenuBox} from "../../../../store/slices/app/index.js";
+import {queryClient} from "../../../../utils/queryClient.js";
 
 export default function Header({isLightTheme}) {
     const navigate = useNavigate()
@@ -190,10 +191,11 @@ export default function Header({isLightTheme}) {
                     >
                         <Menu
                             className={'custom-menu'}
-                            onClick={(item) => {
+                            onClick={async (item) => {
                                 if (item.key !== '/logout') {
                                     navigate(item.key)
                                 } else {
+                                    await queryClient.invalidateQueries({queryKey: ['me']})
                                     dispatch(setIsVisibleMenuBox(false))
                                     removeAuthToken();
                                     dispatch(requestGetMeFail())

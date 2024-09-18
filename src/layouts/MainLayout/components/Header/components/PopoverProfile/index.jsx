@@ -6,13 +6,15 @@ import {useDispatch, useSelector} from "react-redux";
 import _ from "lodash";
 import {requestGetMeFail} from "../../../../../../store/slices/auth/index.js";
 import {setIsVisibleMenuBox} from "../../../../../../store/slices/app/index.js";
+import {queryClient} from "../../../../../../utils/queryClient.js";
 
 function PopoverProfile() {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const authUser = useSelector(state => state.auth.authUser);
 
-    const handleConfirmLogout = () => {
+    const handleConfirmLogout = async () => {
+        await queryClient.invalidateQueries({queryKey: ['me']})
         dispatch(setIsVisibleMenuBox(false))
         removeAuthToken();
         dispatch(requestGetMeFail())

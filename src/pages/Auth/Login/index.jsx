@@ -16,6 +16,7 @@ import {useNavigate} from "react-router-dom";
 import Button from "../../../components/Button/index.jsx";
 import Input from "../../../components/Input/index.jsx";
 import tw from 'twin.macro'
+import {queryClient} from "../../../utils/queryClient.js";
 
 export default function Login() {
     const [loginData, setLoginData] = useState({
@@ -48,7 +49,7 @@ export default function Login() {
     const {isPending, mutate: login} = useMutation({
         mutationKey: ['login'],
         mutationFn: () => requestLogin(loginData),
-        onSuccess: (data) => {
+        onSuccess: async (data) => {
             setAuthToken(data.data.token)
             notify('success', 'Logged in successfully')
             navigate('/')
