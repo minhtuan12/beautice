@@ -13,9 +13,9 @@ export const rootLoader = async ({request}, requiredAuth, saga = null) => {
     const authRoutes = ['/login', '/register']
 
     const authToken = _.isEmpty(auth.authUser) && getAuthToken()
-    const profileDataCache = queryClient.getQueryData(['me'])
+    const profileCacheState = queryClient.getQueryState(['me'])
     if (authToken) {
-        if (!profileDataCache) {
+        if ((profileCacheState && profileCacheState.isInvalidated) || !profileCacheState) {
             try {
                 const data = await queryClient.fetchQuery({
                     queryKey: ['me'],
@@ -39,6 +39,7 @@ export const rootLoader = async ({request}, requiredAuth, saga = null) => {
                 notify('error', 'Failed to get profile')
             }
         } else {
+            const profileDataCache = queryClient.getQueryData(['me'])
             store.dispatch(requestGetMeSuccess(profileDataCache?.data))
         }
     }
